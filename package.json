@@ -7,6 +7,7 @@
     "build": "node build.js",
     "dev": "node build.js && pnpm wrangler pages dev public",
     "deploy": "./deploy.sh",
+    "bootstrap": "./bootstrap.sh",
     "init": "./init-cloudflare.sh",
     "domain:add": "./add-domain-api.sh",
     "test:deployment": "node test-deployment.js"

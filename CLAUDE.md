@@ -6,12 +6,19 @@
 - The deploy script automatically builds, deploys to production, and opens the URL in the browser.
 - There are no test, staging, or preview instances - only the production deployment on the master branch.
 
-## Custom Domain Setup
-- To add custom domains via CLI: `pnpm run domain:add` (uses Cloudflare API)
-- The script requires a Cloudflare API token with Zone:DNS:Edit and Account:Pages:Edit permissions.
-- Get API token at: https://dash.cloudflare.com/profile/api-tokens
-- The script automatically creates CNAME records and adds the domain to the Pages project.
-- No manual dashboard steps required!
+## Automated Bootstrap Setup
+- **ZERO manual steps after initial token creation!**
+- Run `./bootstrap.sh` for fully automated setup
+- Only requires 2 tokens ONCE:
+  1. Cloudflare Master API Token (creates other tokens automatically)
+  2. GitHub Personal Access Token (sets secrets automatically)
+- The bootstrap script automatically:
+  - Creates scoped deployment tokens
+  - Sets GitHub repository secrets
+  - Configures custom domain (blackhoard.com)
+  - Creates DNS records
+  - Triggers first deployment
+- After bootstrap: just `git push` to deploy!
 
 ## Browser Automation and Testing
 - **Always test deployments** using browser automation after deploying.
@@ -27,3 +34,4 @@
 - Screenshots are saved as `deployment-test-screenshot.png` in the project root.
 - Playwright runs in headless mode on Linux (using Chromium browser).
 - Browser binaries are cached in `~/.cache/ms-playwright/` and don't need to be in the repo.
+- Try to get all "manual actions", e.g. things I as a human have to do, by APIs or other automated ways
