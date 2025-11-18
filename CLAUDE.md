@@ -1,1 +1,2 @@
 - Always use command line tools for accessing Github and Cloudflare, i.e. 'gh' and 'wrangler'.
+- Use pnpm as the package manager for this project (not npm or yarn).
