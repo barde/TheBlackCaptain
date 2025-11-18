@@ -1,0 +1,23 @@
+{
+  "name": "the-black-captain",
+  "version": "1.0.0",
+  "description": "The many travels of the Black Captain - A journey of healing through words",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx wrangler pages dev public",
+    "deploy": "node build.js && npx wrangler pages deploy public",
+    "deploy:worker": "npx wrangler deploy"
+  },
+  "keywords": [
+    "blog",
+    "travel",
+    "writing",
+    "cloudflare"
+  ],
+  "author": "The Black Captain",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.78.0"
+  }
+}

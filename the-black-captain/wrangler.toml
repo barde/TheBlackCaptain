@@ -1,0 +1,36 @@
+# The Black Captain - Cloudflare Workers Configuration
+name = "the-black-captain"
+main = "workers/translator.js"
+compatibility_date = "2024-01-01"
+
+# Workers AI binding (for translation)
+[ai]
+binding = "AI"
+
+# KV namespace for caching translations (optional but recommended)
+# Create this with: wrangler kv:namespace create "TRANSLATIONS_KV"
+# Then update the id below with the generated ID
+[[kv_namespaces]]
+binding = "TRANSLATIONS_KV"
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+# Routes configuration
+# The worker will handle /api/translate requests
+# All other requests will be served as static files from Cloudflare Pages
+[routes]
+pattern = "*/api/translate"
+zone_name = "your-domain.com"
+
+# Build configuration for Cloudflare Pages
+[build]
+command = "node build.js"
+cwd = "."
+watch_dirs = ["posts", "assets"]
+
+[build.upload]
+format = "service-worker"
+dir = "public"
+
+# Environment variables (optional)
+[vars]
+ENVIRONMENT = "production"

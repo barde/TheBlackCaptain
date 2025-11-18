@@ -1,0 +1,1 @@
+- Always use command line tools for accessing Github and Cloudflare, i.e. 'gh' and 'wrangler'.
