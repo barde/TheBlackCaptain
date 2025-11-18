@@ -1,0 +1,17 @@
+# The Black Captain - Translation Worker Configuration
+name = "the-black-captain-translator"
+main = "translator.js"
+compatibility_date = "2024-01-01"
+
+# Workers AI binding (for translation)
+[ai]
+binding = "AI"
+
+# KV namespace for caching translations
+[[kv_namespaces]]
+binding = "TRANSLATIONS_KV"
+id = "YOUR_KV_NAMESPACE_ID"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
