@@ -12,14 +12,15 @@ binding = "AI"
 # Then update the id below with the generated ID
 [[kv_namespaces]]
 binding = "TRANSLATIONS_KV"
-id = "YOUR_KV_NAMESPACE_ID_HERE"
+id = "YOUR_KV_NAMESPACE_ID"
 
 # Routes configuration
 # The worker will handle /api/translate requests
 # All other requests will be served as static files from Cloudflare Pages
-[routes]
-pattern = "*/api/translate"
-zone_name = "your-domain.com"
+# Uncomment and configure when you have a domain set up:
+# routes = [
+#   { pattern = "*/api/translate", zone_name = "your-domain.com" }
+# ]
 
 # Build configuration for Cloudflare Pages
 [build]
