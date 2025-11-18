@@ -49,18 +49,18 @@ print_success "pnpm is installed"
 
 # Check wrangler authentication
 print_status "Checking Cloudflare authentication..."
-if ! wrangler whoami &> /dev/null; then
+if ! pnpm wrangler whoami &> /dev/null; then
     print_warning "Not authenticated with Cloudflare"
     print_status "Opening browser for authentication..."
-    wrangler login
+    pnpm wrangler login
 
-    if ! wrangler whoami &> /dev/null; then
+    if ! pnpm wrangler whoami &> /dev/null; then
         print_error "Authentication failed. Please try again."
         exit 1
     fi
 fi
 
-USER_INFO=$(wrangler whoami 2>/dev/null | grep -i "logged in" || echo "")
+USER_INFO=$(pnpm wrangler whoami 2>/dev/null | grep -i "logged in" || echo "")
 print_success "Authenticated with Cloudflare"
 echo "  $USER_INFO"
 
@@ -73,7 +73,7 @@ print_success "Dependencies installed"
 print_status "Creating KV namespace for translation cache..."
 
 # Check if namespace already exists
-EXISTING_KV=$(wrangler kv:namespace list 2>/dev/null | grep -i "TRANSLATIONS_KV" || echo "")
+EXISTING_KV=$(pnpm wrangler kv:namespace list 2>/dev/null | grep -i "TRANSLATIONS_KV" || echo "")
 
 if [ -n "$EXISTING_KV" ]; then
     print_warning "TRANSLATIONS_KV namespace may already exist"
@@ -85,17 +85,17 @@ if [ -n "$EXISTING_KV" ]; then
         KV_ID=$(echo "$EXISTING_KV" | grep -oP 'id = "\K[^"]+' || echo "")
         if [ -z "$KV_ID" ]; then
             print_error "Could not extract KV namespace ID. Please create manually:"
-            echo "  wrangler kv:namespace create \"TRANSLATIONS_KV\""
+            echo "  pnpm wrangler kv:namespace create \"TRANSLATIONS_KV\""
             exit 1
         fi
     else
-        KV_OUTPUT=$(wrangler kv:namespace create "TRANSLATIONS_KV" 2>&1)
+        KV_OUTPUT=$(pnpm wrangler kv:namespace create "TRANSLATIONS_KV" 2>&1)
         echo "$KV_OUTPUT"
         KV_ID=$(echo "$KV_OUTPUT" | grep -oP 'id = "\K[^"]+')
         print_success "KV namespace created"
     fi
 else
-    KV_OUTPUT=$(wrangler kv:namespace create "TRANSLATIONS_KV" 2>&1)
+    KV_OUTPUT=$(pnpm wrangler kv:namespace create "TRANSLATIONS_KV" 2>&1)
     echo "$KV_OUTPUT"
     KV_ID=$(echo "$KV_OUTPUT" | grep -oP 'id = "\K[^"]+')
     print_success "KV namespace created"
