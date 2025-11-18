@@ -85,6 +85,31 @@
     });
   }
 
+  // Translate a single text element
+  async function translateElement(element, targetLang) {
+    const originalText = element.textContent.trim();
+    if (!originalText) return;
+
+    const response = await fetch('/api/translate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        text: originalText,
+        targetLang: targetLang,
+        sourceLang: DEFAULT_LANG
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Translation failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    element.textContent = data.translatedText;
+  }
+
   // Translate page content
   async function translatePage(targetLang) {
     if (targetLang === DEFAULT_LANG) {
@@ -98,7 +123,7 @@
     // Store original content before translating
     storeOriginalContent();
 
-    const translatableElements = document.querySelectorAll('[data-translatable="true"]');
+    const translatableContainer = document.querySelectorAll('[data-translatable="true"]');
 
     // Show loading state
     const button = document.getElementById('lang-toggle');
@@ -108,39 +133,30 @@
     }
 
     try {
-      // Translate each element
-      for (const element of translatableElements) {
-        const originalHTML = originalContent.find(oc => oc.element === element)?.html;
-        if (!originalHTML) continue;
+      // For each translatable container, find individual text elements
+      for (const container of translatableContainer) {
+        // Find all text-containing elements (headings, paragraphs, list items, etc.)
+        const textElements = container.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, figcaption, blockquote, .site-description');
 
-        // Extract text content (simple approach - strip HTML tags for translation)
-        const textContent = element.textContent;
-
-        // Call translation API
-        const response = await fetch('/api/translate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            text: textContent,
-            targetLang: targetLang,
-            sourceLang: DEFAULT_LANG
-          })
-        });
-
-        if (!response.ok) {
-          throw new Error(`Translation failed: ${response.statusText}`);
+        // Translate each element
+        for (const element of textElements) {
+          await translateElement(element, targetLang);
         }
 
-        const data = await response.json();
+        // Also translate direct text in elements with specific classes
+        const postTitle = container.querySelector('.post-title');
+        if (postTitle) await translateElement(postTitle, targetLang);
 
-        // Replace text content while preserving HTML structure (simple approach)
-        // This is basic - for production you'd want to translate text nodes only
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = originalHTML;
-        tempDiv.textContent = data.translatedText;
-        element.innerHTML = tempDiv.innerHTML;
+        const postDate = container.querySelector('.post-date');
+        // Don't translate dates
+
+        // Translate link text but not URLs
+        const links = container.querySelectorAll('a');
+        for (const link of links) {
+          if (link.textContent.trim() && !link.querySelector('h1, h2, h3, h4, h5, h6')) {
+            await translateElement(link, targetLang);
+          }
+        }
       }
 
       currentLang = targetLang;
