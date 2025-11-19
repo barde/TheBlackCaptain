@@ -51,20 +51,21 @@ export async function onRequestPost(context) {
     }
 
     // Language code mapping for m2m100 model
+    // Supports 51 languages across all continents
     const langMap = {
-      'en': 'en',
-      'de': 'de',
-      'es': 'es',
-      'fr': 'fr',
-      'it': 'it',
-      'pt': 'pt',
-      'nl': 'nl',
-      'pl': 'pl',
-      'ru': 'ru',
-      'ja': 'ja',
-      'zh': 'zh',
-      'ko': 'ko',
-      'ar': 'ar'
+      // Europe
+      'en': 'en', 'de': 'de', 'es': 'es', 'fr': 'fr', 'it': 'it', 'pt': 'pt',
+      'nl': 'nl', 'pl': 'pl', 'ru': 'ru', 'cs': 'cs', 'da': 'da', 'fi': 'fi',
+      'el': 'el', 'hu': 'hu', 'no': 'no', 'ro': 'ro', 'sv': 'sv', 'tr': 'tr',
+      'uk': 'uk', 'bg': 'bg', 'hr': 'hr', 'et': 'et', 'is': 'is', 'lt': 'lt',
+      'lv': 'lv', 'mk': 'mk', 'sk': 'sk', 'sl': 'sl',
+      // Asia
+      'zh': 'zh', 'ja': 'ja', 'ko': 'ko', 'ar': 'ar', 'hi': 'hi', 'id': 'id',
+      'th': 'th', 'vi': 'vi', 'ta': 'ta', 'te': 'te', 'ml': 'ml', 'bn': 'bn',
+      'ur': 'ur', 'fa': 'fa', 'he': 'he', 'ms': 'ms', 'my': 'my',
+      // Africa
+      'af': 'af', 'am': 'am', 'ha': 'ha', 'ig': 'ig', 'sw': 'sw', 'yo': 'yo',
+      'zu': 'zu'
     };
 
     const mappedSourceLang = langMap[sourceLang] || sourceLang;

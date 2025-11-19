@@ -102,19 +102,64 @@ function generatePage(title, content, metadata = {}) {
         <a href="/">Home</a>
         <a href="/archive.html">Archive</a>
         <select id="lang-selector" class="lang-selector" aria-label="Select language">
-          <option value="en">English</option>
-          <option value="de">Deutsch</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="it">Italiano</option>
-          <option value="pt">Português</option>
-          <option value="nl">Nederlands</option>
-          <option value="pl">Polski</option>
-          <option value="ru">Русский</option>
-          <option value="ja">日本語</option>
-          <option value="zh">中文</option>
-          <option value="ko">한국어</option>
-          <option value="ar">العربية</option>
+          <option value="en">🌍 English</option>
+          <optgroup label="🇪🇺 Europe">
+            <option value="de">Deutsch (German)</option>
+            <option value="es">Español (Spanish)</option>
+            <option value="fr">Français (French)</option>
+            <option value="it">Italiano (Italian)</option>
+            <option value="pt">Português (Portuguese)</option>
+            <option value="nl">Nederlands (Dutch)</option>
+            <option value="pl">Polski (Polish)</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="cs">Čeština (Czech)</option>
+            <option value="da">Dansk (Danish)</option>
+            <option value="fi">Suomi (Finnish)</option>
+            <option value="el">Ελληνικά (Greek)</option>
+            <option value="hu">Magyar (Hungarian)</option>
+            <option value="no">Norsk (Norwegian)</option>
+            <option value="ro">Română (Romanian)</option>
+            <option value="sv">Svenska (Swedish)</option>
+            <option value="tr">Türkçe (Turkish)</option>
+            <option value="uk">Українська (Ukrainian)</option>
+            <option value="bg">Български (Bulgarian)</option>
+            <option value="hr">Hrvatski (Croatian)</option>
+            <option value="et">Eesti (Estonian)</option>
+            <option value="is">Íslenska (Icelandic)</option>
+            <option value="lt">Lietuvių (Lithuanian)</option>
+            <option value="lv">Latviešu (Latvian)</option>
+            <option value="mk">Македонски (Macedonian)</option>
+            <option value="sk">Slovenčina (Slovak)</option>
+            <option value="sl">Slovenščina (Slovenian)</option>
+          </optgroup>
+          <optgroup label="🌏 Asia">
+            <option value="zh">中文 (Chinese)</option>
+            <option value="ja">日本語 (Japanese)</option>
+            <option value="ko">한국어 (Korean)</option>
+            <option value="ar">العربية (Arabic)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="id">Bahasa Indonesia (Indonesian)</option>
+            <option value="th">ไทย (Thai)</option>
+            <option value="vi">Tiếng Việt (Vietnamese)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+            <option value="ur">اردو (Urdu)</option>
+            <option value="fa">فارسی (Persian)</option>
+            <option value="he">עברית (Hebrew)</option>
+            <option value="ms">Bahasa Melayu (Malay)</option>
+            <option value="my">မြန်မာ (Burmese)</option>
+          </optgroup>
+          <optgroup label="🌍 Africa">
+            <option value="af">Afrikaans</option>
+            <option value="am">አማርኛ (Amharic)</option>
+            <option value="ha">Hausa</option>
+            <option value="ig">Igbo</option>
+            <option value="sw">Kiswahili (Swahili)</option>
+            <option value="yo">Yorùbá</option>
+            <option value="zu">isiZulu (Zulu)</option>
+          </optgroup>
         </select>
       </div>
     </div>
