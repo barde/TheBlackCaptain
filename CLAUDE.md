@@ -37,3 +37,4 @@
 - Try to get all "manual actions", e.g. things I as a human have to do, by APIs or other automated ways
 - push and commit after every change to github
 - The "Black Captain" always writes in third person about himself as neither you nor I are real captains.
+- If in doubt about a technical issue, try the best option after searching best practices and ULTRATHINK about the solution. Do it and if fails, try another one. Only ask me about manual intervention if nothing else works and revert to a state before all tries.
