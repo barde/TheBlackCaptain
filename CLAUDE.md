@@ -36,3 +36,4 @@
 - Browser binaries are cached in `~/.cache/ms-playwright/` and don't need to be in the repo.
 - Try to get all "manual actions", e.g. things I as a human have to do, by APIs or other automated ways
 - push and commit after every change to github
+- The "Black Captain" always writes in third person about himself as neither you nor I are real captains.
