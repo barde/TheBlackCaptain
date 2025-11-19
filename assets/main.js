@@ -56,12 +56,11 @@
     }
   }
 
-  // Update language toggle button
-  function updateLangButton(lang) {
-    const button = document.getElementById('lang-toggle');
-    if (button) {
-      button.textContent = LANG_NAMES[lang] || lang.toUpperCase();
-      button.setAttribute('aria-label', `Current language: ${lang}. Click to change.`);
+  // Update language selector
+  function updateLangSelector(lang) {
+    const selector = document.getElementById('lang-selector');
+    if (selector) {
+      selector.value = lang;
     }
   }
 
@@ -115,7 +114,7 @@
     if (targetLang === DEFAULT_LANG) {
       restoreOriginalContent();
       currentLang = DEFAULT_LANG;
-      updateLangButton(currentLang);
+      updateLangSelector(currentLang);
       storeLanguage(currentLang);
       return;
     }
@@ -126,10 +125,11 @@
     const translatableContainer = document.querySelectorAll('[data-translatable="true"]');
 
     // Show loading state
-    const button = document.getElementById('lang-toggle');
-    if (button) {
-      button.textContent = '...';
-      button.disabled = true;
+    const selector = document.getElementById('lang-selector');
+    const originalValue = selector ? selector.value : targetLang;
+    if (selector) {
+      selector.disabled = true;
+      selector.style.opacity = '0.6';
     }
 
     try {
@@ -167,22 +167,22 @@
       alert('Translation failed. Showing original content.');
       restoreOriginalContent();
       currentLang = DEFAULT_LANG;
+      if (selector) {
+        selector.value = DEFAULT_LANG;
+      }
     } finally {
-      if (button) {
-        button.disabled = false;
-        updateLangButton(currentLang);
+      if (selector) {
+        selector.disabled = false;
+        selector.style.opacity = '1';
+        updateLangSelector(currentLang);
       }
     }
   }
 
-  // Cycle through available languages
-  function cycleLanguage() {
-    const languages = Object.keys(LANG_NAMES);
-    const currentIndex = languages.indexOf(currentLang);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    const nextLang = languages[nextIndex];
-
-    translatePage(nextLang);
+  // Handle language selection
+  function handleLanguageChange(event) {
+    const selectedLang = event.target.value;
+    translatePage(selectedLang);
   }
 
   // Initialize
@@ -195,12 +195,12 @@
     const initialLang = storedLang || (browserLang !== DEFAULT_LANG ? browserLang : DEFAULT_LANG);
 
     currentLang = initialLang;
-    updateLangButton(currentLang);
+    updateLangSelector(currentLang);
 
-    // Set up language toggle button
-    const langButton = document.getElementById('lang-toggle');
-    if (langButton) {
-      langButton.addEventListener('click', cycleLanguage);
+    // Set up language selector dropdown
+    const langSelector = document.getElementById('lang-selector');
+    if (langSelector) {
+      langSelector.addEventListener('change', handleLanguageChange);
     }
 
     // Auto-translate if not English

@@ -101,7 +101,21 @@ function generatePage(title, content, metadata = {}) {
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/archive.html">Archive</a>
-        <button id="lang-toggle" class="lang-toggle">EN</button>
+        <select id="lang-selector" class="lang-selector" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="nl">Nederlands</option>
+          <option value="pl">Polski</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="zh">中文</option>
+          <option value="ko">한국어</option>
+          <option value="ar">العربية</option>
+        </select>
       </div>
     </div>
   </nav>
