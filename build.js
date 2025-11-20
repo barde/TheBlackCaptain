@@ -101,6 +101,8 @@ function generatePage(title, content, metadata = {}) {
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/archive.html">Archive</a>
+        <a href="/treasure-trove.html">Treasure Trove</a>
+        <a href="/avian-studies.html">Avian Studies</a>
         <select id="lang-selector" class="lang-selector" aria-label="Select language">
           <option value="en">🌍 English</option>
           <optgroup label="🇪🇺 Europe">
@@ -184,6 +186,76 @@ function generatePage(title, content, metadata = {}) {
   <script src="/assets/main.js"></script>
 </body>
 </html>`;
+}
+
+// Build knowledge base sections (Treasure Trove and Avian Studies)
+function buildKnowledgeBase(sectionName, sectionTitle, sectionDescription) {
+  const sectionDir = path.join(__dirname, sectionName);
+  const publicDir = path.join(__dirname, 'public');
+  const publicSectionDir = path.join(publicDir, sectionName);
+
+  if (!fs.existsSync(sectionDir)) {
+    return [];
+  }
+
+  // Create section directory in public
+  if (!fs.existsSync(publicSectionDir)) {
+    fs.mkdirSync(publicSectionDir, { recursive: true });
+  }
+
+  const articles = [];
+  const files = fs.readdirSync(sectionDir)
+    .filter(file => file.endsWith('.md'))
+    .sort();
+
+  files.forEach(file => {
+    const filePath = path.join(sectionDir, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const { metadata, content: markdown } = parseFrontmatter(content);
+
+    // Generate HTML
+    const htmlContent = markdownToHTML(markdown);
+    const title = metadata.title || file.replace('.md', '').replace(/-/g, ' ');
+    const slug = file.replace('.md', '');
+
+    // Generate page
+    const page = generatePage(title, htmlContent, metadata);
+
+    // Write to public section directory
+    const outputPath = path.join(publicSectionDir, `${slug}.html`);
+    fs.writeFileSync(outputPath, page);
+
+    console.log(`✓ Built: ${sectionName}/${file} → ${sectionName}/${slug}.html`);
+
+    // Add to articles list
+    articles.push({
+      title,
+      slug,
+      subtitle: metadata.subtitle || '',
+      description: metadata.description || ''
+    });
+  });
+
+  // Generate section index page
+  const indexContent = `
+    <div class="knowledge-base">
+      <h1>${sectionTitle}</h1>
+      <p class="section-description">${sectionDescription}</p>
+      ${articles.map(article => `
+        <article class="kb-article">
+          <h2><a href="/${sectionName}/${article.slug}.html">${article.title}</a></h2>
+          ${article.subtitle ? `<p class="subtitle"><em>${article.subtitle}</em></p>` : ''}
+          ${article.description ? `<p>${article.description}</p>` : ''}
+        </article>
+      `).join('\n')}
+    </div>
+  `;
+
+  const indexPage = generatePage(sectionTitle, indexContent);
+  fs.writeFileSync(path.join(publicDir, `${sectionName}.html`), indexPage);
+  console.log(`✓ Built: ${sectionName}.html`);
+
+  return articles;
 }
 
 // Build all posts
@@ -309,7 +381,22 @@ function build() {
   fs.writeFileSync(path.join(publicDir, 'archive.html'), archivePage);
   console.log('✓ Built: archive.html');
 
-  console.log(`\n🏴‍☠️ Build complete! ${posts.length} post(s) published.\n`);
+  // Build knowledge base sections
+  console.log('\n📚 Building knowledge base sections...\n');
+
+  const treasureTrove = buildKnowledgeBase(
+    'treasure-trove',
+    'The Captain\'s Treasure Trove',
+    'Knowledge and wisdom from the Captain\'s journeys - where science meets the sea. Inspired by the "Schlaues Buch" from Donald Duck comics, these articles explain fascinating concepts in both scientific and Captain\'s terms.'
+  );
+
+  const avianStudies = buildKnowledgeBase(
+    'avian-studies',
+    'The Captain\'s Avian Studies',
+    'The Black Captain is an avid admirer of our feathered friends. These articles explore the birds encountered on his travels, combining ornithological science with maritime observation.'
+  );
+
+  console.log(`\n🏴‍☠️ Build complete! ${posts.length} post(s), ${treasureTrove.length} treasure trove article(s), and ${avianStudies.length} avian study article(s) published.\n`);
   console.log('Deploy the "public" directory to Cloudflare Pages.');
 }
 
