@@ -196,7 +196,7 @@ function generatePage(title, content, metadata = {}) {
 
   <footer class="main-footer">
     <p>The many travels of the Black Captain - A journey of healing through words</p>
-    <p class="footer-links"><a href="/imprint.html">Imprint</a> · <a href="https://ko-fi.com/YOUR_KOFI_USERNAME" target="_blank" rel="noopener">Give the Black Captain Grog</a></p>
+    <p class="footer-links"><a href="/imprint.html">Imprint</a> · <a href="https://ko-fi.com/theblackcaptain" target="_blank" rel="noopener">Give the Black Captain Grog</a></p>
   </footer>
 
   <script src="/assets/main.js"></script>
