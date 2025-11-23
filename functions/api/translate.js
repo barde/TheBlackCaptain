@@ -1,12 +1,71 @@
 /**
  * Cloudflare Pages Function for Translation
  * Handles /api/translate endpoint
+ * SECURITY: Only allows requests from blackhoard.com
  */
+
+// Allowed origins
+const ALLOWED_ORIGINS = [
+  'https://blackhoard.com',
+  'https://www.blackhoard.com',
+  'https://the-black-captain.pages.dev'
+];
+
+// Rate limiting: max requests per IP per minute
+const RATE_LIMIT = 60; // requests
+const RATE_WINDOW = 60; // seconds
 
 export async function onRequestPost(context) {
   const { request, env } = context;
 
   try {
+    // Security Check 1: Origin/Referer validation
+    const origin = request.headers.get('Origin');
+    const referer = request.headers.get('Referer');
+
+    const isAllowedOrigin = origin && ALLOWED_ORIGINS.includes(origin);
+    const isAllowedReferer = referer && ALLOWED_ORIGINS.some(allowed => referer.startsWith(allowed));
+
+    if (!isAllowedOrigin && !isAllowedReferer) {
+      console.warn('Blocked unauthorized request from:', origin || referer || 'unknown');
+      return new Response(JSON.stringify({
+        error: 'Unauthorized'
+      }), {
+        status: 403,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': origin || '*'
+        }
+      });
+    }
+
+    // Security Check 2: Rate limiting by IP
+    const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const rateLimitKey = `ratelimit:${clientIP}`;
+
+    if (env.TRANSLATIONS_KV) {
+      const currentCount = await env.TRANSLATIONS_KV.get(rateLimitKey);
+      const count = currentCount ? parseInt(currentCount) : 0;
+
+      if (count >= RATE_LIMIT) {
+        console.warn('Rate limit exceeded for IP:', clientIP);
+        return new Response(JSON.stringify({
+          error: 'Rate limit exceeded. Please try again later.'
+        }), {
+          status: 429,
+          headers: {
+            'Content-Type': 'application/json',
+            'Retry-After': RATE_WINDOW.toString()
+          }
+        });
+      }
+
+      // Increment rate limit counter
+      await env.TRANSLATIONS_KV.put(rateLimitKey, (count + 1).toString(), {
+        expirationTtl: RATE_WINDOW
+      });
+    }
+
     // Parse request body
     const { text, targetLang, sourceLang = 'en' } = await request.json();
 
@@ -15,7 +74,24 @@ export async function onRequestPost(context) {
         error: 'Missing required fields: text, targetLang'
       }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': origin || 'https://blackhoard.com'
+        }
+      });
+    }
+
+    // Security Check 3: Text length validation (prevent abuse)
+    const MAX_TEXT_LENGTH = 5000; // characters
+    if (text.length > MAX_TEXT_LENGTH) {
+      return new Response(JSON.stringify({
+        error: `Text too long. Maximum ${MAX_TEXT_LENGTH} characters allowed.`
+      }), {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': origin || 'https://blackhoard.com'
+        }
       });
     }
 
@@ -95,7 +171,12 @@ export async function onRequestPost(context) {
       sourceLang,
       targetLang
     }), {
-      headers: { 'Content-Type': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': origin || 'https://blackhoard.com',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
     });
 
   } catch (error) {
@@ -108,6 +189,25 @@ export async function onRequestPost(context) {
       headers: { 'Content-Type': 'application/json' }
     });
   }
+}
+
+// Handle OPTIONS request for CORS preflight
+export async function onRequestOptions(context) {
+  const { request } = context;
+  const origin = request.headers.get('Origin');
+
+  // Only allow CORS from our domains
+  const isAllowed = origin && ALLOWED_ORIGINS.includes(origin);
+
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': isAllowed ? origin : 'https://blackhoard.com',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '86400'
+    }
+  });
 }
 
 // Simple hash function for cache keys
