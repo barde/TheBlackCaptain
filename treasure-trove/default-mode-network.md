@@ -7,10 +7,6 @@ description: Understanding the brain's resting state - where creativity, memory,
 
 # The Default Mode Network
 
-*From the Captain's Treasure Trove - inspired by Donald Duck's "Schlaues Buch" (Clever Book)*
-
----
-
 ## The Scientific Account
 
 ### What Is It?
@@ -139,7 +135,3 @@ Raichle, M. E. (2015). The brain's default mode network. *Annual Review of Neuro
 Kam, J. W. Y., Xu, J., & Handy, T. C. (2024). Rest to promote learning: A brain default mode network perspective. *Frontiers in Psychology*, 15, 1024. https://doi.org/10.3389/fpsyg.2024.1024
 
 Buckner, R. L., Andrews-Hanna, J. R., & Schacter, D. L. (2008). The brain's default network: Anatomy, function, and relevance to disease. *Annals of the New York Academy of Sciences*, 1124, 1-38. https://doi.org/10.1196/annals.1440.011
-
----
-
-*Part of the Captain's Treasure Trove - Where Science Meets the Sea*

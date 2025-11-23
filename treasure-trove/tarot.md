@@ -6,10 +6,6 @@ description: Understanding the Tarot deck - its history, symbolism, and use as a
 
 # Tarot - The Cards of Wisdom
 
-_From the Captain's Treasure Trove - inspired by Donald Duck's "Schlaues Buch" (Clever Book)_
-
----
-
 ## The Scientific Account
 
 ### What Is Tarot?
@@ -223,7 +219,5 @@ Place, R. M. (2005). _The Tarot: History, Symbolism, and Divination_. Penguin.
 Waite, A. E. (1911). _The Pictorial Key to the Tarot_. William Rider & Son. [Public domain classic]
 
 ---
-
-_Part of the Captain's Treasure Trove - Where Science Meets the Sea_
 
 _"The cards don't show the future. They show what you're not seeing in the present."_ - The Black Captain

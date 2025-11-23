@@ -12,7 +12,8 @@ const path = require('path');
 function markdownToHTML(markdown) {
   let html = markdown;
 
-  // Headers
+  // Headers (must be in reverse order: h4, h3, h2, h1)
+  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
