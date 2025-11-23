@@ -77,3 +77,5 @@ When a new story/adventure is added to `posts/`, **ALWAYS** update the Ship's Cr
    - Characters become familiar friends through repeated appearances
 
 **Goal**: Let the crew roster grow naturally, so readers fall in love with recurring characters like The Russian, The Admiral's Wife, or the wise Herring Gulls. Each appearance deepens the reader's connection.
+- If making citations verify the source and make direct links. Never invent anything as we want to keep the truth!
+- If referring to any literature search in the Internet for a publicly available version. Do a href link to it.

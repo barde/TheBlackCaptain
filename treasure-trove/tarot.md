@@ -37,6 +37,32 @@ The association with mysticism and divination developed much later:
 - **1789** - Jean-Baptiste Alliette (Etteilla) published the first guide to using Tarot for divination
 - **1909** - The Rider-Waite-Smith deck was published, becoming the most influential modern Tarot deck
 - **Early 20th Century** - The Hermetic Order of the Golden Dawn incorporated Tarot into Western occult practices
+- **1938-1943** - Aleister Crowley designed the Thoth Tarot, painted by Lady Frieda Harris
+- **1969** - The Book of Thoth published posthumously, documenting Crowley's Tarot system
+
+### Major Tarot Traditions
+
+Three major Tarot traditions have shaped modern understanding of the cards:
+
+#### The Visconti-Sforza Tarot (c. 1450)
+
+The oldest surviving Tarot deck, commissioned by the Visconti and Sforza families of Milan. Hand-painted by Bonifacio Bembo, these cards represent the original Tarot before occult associations developed. The deck shows the Renaissance worldview - Christian imagery,medieval hierarchy, classical virtues.
+
+**The Judgement Card (XX)**: [View on Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Pierpont_Morgan-Bergamo_Visconti-Sforza_Tarot) - Shows the traditional Christian Last Judgement scene with an angel and the dead rising from graves.
+
+#### The Rider-Waite-Smith Tarot (1909)
+
+Created by Arthur Edward Waite and illustrated by Pamela Colman Smith, this became the most influential modern deck. Published by Rider & Company, it was the first deck to feature illustrated pip cards (minor arcana). Waite was a member of the Hermetic Order of the Golden Dawn and incorporated Kabbalistic and astrological symbolism.
+
+**The Judgement Card (XX)**: Shows Archangel Gabriel blowing a trumpet as naked figures rise from their coffins, arms raised in praise. Mountains in the background, a flag with a red cross on white. The card represents awakening, renewal, and reckoning.
+
+#### The Thoth Tarot (1938-1943, published 1969)
+
+Aleister Crowley's most ambitious work, painted by artist Lady Frieda Harris over five years. Crowley renamed several cards to reflect his Thelemic philosophy. The deck incorporated Egyptian symbolism, Kabbalah, astrology, and Crowley's own magical system. Unlike earlier decks, it emphasizes abstract spiritual concepts over Christian imagery.
+
+**The Aeon Card (XX)**: Crowley renamed "Judgement" to "Aeon," reflecting his belief in a new spiritual age. The card shows the Egyptian god Horus as a child, symbolizing the "New Aeon" of Thelema. Nut (the sky goddess) arches overhead, while Harpocrates (Horus the Child) emerges from an egg. The imagery represents transformation from old spiritual paradigms to new consciousness.
+
+*Note: The Thoth Tarot remains under copyright until 2064. Images can be viewed in published editions of "The Book of Thoth" (Crowley, 1969/1974).*
 
 ### Psychological Interpretation
 
@@ -183,28 +209,17 @@ And at sea - as in life - knowing yourself is often more valuable than knowing t
 
 The Captain recommends the classic Rider-Waite-Smith deck for beginners. Its imagery is clear, its symbolism well-documented, and it's been the standard for over a century for good reason.
 
-<div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: rgba(44, 95, 124, 0.1); border-radius: 8px; border-left: 4px solid var(--accent);">
-  <p style="font-family: var(--font-sans); font-size: 1.1rem; margin-bottom: 1rem;">
-    <strong>⚓ Support the Captain's Voyages</strong>
-  </p>
-  <p style="margin-bottom: 1rem;">
-    If you purchase through this link, a small portion helps keep the Black Captain's ship sailing.
-  </p>
-  <p>
-    <a href="https://amzn.to/4ihiUPL" target="_blank" rel="noopener" style="display: inline-block; background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 4px; font-family: var(--font-sans); font-weight: 600; text-decoration: none; border: none;">
-      Get the Rider-Waite Tarot Deck
-    </a>
-  </p>
-  <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 1rem;">
-    Amazon affiliate link - see our <a href="/imprint.html">imprint</a> for details
-  </p>
-</div>
+For those interested, the deck is available through various retailers including [Amazon](https://amzn.to/4ihiUPL) (affiliate link - purchases support this site).
 
 ---
 
 ## References
 
+Crowley, A. (1944). _The Book of Thoth: A Short Essay on the Tarot of the Egyptians_. [Available on Archive.org](https://archive.org/details/AleisterCrowleyTheBookOfThoth)
+
 Decker, R., Depaulis, T., & Dummett, M. (1996). _A Wicked Pack of Cards: The Origins of the Occult Tarot_. St. Martin's Press.
+
+DuQuette, L. M. (2003). _Understanding Aleister Crowley's Thoth Tarot_. Weiser Books. [Available on Archive.org](https://archive.org/details/LonMiloDuquette-UnderstandingAleisterCrowleysThothTarot-2002)
 
 Farley, H. (2009). _A Cultural History of Tarot: From Entertainment to Esotericism_. I.B. Tauris.
 
