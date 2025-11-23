@@ -63,24 +63,6 @@ description: Meet the crew and characters aboard the Black Captain's ship
 
 <div class="character-card">
 
-### Thomas
-<p class="character-role">Cleaning Crew (Former Student of Law)</p>
-<p class="character-description">A tall, lean young man with intelligent eyes that dart everywhere, observing and calculating. Once a law student at the university, he fled with his friend Wilhelm after a drunken fight with nobleman's sons went badly wrong. Disguised as a common worker, he sought refuge on the Black Captain's ship, where he proved himself tidy, fast, and remarkably useful. His sharp wit and ability to translate documents in three languages made him valuable beyond his cleaning duties. Though he initially wanted to keep running forever, he eventually found the courage to return and face the consequences of his actions.</p>
-<p class="character-appearances">Appears in: [The Drunken Scholars](/2025-11-24-the-drunken-scholars.html)</p>
-
-</div>
-
-<div class="character-card">
-
-### Wilhelm
-<p class="character-role">Cleaning Crew (Former Student of Medicine)</p>
-<p class="character-description">A scholarly young man who studied medicine before shame and fear drove him to flee. He quotes Seneca - "We suffer more in imagination than in reality" - though he knows from experience that sometimes you suffer plenty in both. Six weeks of honest work aboard the Captain's ship transformed his soft hands into calloused ones and taught him that being useful has its own dignity. Of the two fugitives, he was first to realize that running from problems doesn't make them disappear, only makes them follow you to new places. His decision to return and face justice showed more courage than his initial flight showed cowardice.</p>
-<p class="character-appearances">Appears in: [The Drunken Scholars](/2025-11-24-the-drunken-scholars.html)</p>
-
-</div>
-
-<div class="character-card">
-
 ### The Crew
 <p class="character-role">Various Positions</p>
 <p class="character-description">The many sailors who move about the deck with practiced efficiency, each knowing his role as surely as he knows the lines in his weathered palms. When storms rise, their voices grow anxious and their hands grip ropes tighter, yet they trust in the Captain's wisdom and the strength of their brothers aboard.</p>

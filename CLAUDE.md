@@ -55,7 +55,9 @@ When a new story/adventure is added to `posts/`, **ALWAYS** update the Ship's Cr
    - Character developments or new details about known characters
 
 2. **Update `pages/ships-crew.md`**:
-   - Add new characters to the appropriate section:
+   - **ONLY add characters that the user explicitly names and requests to be added to the crew roster**
+   - Do NOT automatically add unnamed characters or characters referred to only by description (e.g., "the tall one", "two young men")
+   - Add new named characters to the appropriate section:
      - **The Captain and His Officers** - Leadership and command
      - **The Crew** - Regular sailors and crew members
      - **Companions of Wing and Wisdom** - Birds and animals

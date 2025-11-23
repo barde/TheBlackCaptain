@@ -52,13 +52,13 @@ There it was. The Captain noted the way they glanced at each other when drink wa
 
 "You have names?"
 
-"Thomas," said the tall one.
+The tall one hesitated. "Does it matter?"
 
-"Wilhelm," said the short one.
+"It does on a ship," the Captain said.
 
-Probably not their real names. Definitely not their real names.
+They gave names - probably not their real ones, but names serve their purpose whether true or false.
 
-"Alright, Thomas and Wilhelm," the Captain said. "You can have your cleaning work. But on a ship, everyone does what needs doing. Understood?"
+"Alright," the Captain said. "You can have your cleaning work. But on a ship, everyone does what needs doing. Understood?"
 
 "Yes, Captain!"
 
@@ -76,7 +76,7 @@ Right: They were running from something.
 
 Wrong: They were not useless.
 
-Thomas and Wilhelm attacked their cleaning duties with the determined focus of men who had spent years studying difficult subjects and passing examinations. They learned quickly - too quickly to be ordinary workers, which confirmed the Captain's suspicions - and they worked with surprising efficiency.
+The two young men attacked their cleaning duties with the determined focus of men who had spent years studying difficult subjects and passing examinations. They learned quickly - too quickly to be ordinary workers, which confirmed the Captain's suspicions - and they worked with surprising efficiency.
 
 They were tidy. Obsessively so. The sections they cleaned stayed cleaner than they had in years.
 
@@ -98,7 +98,7 @@ The Boatswain was the first to see it.
 
 The Captain nodded. He'd suspected as much.
 
-"Young Wilhelm was quoting Seneca," the Boatswain continued. "Something about how we suffer more in imagination than in reality."
+"The short one was quoting Seneca," the Boatswain continued. "Something about how we suffer more in imagination than in reality."
 
 "Fitting," said the Captain.
 
@@ -120,7 +120,7 @@ Documents translated. Messages delivered. Introductions made between parties who
 
 The kind of work that educated men who asked no questions and left no trail were perfect for.
 
-Within days, Thomas and Wilhelm found themselves with additional employment. They still cleaned the ship - the Captain insisted on that, and they were oddly proud of how well they'd learned to do it. But in the evenings, they translated shipping manifests from Danish to Dutch, carried messages between merchants who couldn't afford to meet publicly, and occasionally provided discreet escort for valuable cargo moving between warehouses.
+Within days, the two young men found themselves with additional employment. They still cleaned the ship - the Captain insisted on that, and they were oddly proud of how well they'd learned to do it. But in the evenings, they translated shipping manifests from Danish to Dutch, carried messages between merchants who couldn't afford to meet publicly, and occasionally provided discreet escort for valuable cargo moving between warehouses.
 
 They were good at it. The same sharp intelligence that had made them successful in whatever scholarly pursuit they'd abandoned now made them valuable in the grey economy of port cities.
 
@@ -144,7 +144,7 @@ And so he continued to connect them with people. Merchants who needed translatio
 
 ## The Truth Emerges
 
-It was Wilhelm who finally broke.
+It was the shorter one who finally broke.
 
 Six weeks into their employment - three weeks at sea, three back in port - he appeared at the Captain's cabin door late one night. Sober, which was unusual. Anxious, which was not.
 
@@ -152,13 +152,13 @@ Six weeks into their employment - three weeks at sea, three back in port - he ap
 
 The Captain gestured him in.
 
-Wilhelm stood there, twisting his hands - hands that were no longer soft, the Captain noted. Six weeks of rope and brush and honest work had left their mark.
+The young man stood there, twisting his hands - hands that were no longer soft, the Captain noted. Six weeks of rope and brush and honest work had left their mark.
 
-"We lied to you," Wilhelm said. "About who we are."
+"We lied to you," he said. "About who we are."
 
 "I know," said the Captain.
 
-"We're students. Were students. From the university. Thomas studied law, I studied medicine."
+"We're students. Were students. From the university. My friend studied law, I studied medicine."
 
 "And?"
 
@@ -170,21 +170,21 @@ The Captain waited.
 
 "So you ran."
 
-"We ran," Wilhelm confirmed. "Disguised ourselves as workers. Thought we could disappear on a ship, maybe work our way to another country, start over."
+"We ran," he confirmed. "Disguised ourselves as workers. Thought we could disappear on a ship, maybe work our way to another country, start over."
 
 "And the drinking?"
 
-Wilhelm laughed bitterly. "Turns out running from your problems doesn't make them go away. It just makes them follow you around while you're somewhere else. The drink helps. A bit. Not much."
+The young man laughed bitterly. "Turns out running from your problems doesn't make them go away. It just makes them follow you around while you're somewhere else. The drink helps. A bit. Not much."
 
-The Captain poured two glasses of rum - good rum, from his private stock, not the crew's ration - and handed one to Wilhelm.
+The Captain poured two glasses of rum - good rum, from his private stock, not the crew's ration - and handed one to him.
 
 "The Boatswain says you've been quoting Seneca."
 
-"'We suffer more in imagination than in reality,'" Wilhelm quoted. "Except in our case, we suffered plenty in reality, then ran away and suffered even more in imagination."
+"'We suffer more in imagination than in reality,'" he quoted. "Except in our case, we suffered plenty in reality, then ran away and suffered even more in imagination."
 
-"What does Thomas say?"
+"What does your friend say?"
 
-"Thomas wants to keep running. Work our way around the world, never go back. But I..." Wilhelm stared into his rum. "I think we have to face it eventually. You can't run forever. You just get more tired."
+"He wants to keep running. Work our way around the world, never go back. But I..." The young man stared into his rum. "I think we have to face it eventually. You can't run forever. You just get more tired."
 
 ## The Captain's Wisdom
 
@@ -200,7 +200,7 @@ The Captain drank his rum slowly before speaking.
 
 "You're young men who made a mistake, panicked, and ran. Then learned to clean ships, translate documents, carry messages, and be useful. That's not the same as being cowards."
 
-Wilhelm looked up. "What should we do?"
+The young man looked up. "What should we do?"
 
 "That's not for me to say," the Captain replied. "But I'll tell you what I've observed: The two of you are smart enough to be valuable, honest enough to be trusted - eventually - and scared enough to work hard. That's a decent combination for building a life, if you can figure out how to use it."
 
@@ -210,13 +210,13 @@ The Captain shrugged. "The drinking is what you do when you don't want to think 
 
 ## The Decision
 
-Three days later, Thomas appeared at the same door.
+Three days later, the taller one appeared at the same door.
 
-"We're going back," he said without preamble. "Wilhelm and I. We're going back to face what we did."
+"We're going back," he said without preamble. "Both of us. We're going back to face what we did."
 
 "Your idea or his?"
 
-"His. But he's right. We can't keep running. And..." Thomas managed a wry smile, "we're getting too good at being useful here. If we stay much longer, we'll forget we ever wanted to be anything else."
+"His. But he's right. We can't keep running. And..." The young man managed a wry smile, "we're getting too good at being useful here. If we stay much longer, we'll forget we ever wanted to be anything else."
 
 "Being useful isn't the worst thing to be," the Captain observed.
 
@@ -224,11 +224,11 @@ Three days later, Thomas appeared at the same door.
 
 "You have enough money for passage back?"
 
-"Some. We've been saving. Well, Wilhelm has. I've been drinking mine."
+"Some. We've been saving. Well, he has. I've been drinking mine."
 
 The Captain opened a drawer and pulled out an envelope. "The merchants you've been working for asked me to give you this. Payment for your discretion and efficiency. They said you were the best translators they'd worked with - fast, accurate, and asked no awkward questions."
 
-Thomas opened it and stared. "This is..."
+The young man opened it and stared. "This is..."
 
 "Enough for passage and maybe a lawyer. If you're careful."
 
@@ -238,13 +238,13 @@ The Captain walked them to the dock the day they left.
 
 They looked different than they had six weeks earlier. Harder, in a good way. Browner from sun. More confident in how they moved. Their hands were calloused and their shoulders had broadened from hauling rope and scrubbing decks.
 
-"Thank you, Captain," Wilhelm said. "For seeing through our disguise and hiring us anyway."
+"Thank you, Captain," the shorter one said. "For seeing through our disguise and hiring us anyway."
 
-"For connecting us with people who needed our skills," Thomas added. "We learned a lot."
+"For connecting us with people who needed our skills," the taller one added. "We learned a lot."
 
 "You learned to clean," the Captain corrected. "The rest you already knew. You just didn't know it was useful outside a university."
 
-"Will you tell us something, Captain?" Wilhelm asked. "Why did you help us? You could have just let us work and fail and go home ashamed."
+"Will you tell us something, Captain?" the shorter one asked. "Why did you help us? You could have just let us work and fail and go home ashamed."
 
 The Captain looked out at the water, then back at these two young men who had come to him as false workers and were leaving as something more honest.
 
@@ -254,13 +254,13 @@ The Captain looked out at the water, then back at these two young men who had co
 
 "Then you'd have made excellent ship's cleaners. Tidiest crew compartments I've ever had."
 
-They laughed at that. Then Wilhelm sobered.
+They laughed at that. Then the shorter one sobered.
 
 "One more thing, Captain. The drinking. You never told us to stop, even though you must have seen..."
 
 "I saw two young men using alcohol to quiet thoughts they weren't ready to face. When you became ready, you quieted them a different way - by deciding to act instead of run. The drinking was just a symptom. Treating symptoms rarely fixes problems."
 
-"What fixes problems?" Thomas asked.
+"What fixes problems?" the taller one asked.
 
 "Facing them," the Captain said. "Which you're doing. It won't be easy. The boy you hurt may not forgive you. Your families will be angry. There may be consequences you can't avoid."
 
@@ -302,7 +302,7 @@ The Captain smiled. "The drinking is what young people with sharp minds and dull
 
 ---
 
-_The Black Captain never learned what became of Thomas and Wilhelm. But six months later, a letter arrived at the port master's office, addressed to "The Captain of the Ship with the Tidiest Compartments." Inside was a bank note for passage they never used, a note that said only "We faced it. Thank you." - and a bottle of very good rum._
+_The Black Captain never learned what became of the two young scholars. But six months later, a letter arrived at the port master's office, addressed to "The Captain of the Ship with the Tidiest Compartments." Inside was a bank note for passage they never used, a note that said only "We faced it. Thank you." - and a bottle of very good rum._
 
 _The Captain shared the rum with the Boatswain._
 

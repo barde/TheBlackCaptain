@@ -91,12 +91,13 @@ function generatePage(title, content, metadata = {}) {
 
   // Check if generated image exists for this post
   let generatedImage = '';
-  if (slug && type === 'post') {
-    const imagePath = path.join(__dirname, 'public', 'images', 'generated', `${slug}.jpg`);
-    if (fs.existsSync(imagePath)) {
-      generatedImage = `<img src="/images/generated/${slug}.jpg" alt="${title}" class="post-hero-image">`;
-    }
-  }
+  // Disabled: AI image generation requires CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN
+  // if (slug && type === 'post') {
+  //   const imagePath = path.join(__dirname, 'public', 'images', 'generated', `${slug}.jpg`);
+  //   if (fs.existsSync(imagePath)) {
+  //     generatedImage = `<img src="/images/generated/${slug}.jpg" alt="${title}" class="post-hero-image">`;
+  //   }
+  // }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -388,7 +389,6 @@ function build() {
 
     indexContent = `
       <div class="latest-story">
-        <p class="latest-label">Latest Tale</p>
         ${latestPost.date ? `<time class="post-date">${latestPost.date}</time>` : ''}
         <div class="story-content">
           ${htmlContent}
@@ -408,7 +408,7 @@ function build() {
     `;
   }
 
-  const indexPage = generatePage('The many travels of the Black Captain', indexContent);
+  const indexPage = generatePage('', indexContent);
   fs.writeFileSync(path.join(publicDir, 'index.html'), indexPage);
   console.log('✓ Built: index.html');
 
