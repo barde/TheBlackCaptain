@@ -5,6 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
+    "generate:images": "node generate-images.js",
     "dev": "node build.js && pnpm wrangler pages dev public",
     "deploy": "./deploy.sh",
     "bootstrap": "./bootstrap.sh",

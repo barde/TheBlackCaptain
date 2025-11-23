@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { generateAllImages } = require('./generate-images.js');
 
 // Simple markdown to HTML converter (no dependencies needed)
 function markdownToHTML(markdown) {
@@ -85,6 +86,17 @@ function parseFrontmatter(content) {
 function generatePage(title, content, metadata = {}) {
   const date = metadata.date || '';
   const description = metadata.description || '';
+  const slug = metadata.slug || '';
+  const type = metadata.type || 'post';
+
+  // Check if generated image exists for this post
+  let generatedImage = '';
+  if (slug && type === 'post') {
+    const imagePath = path.join(__dirname, 'public', 'images', 'generated', `${slug}.jpg`);
+    if (fs.existsSync(imagePath)) {
+      generatedImage = `<img src="/images/generated/${slug}.jpg" alt="${title}" class="post-hero-image">`;
+    }
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -171,6 +183,7 @@ function generatePage(title, content, metadata = {}) {
 
   <main class="container">
     <article class="post" data-translatable="true">
+      ${generatedImage}
       <header class="post-header">
         <h1 class="post-title">${title}</h1>
         ${date ? `<time class="post-date">${date}</time>` : ''}
@@ -305,6 +318,19 @@ function build() {
     console.log('✓ Copied images');
   }
 
+  // Copy generated images if they exist
+  const generatedImagesDir = path.join(publicDir, 'images', 'generated');
+  if (fs.existsSync(generatedImagesDir)) {
+    fs.readdirSync(generatedImagesDir).forEach(file => {
+      const sourcePath = path.join(generatedImagesDir, file);
+      const destPath = path.join(publicImagesDir, 'generated', file);
+      if (!fs.existsSync(path.dirname(destPath))) {
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+      }
+      fs.copyFileSync(sourcePath, destPath);
+    });
+  }
+
   // Process all markdown files
   if (!fs.existsSync(postsDir)) {
     console.log('⚠ No posts directory found. Creating it...');
@@ -327,6 +353,9 @@ function build() {
     const htmlContent = markdownToHTML(markdown);
     const title = metadata.title || file.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/-/g, ' ');
     const slug = file.replace('.md', '');
+
+    // Add slug to metadata for image lookup
+    metadata.slug = slug;
 
     // Generate page
     const page = generatePage(title, htmlContent, metadata);
@@ -360,7 +389,6 @@ function build() {
     indexContent = `
       <div class="latest-story">
         <p class="latest-label">Latest Tale</p>
-        <h1>${latestPost.title}</h1>
         ${latestPost.date ? `<time class="post-date">${latestPost.date}</time>` : ''}
         <div class="story-content">
           ${htmlContent}
