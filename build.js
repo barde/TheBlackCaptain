@@ -182,6 +182,7 @@ function generatePage(title, content, metadata = {}) {
 
   <footer class="main-footer">
     <p>The many travels of the Black Captain - A journey of healing through words</p>
+    <p class="footer-links"><a href="/imprint.html">Imprint</a></p>
   </footer>
 
   <script src="/assets/main.js"></script>
