@@ -101,6 +101,7 @@ function generatePage(title, content, metadata = {}) {
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/archive.html">Archive</a>
+        <a href="/ships-crew.html">Ship's Crew</a>
         <a href="/treasure-trove.html">Treasure Trove</a>
         <a href="/avian-studies.html">Avian Studies</a>
         <select id="lang-selector" class="lang-selector" aria-label="Select language">
@@ -396,7 +397,39 @@ function build() {
     'The Black Captain is an avid admirer of our feathered friends. These articles explore the birds encountered on his travels, combining ornithological science with maritime observation.'
   );
 
-  console.log(`\n🏴‍☠️ Build complete! ${posts.length} post(s), ${treasureTrove.length} treasure trove article(s), and ${avianStudies.length} avian study article(s) published.\n`);
+  // Build static pages
+  console.log('\n📄 Building static pages...\n');
+  const pagesDir = path.join(__dirname, 'pages');
+  let pageCount = 0;
+
+  if (fs.existsSync(pagesDir)) {
+    const pageFiles = fs.readdirSync(pagesDir)
+      .filter(file => file.endsWith('.md'))
+      .sort();
+
+    pageFiles.forEach(file => {
+      const filePath = path.join(pagesDir, file);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const { metadata, content: markdown } = parseFrontmatter(content);
+
+      // Generate HTML
+      const htmlContent = markdownToHTML(markdown);
+      const title = metadata.title || file.replace('.md', '').replace(/-/g, ' ');
+      const slug = file.replace('.md', '');
+
+      // Generate page
+      const page = generatePage(title, htmlContent, metadata);
+
+      // Write to public directory
+      const outputPath = path.join(publicDir, `${slug}.html`);
+      fs.writeFileSync(outputPath, page);
+
+      console.log(`✓ Built: pages/${file} → ${slug}.html`);
+      pageCount++;
+    });
+  }
+
+  console.log(`\n🏴‍☠️ Build complete! ${posts.length} post(s), ${treasureTrove.length} treasure trove article(s), ${avianStudies.length} avian study article(s), and ${pageCount} static page(s) published.\n`);
   console.log('Deploy the "public" directory to Cloudflare Pages.');
 }
 

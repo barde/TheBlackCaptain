@@ -389,6 +389,143 @@ a:hover {
   }
 }
 
+/* Knowledge Base Sections */
+.knowledge-base {
+  max-width: var(--reading-width);
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+  border-left: 4px solid var(--accent);
+  padding-left: var(--space-md);
+}
+
+.kb-article {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.kb-article:last-child {
+  border-bottom: none;
+}
+
+.kb-article h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  border: none;
+  font-size: 1.6rem;
+}
+
+.kb-article .subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: -var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+/* Ship's Crew Page */
+.crew-roster {
+  max-width: var(--reading-width);
+}
+
+.crew-roster .intro {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+  border-left: 4px solid var(--accent);
+  padding-left: var(--space-md);
+}
+
+.character-section {
+  margin-bottom: var(--space-xl);
+}
+
+.character-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-lg);
+  color: var(--accent);
+}
+
+.character-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .character-card {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.character-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .character-card:hover {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.character-card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.character-role {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.character-description {
+  color: var(--text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+
+.character-appearances,
+.character-link {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-xs);
+}
+
+.character-appearances:last-child,
+.character-link:last-child {
+  margin-bottom: 0;
+}
+
+.crew-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.crew-footer p {
+  color: var(--text-light);
+  font-style: italic;
+}
+
 /* Accessibility */
 .visually-hidden {
   position: absolute;
