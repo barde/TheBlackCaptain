@@ -408,7 +408,7 @@ function build() {
     `;
   }
 
-  const indexPage = generatePage('Home', indexContent);
+  const indexPage = generatePage('The many travels of the Black Captain', indexContent);
   fs.writeFileSync(path.join(publicDir, 'index.html'), indexPage);
   console.log('✓ Built: index.html');
 

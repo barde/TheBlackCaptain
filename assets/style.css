@@ -208,7 +208,6 @@ a:hover {
 
 .post-header {
   margin-bottom: var(--space-xl);
-  border-bottom: 3px solid var(--border);
   padding-bottom: var(--space-md);
 }
 
