@@ -253,6 +253,58 @@ a:hover {
   padding-left: var(--space-md);
 }
 
+/* Latest Story (Homepage) */
+.latest-story {
+  max-width: var(--reading-width);
+}
+
+.latest-label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.latest-story h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.latest-story .post-date {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: var(--space-xl);
+}
+
+.story-content {
+  margin-bottom: var(--space-xl);
+}
+
+.archive-notice {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--border);
+  text-align: center;
+}
+
+.archive-notice p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.archive-notice a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Post Previews (deprecated but kept for compatibility) */
 .post-preview {
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-lg);

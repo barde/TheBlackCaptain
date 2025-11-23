@@ -345,20 +345,39 @@ function build() {
     });
   });
 
-  // Generate index page with post list
-  const indexContent = `
-    <div class="post-list">
-      <h1>The many travels of the Black Captain</h1>
-      <p class="site-description">A journey of healing, discovery, and resilience through the written word.</p>
-      ${posts.map(post => `
-        <article class="post-preview">
-          <h2><a href="/${post.slug}.html">${post.title}</a></h2>
-          ${post.date ? `<time>${post.date}</time>` : ''}
-          ${post.description ? `<p>${post.description}</p>` : ''}
-        </article>
-      `).join('\n')}
-    </div>
-  `;
+  // Generate index page with latest post's full content
+  const latestPost = posts[0]; // Already sorted newest first
+  let indexContent;
+
+  if (latestPost) {
+    // Read the latest post's markdown file to get full content
+    const latestPostPath = path.join(postsDir, files[0]); // files is also sorted newest first
+    const latestPostContent = fs.readFileSync(latestPostPath, 'utf-8');
+    const { metadata, content: markdown } = parseFrontmatter(latestPostContent);
+    const htmlContent = markdownToHTML(markdown);
+
+    indexContent = `
+      <div class="latest-story">
+        <p class="latest-label">Latest Tale</p>
+        <h1>${latestPost.title}</h1>
+        ${latestPost.date ? `<time class="post-date">${latestPost.date}</time>` : ''}
+        <div class="story-content">
+          ${htmlContent}
+        </div>
+        <div class="archive-notice">
+          <p><a href="/archive.html">View all previous tales in the Archive →</a></p>
+        </div>
+      </div>
+    `;
+  } else {
+    indexContent = `
+      <div class="post-list">
+        <h1>The many travels of the Black Captain</h1>
+        <p class="site-description">A journey of healing, discovery, and resilience through the written word.</p>
+        <p>No tales yet. The Captain's first voyage begins soon...</p>
+      </div>
+    `;
+  }
 
   const indexPage = generatePage('Home', indexContent);
   fs.writeFileSync(path.join(publicDir, 'index.html'), indexPage);
