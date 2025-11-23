@@ -11,7 +11,8 @@
     "bootstrap": "./bootstrap.sh",
     "init": "./init-cloudflare.sh",
     "domain:add": "./add-domain-api.sh",
-    "test:deployment": "node test-deployment.js"
+    "test:deployment": "node test-deployment.js",
+    "test:story": "node test-story.js"
   },
   "keywords": [
     "blog",

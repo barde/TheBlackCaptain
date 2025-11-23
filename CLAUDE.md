@@ -31,7 +31,12 @@
   - JavaScript error detection
   - Presence of expected content ("Black Captain")
 - To run tests manually: `pnpm run test:deployment`
-- Screenshots are saved as `deployment-test-screenshot.png` in the project root.
+- **Story verification test** (`test-story.js`):
+  - Checks if latest story appears on homepage
+  - Verifies direct story URL is accessible
+  - Confirms story appears in archive
+  - Run with: `pnpm run test:story`
+- Screenshots are saved as `deployment-test-screenshot.png` and `homepage-check.png` in the project root.
 - Playwright runs in headless mode on Linux (using Chromium browser).
 - Browser binaries are cached in `~/.cache/ms-playwright/` and don't need to be in the repo.
 - Try to get all "manual actions", e.g. things I as a human have to do, by APIs or other automated ways
@@ -80,3 +85,4 @@ When a new story/adventure is added to `posts/`, **ALWAYS** update the Ship's Cr
 - If making citations verify the source and make direct links. Never invent anything as we want to keep the truth!
 - If referring to any literature search in the Internet for a publicly available version. Do a href link to it.
 - When adding articlese to the Avian Studies always show pictures from Wikimedia and sounds from XenoCanto. Choose the most popular ones.
+- Always commit, push and deploy after changing content on the site
