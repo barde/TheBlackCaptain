@@ -303,7 +303,6 @@ a:hover {
 .archive-notice {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
-  border-top: 2px solid var(--border);
   text-align: center;
 }
 
