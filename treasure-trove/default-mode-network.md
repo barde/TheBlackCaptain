@@ -58,7 +58,7 @@ DMN dysfunction has been implicated in various neurological and psychiatric cond
 
 ### Recent Insights (2024)
 
-Recent research highlights that "learning does not stop when the brain rests" (Kam et al., 2024). The DMN appears crucial for memory consolidation, creative problem-solving, and integrating new information with existing knowledge. Far from being idle, the resting brain is actively constructing meaning, planning futures, and understanding self.
+Recent research highlights that "learning does not stop when the brain rests" (Luo et al., 2024). The DMN appears crucial for memory consolidation, creative problem-solving, and integrating new information with existing knowledge. Far from being idle, the resting brain is actively constructing meaning, planning futures, and understanding self.
 
 ---
 
@@ -128,10 +128,10 @@ The Captain calls it **the sea between thoughts** - necessary, valuable, and as 
 
 ## References
 
-Menon, V. (2023). 20 years of the default mode network: A review and synthesis. *Neuron*, 111(16), 2469-2487. https://doi.org/10.1016/j.neuron.2023.04.023
+Menon, V. (2023). 20 years of the default mode network: A review and synthesis. *Neuron*, 111(16), 2469-2487. [Open Access PDF - Stanford](https://med.stanford.edu/content/dam/sm/scsnl/documents/Neuron_2023_Menon_20_years.pdf) | [PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10524518/)
 
-Raichle, M. E. (2015). The brain's default mode network. *Annual Review of Neuroscience*, 38, 433-447. https://doi.org/10.1146/annurev-neuro-071013-014030
+Raichle, M. E. (2015). The brain's default mode network. *Annual Review of Neuroscience*, 38, 433-447. [ResearchGate](https://www.researchgate.net/publication/275835003_The_Brain's_Default_Mode_Network)
 
-Kam, J. W. Y., Xu, J., & Handy, T. C. (2024). Rest to promote learning: A brain default mode network perspective. *Frontiers in Psychology*, 15, 1024. https://doi.org/10.3389/fpsyg.2024.1024
+Luo, W., Wei, D., Liu, C., Tang, Y., Huang, S., & Wu, G. (2024). Rest to promote learning: A brain default mode network perspective. *Behavioral Sciences*, 14(4), 349. [Open Access on PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11047624/) | [MDPI](https://www.mdpi.com/2076-328X/14/4/349)
 
 Buckner, R. L., Andrews-Hanna, J. R., & Schacter, D. L. (2008). The brain's default network: Anatomy, function, and relevance to disease. *Annals of the New York Academy of Sciences*, 1124, 1-38. https://doi.org/10.1196/annals.1440.011

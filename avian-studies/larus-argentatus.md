@@ -9,6 +9,11 @@ description: Scientific and observational study of one of the world's most intel
 
 *From the Captain's Avian Studies - Where Ornithology Meets the Open Sea*
 
+![Adult Herring Gull](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Larus_argentatus_1.JPG/800px-Larus_argentatus_1.JPG)
+*Adult European Herring Gull (Larus argentatus), Heiligenhafen, Germany. [Image: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Larus_argentatus_1.JPG), CC BY-SA 3.0*
+
+**Listen:** [Herring Gull calls on XenoCanto](https://xeno-canto.org/species/Larus-argentatus) - Over 840 recordings of European Herring Gull vocalizations
+
 ---
 
 ## The Scientific Account
@@ -184,13 +189,13 @@ The Captain remained having reinforced something: **the best teachers are found 
 
 ## References
 
-Hacker, F., Smith, K., & Graham, P. (2023). Inter-species stimulus enhancement: herring gulls (*Larus argentatus*) mimic human food choice during foraging. *Biology Letters*, 19(5), 20230035. https://doi.org/10.1098/rsbl.2023.0035
+Hacker, F., Smith, K., & Graham, P. (2023). Inter-species stimulus enhancement: herring gulls (*Larus argentatus*) mimic human food choice during foraging. *Biology Letters*, 19(5), 20230035. [Open Access on PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10206476/) | [ResearchGate](https://www.researchgate.net/publication/370987717_Inter-species_stimulus_enhancement_herring_gulls_Larus_argentatus_mimic_human_food_choice_during_foraging)
 
-Rock, P. (2023). An ethogram identifies behavioural markers of attention to humans in European herring gulls (*Larus argentatus*). *Royal Society Open Science*, 10(6), 230216. https://doi.org/10.1098/rsos.230216
+Hacker, F., & Graham, P. (2023). An ethogram identifies behavioural markers of attention to humans in European herring gulls (*Larus argentatus*). *Biology Open*, 12(6), bio060016. [Open Access](https://journals.biologists.com/bio/article/12/6/bio060016/316683/)
 
-Goumas, M., Burns, I., Kelley, L. A., & Boogert, N. J. (2019). Herring gulls respond to human gaze direction. *Biology Letters*, 15(8), 20190405. https://doi.org/10.1098/rsbl.2019.0405
+Goumas, M., Burns, I., Kelley, L. A., & Boogert, N. J. (2019). Herring gulls respond to human gaze direction. *Biology Letters*, 15(8), 20190405. [Open Access on Royal Society](https://royalsocietypublishing.org/doi/10.1098/rsbl.2019.0405) | [ResearchGate](https://www.researchgate.net/publication/335024168_Herring_gulls_respond_to_human_gaze_direction)
 
-Camphuysen, C. J. (2013). A historical ecology of two closely related gull species (Laridae): Multiple adaptations to a man-made environment. PhD thesis, University of Groningen.
+Camphuysen, C. J. (2013). A historical ecology of two closely related gull species (Laridae): Multiple adaptations to a man-made environment. PhD thesis, University of Groningen. [Available via University of Groningen](https://research.rug.nl/en/publications/a-historical-ecology-of-two-closely-related-gull-species-laridae-)
 
 Tinbergen, N. (1953). *The Herring Gull's World*. Collins, London. [Classic behavioral study]
 
