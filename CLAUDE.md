@@ -38,3 +38,42 @@
 - push and commit after every change to github
 - The "Black Captain" always writes in third person about himself as neither you nor I are real captains.
 - If in doubt about a technical issue, try the best option after searching best practices and ULTRATHINK about the solution. Do it and if fails, try another one. Only ask me about manual intervention if nothing else works and revert to a state before all tries.
+
+## Content Publishing Workflow
+
+### After Publishing a New Story
+When a new story/adventure is added to `posts/`, **ALWAYS** update the Ship's Crew page:
+
+1. **Read the new story** to identify:
+   - New characters introduced
+   - Existing characters that appear
+   - Character developments or new details about known characters
+
+2. **Update `pages/ships-crew.md`**:
+   - Add new characters to the appropriate section:
+     - **The Captain and His Officers** - Leadership and command
+     - **The Crew** - Regular sailors and crew members
+     - **Companions of Wing and Wisdom** - Birds and animals
+     - **Encounters Along the Way** - One-time or recurring encounters
+   - For existing characters, add the new story to their "Appears in:" list
+   - Update descriptions if the story reveals new aspects of their character
+
+3. **Character Card Format**:
+   ```markdown
+   <div class="character-card">
+
+   ### Character Name
+   <p class="character-role">Their Role/Title</p>
+   <p class="character-description">Rich description of the character, their traits, background, and significance to the tales.</p>
+   <p class="character-appearances">Appears in: [Story 1](/link1.html), [Story 2](/link2.html)</p>
+   <p class="character-link">Learn more: [Related Article](/link.html)</p> <!-- Optional -->
+
+   </div>
+   ```
+
+4. **Build and Deploy**:
+   - The crew page updates organically with each story
+   - Readers can track recurring characters across adventures
+   - Characters become familiar friends through repeated appearances
+
+**Goal**: Let the crew roster grow naturally, so readers fall in love with recurring characters like The Russian, The Admiral's Wife, or the wise Herring Gulls. Each appearance deepens the reader's connection.
