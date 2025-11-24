@@ -90,8 +90,6 @@ Ko-fi also serves as a direct channel to reach the Captain. Your messages, sugge
 
 _Fair winds and following seas_
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/H%C3%A9raldique_meuble_Croix_recercel%C3%A9e_black.svg" alt="X" width="30" height="30">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/H%C3%A9raldique_meuble_Croix_recercel%C3%A9e_black.svg" alt="X" width="30" height="30">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/H%C3%A9raldique_meuble_Croix_recercel%C3%A9e_black.svg" alt="X" width="30" height="30">
+<div style="display: flex; justify-content: center; margin-top: 30px;">
+  <img src="/images/golgotha-cross.svg" alt="The Black Captain's Signature" width="150" height="150">
 </div>

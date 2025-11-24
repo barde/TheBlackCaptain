@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1">
+  <title id="title4230">Golgotha Cross</title>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Golgotha Cross</dc:title>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:date>02.03.2015</dc:date>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g id="layer3" style="display:inline">
+    <use x="0" y="0" xlink:href="#use4308" id="use4328" transform="matrix(1,0,0,-1,2.3780682e-6,592.12546)" width="100%" height="100%" />
+    <path id="use4308" d="m 462.62185,353.46509 -156.23568,0 82.91837,-76.6724 z" style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <circle style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.38999003;stroke-miterlimit:4;stroke-dasharray:none" id="path4300" cx="383.01596" cy="297.94632" r="75.728012" />
+    <circle style="opacity:1;fill:#ffffff;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none" id="path4286" cx="383.61777" cy="296.74265" r="60.18671" />
+    <rect style="opacity:1;fill:#000000;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none" id="rect4257" width="34.897911" height="613.23535" x="366.17227" y="147.55858" />
+    <rect style="opacity:1;fill:#000000;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none" id="rect4259" width="515.16974" height="33.408363" x="125.71712" y="278.42566" />
+    <path style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 646.91815,270.7651 0,50.00615 -23.40717,-26.53957 z" id="path4266" />
+    <use x="0" y="0" xlink:href="#path4266" id="use4268" transform="matrix(-1,0,0,1,766.03874,-0.85116932)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4268" id="use4270" transform="matrix(0,1,-1,0,677.98805,21.999308)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#rect4259" id="use4272" transform="matrix(0.18546052,0.10890457,0,1.1805226,310.93786,169.26692)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#path4266" id="use4274" transform="matrix(1,0,0,1.2034,-212.01399,230.49344)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4274" id="use4276" transform="matrix(-1,0,0,1.1276572,762.38914,-128.85063)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#rect4259" id="use4278" transform="matrix(0.23593911,0,0,1,292.86608,-87.872589)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4268" id="use4280" transform="translate(196.50959,-87.722119)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#path4266" id="use4282" transform="translate(-196.35913,-87.421189)" width="100%" height="100%" />
+    <circle style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.71498162;stroke-miterlimit:4;stroke-dasharray:none" id="path4310" cx="255.73317" cy="400.99399" r="9.362854" />
+    <use x="0" y="0" xlink:href="#path4310" id="use4312" transform="translate(256.90247,-0.97581932)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4312" id="use4314" transform="translate(-35.705012,164.29379)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4314" id="use4316" transform="translate(-185.66114,0.10640068)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#rect4257" id="use4318" transform="matrix(0.2639719,-0.03684788,0.17775827,0.81898638,97.947098,154.02571)" width="100%" height="100%" />
+    <use x="0" y="0" xlink:href="#use4318" id="use4320" transform="matrix(-1,0,0,1,769.79604,-6.8093493)" width="100%" height="100%" />
+    <path style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 552.56617,212.01914 c 12.52705,27.87156 6.0676,40.97624 -7.97659,47.48701 -21.15629,-23.09167 -1.68998,-33.827 7.97659,-47.48701 z" id="path4322" />
+    <path style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 225.32677,263.63996 c -13.38152,-0.28755 -10.0917,-22.34899 -8.72709,-39.72324 8.97457,14.13602 21.30867,37.86111 8.72709,39.72324 z" id="path4324" />
+  </g>
+</svg>
