@@ -88,9 +88,9 @@ function getHeroImage(title, slug, type, metadata = {}) {
   const sectionImages = {
     'Archive': 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg', // Hokusai's Great Wave - Wikimedia Commons
     'Ship\'s Crew': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Argonautesch%C3%ABff_Lorenzo_Costa_w.jpg', // Argonauts by Lorenzo Costa - Wikimedia Commons
-    'The Captain\'s Treasure Trove': 'https://cdn12.picryl.com/photo/2016/12/31/treasure-gems-box-3a0538-1024.jpg', // Treasure chest - Picryl
+    'The Captain\'s Treasure Trove': 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Treasure_chest_with_gold_coins.svg', // Treasure chest with gold coins - Wikimedia Commons (transparent background)
     'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg', // Custom bird image
-    'Others': 'https://upload.wikimedia.org/wikipedia/commons/9/95/Internet_Pirate.png' // Internet Pirate - Wikimedia Commons
+    'Others': 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Piratey_transparent_background.svg' // Internet Pirate - Wikimedia Commons (transparent background)
   };
 
   // Check if this is a section page
