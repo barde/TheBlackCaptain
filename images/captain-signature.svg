@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Captain's signature: three crosses -->
+  <defs>
+    <style>
+      .cross {
+        stroke: #2c3e50;
+        stroke-width: 3;
+        stroke-linecap: round;
+        fill: none;
+      }
+      @media (prefers-color-scheme: dark) {
+        .cross {
+          stroke: #e8e8e8;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- First X -->
+  <line x1="20" y1="15" x2="45" y2="45" class="cross"/>
+  <line x1="45" y1="15" x2="20" y2="45" class="cross"/>
+
+  <!-- Second X -->
+  <line x1="75" y1="15" x2="100" y2="45" class="cross"/>
+  <line x1="100" y1="15" x2="75" y2="45" class="cross"/>
+
+  <!-- Third X -->
+  <line x1="130" y1="15" x2="155" y2="45" class="cross"/>
+  <line x1="155" y1="15" x2="130" y2="45" class="cross"/>
+
+  <!-- Optional: subtle horizontal line beneath (like a captain's mark) -->
+  <line x1="15" y1="52" x2="160" y2="52" stroke="#2c3e50" stroke-width="1" opacity="0.3"/>
+</svg>

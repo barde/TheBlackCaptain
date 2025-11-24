@@ -9,7 +9,7 @@ description: Legal information, contact details, and affiliate disclosures for T
 
 **Operator:** Verwegener Vogel e.V.
 
-**Contact:** verein@vogel.yoga
+**Contact:** [verein@vogel.yoga](mailto:verein@vogel.yoga)
 
 **Registration:** Court registration in Lübeck, Register number VR 4404 HL
 
@@ -23,7 +23,7 @@ All imagery and content on this site is owned by Verwegener Vogel e.V. unless ot
 
 ## Privacy
 
-For information about how we handle your data, please see our privacy policy (Datenschutzerklärung) available upon request at verein@vogel.yoga.
+For information about how we handle your data, please see our privacy policy (Datenschutzerklärung) available upon request at [verein@vogel.yoga](mailto:verein@vogel.yoga).
 
 ---
 
@@ -57,8 +57,8 @@ All stories, articles, and content on The Black Captain are original works creat
 
 **Reuse Policy:**
 - Personal, non-commercial use: Feel free to share and reference
-- Commercial use: Please contact verein@vogel.yoga
-- Attribution: Please link back to blackhoard.com when referencing
+- Commercial use: Please contact [verein@vogel.yoga](mailto:verein@vogel.yoga)
+- Attribution: Please link back to [blackhoard.com](https://blackhoard.com) when referencing
 
 ---
 
@@ -68,16 +68,26 @@ This site is hosted on Cloudflare Pages and uses no tracking cookies or analytic
 
 ---
 
-## Contact
+## Contact & Support
+
+### Reach the Captain
 
 For questions, suggestions, or to report issues:
 
-**Email:** verein@vogel.yoga
+**Email:** [verein@vogel.yoga](mailto:verein@vogel.yoga)
 
-**Website:** https://blackhoard.com
+**Website:** [https://blackhoard.com](https://blackhoard.com)
+
+### Support the Captain's Voyages
+
+If the Captain's tales have brought you value, wisdom, or simply a moment of peace on your own journey, you can support continued voyages through Ko-fi:
+
+**☕ [Give the Black Captain Grog on Ko-fi](https://ko-fi.com/theblackcaptain)**
+
+Ko-fi also serves as a direct channel to reach the Captain. Your messages, suggestions, and stories are always welcome. Whether you choose to support with grog or simply share your thoughts, the Captain values the connection with fellow travelers on the digital seas.
 
 ---
 
 _Fair winds and following seas_
 
-The Black Captain
+![The Black Captain's Signature](/images/captain-signature.svg)

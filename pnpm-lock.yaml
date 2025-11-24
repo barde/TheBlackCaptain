@@ -7,6 +7,19 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@cloudflare/pages-plugin-vercel-og':
+        specifier: ^0.1.2
+        version: 0.1.2
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      react:
+        specifier: ^19.2.0
+        version: 19.2.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
     devDependencies:
       '@playwright/test':
         specifier: ^1.56.1
@@ -23,6 +36,9 @@ packages:
   '@cloudflare/kv-asset-handler@0.4.0':
     resolution: {integrity: sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA==}
     engines: {node: '>=18.0.0'}
+
+  '@cloudflare/pages-plugin-vercel-og@0.1.2':
+    resolution: {integrity: sha512-aWA2pHu1R2UbOJIcSASCuViyYVEhYkZ3tWTrTnr+yLosBfksOzjecHQkCkPv/jy75hGPrn1BbtsQR+oWVFkp1g==}
 
   '@cloudflare/unenv-preset@2.7.10':
     resolution: {integrity: sha512-mvsNAiJSduC/9yxv1ZpCxwgAXgcuoDvkl8yaHjxoLpFxXy2ugc6TZK20EKgv4yO0vZhAEKwqJm+eGOzf8Oc45w==}
@@ -356,6 +372,9 @@ packages:
   '@speed-highlight/core@1.2.12':
     resolution: {integrity: sha512-uilwrK0Ygyri5dToHYdZSjcvpS2ZwX0w5aSt3GCEN9hrjxWCoeV4Z2DTXuxjwbntaLQIEEAlCeNQss5SoHvAEA==}
 
+  '@types/react@19.2.7':
+    resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
+
   acorn-walk@8.3.2:
     resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
     engines: {node: '>=0.4.0'}
@@ -385,6 +404,9 @@ packages:
   cookie@1.0.2:
     resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
+
+  csstype@3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
@@ -448,6 +470,10 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  react@19.2.0:
+    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
+    engines: {node: '>=0.10.0'}
+
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
@@ -470,6 +496,11 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   undici@7.14.0:
     resolution: {integrity: sha512-Vqs8HTzjpQXZeXdpsfChQTlafcMQaaIwnGwLam1wudSSjlJeQ3bw1j+TLPePgrCnCpUXx7Ba5Pdpf5OBih62NQ==}
@@ -519,6 +550,8 @@ snapshots:
   '@cloudflare/kv-asset-handler@0.4.0':
     dependencies:
       mime: 3.0.0
+
+  '@cloudflare/pages-plugin-vercel-og@0.1.2': {}
 
   '@cloudflare/unenv-preset@2.7.10(unenv@2.0.0-rc.24)(workerd@1.20251113.0)':
     dependencies:
@@ -729,6 +762,10 @@ snapshots:
 
   '@speed-highlight/core@1.2.12': {}
 
+  '@types/react@19.2.7':
+    dependencies:
+      csstype: 3.2.3
+
   acorn-walk@8.3.2: {}
 
   acorn@8.14.0: {}
@@ -752,6 +789,8 @@ snapshots:
       color-string: 1.9.1
 
   cookie@1.0.2: {}
+
+  csstype@3.2.3: {}
 
   detect-libc@2.1.2: {}
 
@@ -831,6 +870,8 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.2
 
+  react@19.2.0: {}
+
   semver@7.7.3: {}
 
   sharp@0.33.5:
@@ -869,6 +910,8 @@ snapshots:
 
   tslib@2.8.1:
     optional: true
+
+  typescript@5.9.3: {}
 
   undici@7.14.0: {}
 

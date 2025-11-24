@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["functions/**/*"],
+  "exclude": ["node_modules"]
+}
