@@ -84,7 +84,20 @@ function parseFrontmatter(content) {
 
 // Hero image system - curated maritime images from Unsplash
 function getHeroImage(title, slug, type, metadata = {}) {
-  // Skip hero images for avian studies (they have their own Wikimedia images in content)
+  // Special section pages with custom hero images
+  const sectionImages = {
+    'Archive': 'https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=1600&h=900&fit=crop', // Hokusai's Great Wave
+    'Ship\'s Crew': 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=1600&h=900&fit=crop', // Classical Greek ship/warriors
+    'The Captain\'s Treasure Trove': 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1600&h=900&fit=crop', // Treasure chest with gold
+    'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg' // Custom bird image
+  };
+
+  // Check if this is a section page
+  if (sectionImages[title]) {
+    return `<img src="${sectionImages[title]}" alt="${title}" class="post-hero-image" loading="lazy">`;
+  }
+
+  // Skip hero images for individual avian study articles (they have their own Wikimedia images in content)
   if (type === 'avian-study') {
     return '';
   }
