@@ -90,7 +90,7 @@ function getHeroImage(title, slug, type, metadata = {}) {
     'Ship\'s Crew': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Argonautesch%C3%ABff_Lorenzo_Costa_w.jpg', // Argonauts by Lorenzo Costa - Wikimedia Commons
     'The Captain\'s Treasure Trove': 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Treasure_chest_with_gold_coins.svg', // Treasure chest with gold coins - Wikimedia Commons (transparent background)
     'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg', // Custom bird image
-    'Others': 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Piratey_transparent_background.svg' // Internet Pirate - Wikimedia Commons (transparent background)
+    'Others': '/images/internet-pirate-transparent.png' // Internet Pirate with transparent background (processed locally)
   };
 
   // Check if this is a section page
