@@ -86,11 +86,11 @@ function parseFrontmatter(content) {
 function getHeroImage(title, slug, type, metadata = {}) {
   // Special section pages with custom hero images
   const sectionImages = {
-    'Archive': 'https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=1600&h=900&fit=crop', // Hokusai's Great Wave
-    'Ship\'s Crew': 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=1600&h=900&fit=crop', // Classical Greek ship/warriors
-    'The Captain\'s Treasure Trove': 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1600&h=900&fit=crop', // Treasure chest with gold
+    'Archive': 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg', // Hokusai's Great Wave - Wikimedia Commons
+    'Ship\'s Crew': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Argonautesch%C3%ABff_Lorenzo_Costa_w.jpg', // Argonauts by Lorenzo Costa - Wikimedia Commons
+    'The Captain\'s Treasure Trove': 'https://cdn12.picryl.com/photo/2016/12/31/treasure-gems-box-3a0538-1024.jpg', // Treasure chest - Picryl
     'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg', // Custom bird image
-    'Others': 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?w=1600&h=900&fit=crop' // Compass and maps - navigation to other ports
+    'Others': 'https://upload.wikimedia.org/wikipedia/commons/9/95/Internet_Pirate.png' // Internet Pirate - Wikimedia Commons
   };
 
   // Check if this is a section page
