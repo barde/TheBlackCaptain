@@ -82,6 +82,62 @@ function parseFrontmatter(content) {
   return { metadata, content: markdown };
 }
 
+// Hero image system - curated maritime images from Unsplash
+function getHeroImage(title, slug, type, metadata = {}) {
+  // Skip hero images for avian studies (they have their own Wikimedia images in content)
+  if (type === 'avian-study') {
+    return '';
+  }
+
+  // If image is explicitly set in frontmatter, use it
+  if (metadata.image) {
+    return `<img src="${metadata.image}" alt="${title}" class="post-hero-image" loading="lazy">`;
+  }
+
+  // Map of curated Unsplash photos for different themes (maritime-themed)
+  const themeImages = {
+    // Sailing & Ships
+    'ship': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=900&fit=crop',
+    'voyage': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&h=900&fit=crop',
+    'sailor': 'https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1600&h=900&fit=crop',
+    'sea': 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1600&h=900&fit=crop',
+    'ocean': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&h=900&fit=crop',
+    'port': 'https://images.unsplash.com/photo-1605553787144-0c29cd64d13b?w=1600&h=900&fit=crop',
+    'captain': 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=1600&h=900&fit=crop',
+    'storm': 'https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=1600&h=900&fit=crop',
+    'dock': 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&h=900&fit=crop',
+    'harbor': 'https://images.unsplash.com/photo-1568445186401-2e0213c59eaf?w=1600&h=900&fit=crop',
+    // Mood & Season
+    'northern': 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1600&h=900&fit=crop',
+    'winter': 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1600&h=900&fit=crop',
+    'cold': 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&h=900&fit=crop',
+    'illness': 'https://images.unsplash.com/photo-1584362917165-526a968579e8?w=1600&h=900&fit=crop',
+    'remedy': 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1600&h=900&fit=crop',
+    // People & Stories
+    'scholar': 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&h=900&fit=crop',
+    'crew': 'https://images.unsplash.com/photo-1593642532781-03e79bf5bec2?w=1600&h=900&fit=crop',
+    'beginning': 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1600&h=900&fit=crop',
+    // Default maritime
+    'default': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&h=900&fit=crop'
+  };
+
+  // Try to match theme based on title and slug
+  const searchText = (title + ' ' + slug).toLowerCase();
+
+  for (const [theme, imageUrl] of Object.entries(themeImages)) {
+    if (searchText.includes(theme)) {
+      return `<img src="${imageUrl}" alt="${title}" class="post-hero-image" loading="lazy">`;
+    }
+  }
+
+  // Default maritime image for posts
+  if (type === 'post') {
+    return `<img src="${themeImages.default}" alt="${title}" class="post-hero-image" loading="lazy">`;
+  }
+
+  return '';
+}
+
 // Generate HTML page from template
 function generatePage(title, content, metadata = {}) {
   const date = metadata.date || '';
@@ -89,15 +145,8 @@ function generatePage(title, content, metadata = {}) {
   const slug = metadata.slug || '';
   const type = metadata.type || 'post';
 
-  // Check if generated image exists for this post
-  let generatedImage = '';
-  // Disabled: AI image generation requires CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN
-  // if (slug && type === 'post') {
-  //   const imagePath = path.join(__dirname, 'public', 'images', 'generated', `${slug}.jpg`);
-  //   if (fs.existsSync(imagePath)) {
-  //     generatedImage = `<img src="/images/generated/${slug}.jpg" alt="${title}" class="post-hero-image">`;
-  //   }
-  // }
+  // Get hero image for this content
+  const heroImage = getHeroImage(title, slug, type, metadata);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -184,7 +233,7 @@ function generatePage(title, content, metadata = {}) {
 
   <main class="container">
     <article class="post" data-translatable="true">
-      ${generatedImage}
+      ${heroImage}
       <header class="post-header">
         <h1 class="post-title">${title}</h1>
         ${date ? `<time class="post-date">${date}</time>` : ''}
