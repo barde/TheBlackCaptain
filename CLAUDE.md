@@ -84,7 +84,75 @@ When a new story/adventure is added to `posts/`, **ALWAYS** update the Ship's Cr
    - Characters become familiar friends through repeated appearances
 
 **Goal**: Let the crew roster grow naturally, so readers fall in love with recurring characters like The Russian, The Admiral's Wife, or the wise Herring Gulls. Each appearance deepens the reader's connection.
+
+## Hero Images for Posts
+
+**Every blog post gets a beautiful hero image automatically!** The system uses curated, high-quality maritime-themed photos from Unsplash.
+
+### How It Works
+
+The hero image system automatically selects appropriate images based on the post's title and slug:
+
+- **Automatic theme detection**: Keywords like "voyage", "ship", "remedy", "northern", etc. trigger specific maritime images
+- **Smart defaults**: Posts without matching keywords get a default beautiful sailing ship image
+- **Category-specific behavior**:
+  - **Posts** (`posts/*.md`): Always get hero images
+  - **Treasure Trove**: Get themed images
+  - **Avian Studies**: NO hero images (they use Wikimedia images in their content instead)
+
+### Available Themes
+
+The system recognizes these keywords in titles/slugs:
+
+**Sailing & Ships**: ship, voyage, sailor, sea, ocean, port, captain, storm, dock, harbor
+
+**Mood & Season**: northern, winter, cold, illness, remedy
+
+**People & Stories**: scholar, crew, beginning
+
+### Customizing Images
+
+To override the automatic selection, add to the post's frontmatter:
+
+```markdown
+---
+title: My Story
+date: November 25, 2025
+image: https://images.unsplash.com/photo-XXXXX?w=1600&h=900&fit=crop
+---
+```
+
+### Adding New Themes
+
+To add more themed images, edit `build.js` in the `getHeroImage()` function's `themeImages` object:
+
+```javascript
+const themeImages = {
+  'newtheme': 'https://images.unsplash.com/photo-XXXXX?w=1600&h=900&fit=crop',
+  // ... existing themes
+};
+```
+
+**Image Requirements**:
+- Source: Unsplash (free, high-quality, legally usable)
+- Size: `w=1600&h=900&fit=crop` (optimal for all devices)
+- Theme: Maritime, nautical, or thematically relevant to the story
+- Quality: Professional photography that enhances reader engagement
+
+### Why Hero Images Matter
+
+Based on 2024 research and best practices:
+- High-quality visuals create strong first impressions
+- Images enhance reader retention and engagement
+- Authentic, themed photos build emotional connection
+- Proper sizing ensures fast loading and good SEO
+- Lazy loading optimizes performance
+
+**Hero images make the blog more approachable and visually engaging for readers!**
+
+## Content Standards
+
 - If making citations verify the source and make direct links. Never invent anything as we want to keep the truth!
 - If referring to any literature search in the Internet for a publicly available version. Do a href link to it.
-- When adding articlese to the Avian Studies always show pictures from Wikimedia and sounds from XenoCanto. Choose the most popular ones.
+- When adding articles to the Avian Studies always show pictures from Wikimedia and sounds from XenoCanto. Choose the most popular ones.
 - Always commit, push and deploy after changing content on the site
