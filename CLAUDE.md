@@ -156,3 +156,40 @@ Based on 2024 research and best practices:
 - If referring to any literature search in the Internet for a publicly available version. Do a href link to it.
 - When adding articles to the Avian Studies always show pictures from Wikimedia and sounds from XenoCanto. Choose the most popular ones.
 - Always commit, push and deploy after changing content on the site
+
+## The "Others" Section - Recommended Sites
+
+The "Others" section (`pages/others.md`) contains the Black Captain's recommendations for other websites worth visiting.
+
+### Adding Recommendations
+
+When adding a new site recommendation to the Others section:
+
+1. **Thoroughly explore the site**: Read the main content, subpages, and follow external links to understand the site's full scope, themes, and value
+2. **Write in the Captain's voice**: Every recommendation MUST include "**The Captain's words**:" followed by ONE SENTENCE (can be long with semicolons and em-dashes) written in the Captain's distinctive style:
+   - Third person perspective
+   - Maritime metaphors and nautical language
+   - Philosophical and contemplative tone
+   - Rich, flowing prose with subordinate clauses
+   - Describes both the content and its deeper significance
+3. **Include site details**: After the Captain's sentence, add practical information:
+   - Brief description of what awaits there
+   - Language(s) of the site
+   - How long it has been active
+   - Any special context (e.g., "the Captain's beloved cousin")
+
+### Example Format
+
+```markdown
+### [Site Name](https://example.com/)
+
+**The Captain's words**: [One long, flowing sentence in third person describing the site in the Captain's philosophical, maritime style]
+
+**What awaits there**: [Practical description of content]
+
+**Language**: [Language name]
+
+**Active since**: [Year]
+```
+
+**Note**: The Captain's sentence should capture the essence and soul of the recommended site, not just describe its features - it should convey why this harbor is worth visiting in the vast digital sea.

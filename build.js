@@ -89,7 +89,8 @@ function getHeroImage(title, slug, type, metadata = {}) {
     'Archive': 'https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=1600&h=900&fit=crop', // Hokusai's Great Wave
     'Ship\'s Crew': 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=1600&h=900&fit=crop', // Classical Greek ship/warriors
     'The Captain\'s Treasure Trove': 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1600&h=900&fit=crop', // Treasure chest with gold
-    'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg' // Custom bird image
+    'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg', // Custom bird image
+    'Others': 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?w=1600&h=900&fit=crop' // Compass and maps - navigation to other ports
   };
 
   // Check if this is a section page
@@ -180,6 +181,7 @@ function generatePage(title, content, metadata = {}) {
         <a href="/ships-crew.html">Ship's Crew</a>
         <a href="/treasure-trove.html">Treasure Trove</a>
         <a href="/avian-studies.html">Avian Studies</a>
+        <a href="/others.html">Others</a>
         <select id="lang-selector" class="lang-selector" aria-label="Select language">
           <option value="en">🌍 English</option>
           <optgroup label="🇪🇺 Europe">
