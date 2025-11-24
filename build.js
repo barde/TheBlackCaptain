@@ -88,7 +88,7 @@ function getHeroImage(title, slug, type, metadata = {}) {
   const sectionImages = {
     'Archive': 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg', // Hokusai's Great Wave - Wikimedia Commons
     'Ship\'s Crew': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Argonautesch%C3%ABff_Lorenzo_Costa_w.jpg', // Argonauts by Lorenzo Costa - Wikimedia Commons
-    'The Captain\'s Treasure Trove': 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Treasure_chest_with_gold_coins.svg', // Treasure chest with gold coins - Wikimedia Commons (transparent background)
+    'The Captain\'s Treasure Trove': 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Silver_Adornments_of_the_Vishchyn_Treasure_Trove.jpg', // Silver Adornments of the Vishchyn Treasure Trove - Wikimedia Commons
     'The Captain\'s Avian Studies': 'https://cloud.vogel.yoga/imgs/IMG_6283.jpg', // Custom bird image
     'Others': '/images/internet-pirate-transparent.png' // Internet Pirate with transparent background (processed locally)
   };
