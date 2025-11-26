@@ -1,6 +1,6 @@
 ---
 title: The Language Lesson
-date: 2025-11-26
+date: November 26, 2025
 description: Stranded at port waiting for his transit ship, the Captain encounters Austrian-Hungarian navy soldiers seeking the tongue of their enemies, and shares an ancient method of learning languages at sea
 ---
 

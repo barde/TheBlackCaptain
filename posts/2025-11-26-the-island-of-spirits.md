@@ -1,6 +1,6 @@
 ---
 title: The Island of Spirits
-date: 2025-11-26
+date: November 26, 2025
 description: The Captain discovers a mysterious island inhabited by nuns who run a peculiar establishment, only to find it vanishes like morning mist
 ---
 
