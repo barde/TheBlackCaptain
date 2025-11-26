@@ -601,6 +601,56 @@ a:hover {
   font-style: italic;
 }
 
+/* Support the Captain (Ko-fi) */
+.support-captain {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, rgba(44, 95, 124, 0.08) 0%, rgba(44, 95, 124, 0.03) 100%);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .support-captain {
+    background: linear-gradient(135deg, rgba(90, 159, 197, 0.15) 0%, rgba(90, 159, 197, 0.05) 100%);
+  }
+}
+
+.support-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: var(--space-md);
+}
+
+.kofi-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.kofi-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  border: none;
+}
+
+.kofi-icon {
+  font-size: 1.2rem;
+}
+
 /* Accessibility */
 .visually-hidden {
   position: absolute;

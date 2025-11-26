@@ -256,6 +256,14 @@ function generatePage(title, content, metadata = {}) {
       <div class="post-content">
         ${content}
       </div>
+      ${type === 'post' ? `
+      <div class="support-captain">
+        <p class="support-text">If this tale warmed your heart or gave you a moment of peace on troubled seas, consider buying the Captain a grog.</p>
+        <a href="https://ko-fi.com/theblackcaptain" target="_blank" rel="noopener" class="kofi-button">
+          <span class="kofi-icon">☕</span> Buy the Captain a Grog
+        </a>
+      </div>
+      ` : ''}
     </article>
   </main>
 
@@ -456,6 +464,12 @@ function build() {
         ${latestPost.date ? `<time class="post-date">${latestPost.date}</time>` : ''}
         <div class="story-content">
           ${htmlContent}
+        </div>
+        <div class="support-captain">
+          <p class="support-text">If this tale warmed your heart or gave you a moment of peace on troubled seas, consider buying the Captain a grog.</p>
+          <a href="https://ko-fi.com/theblackcaptain" target="_blank" rel="noopener" class="kofi-button">
+            <span class="kofi-icon">☕</span> Buy the Captain a Grog
+          </a>
         </div>
         <div class="archive-notice">
           <p><a href="/archive.html">View all previous tales in the Archive →</a></p>
