@@ -3,8 +3,6 @@ title: Imprint
 description: Legal information, contact details, and affiliate disclosures for The Black Captain
 ---
 
-# Imprint
-
 ## Legal Information
 
 **Operator:** Verwegener Vogel e.V.

@@ -4,8 +4,6 @@ description: Sites the Black Captain recommends to those who sail the digital se
 type: page
 ---
 
-# Others
-
 The Black Captain, in all his travels across the digital waters, has encountered many ports worth visiting. These are the harbors where wisdom dwells, where words carry weight, and where the soul finds nourishment that no rum can provide.
 
 ## Recommended Harbors
