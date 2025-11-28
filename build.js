@@ -9,14 +9,75 @@ const fs = require('fs');
 const path = require('path');
 const { generateAllImages } = require('./generate-images.js');
 
-// Simple markdown to HTML converter (no dependencies needed)
-function markdownToHTML(markdown) {
-  let html = markdown;
+// Generate URL-safe slug from text
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove non-word chars
+    .replace(/\s+/g, '-')     // Replace spaces with hyphens
+    .replace(/-+/g, '-')      // Replace multiple hyphens with single
+    .trim();
+}
 
-  // Headers (must be in reverse order: h4, h3, h2, h1)
-  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
-  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+// Extract headings from markdown and generate TOC
+function extractHeadings(markdown) {
+  const headings = [];
+  const headingRegex = /^(#{2,4})\s+(.+)$/gm;
+  let match;
+
+  while ((match = headingRegex.exec(markdown)) !== null) {
+    const level = match[1].length; // 2 for ##, 3 for ###, etc.
+    const text = match[2].trim();
+    const id = slugify(text);
+    headings.push({ level, text, id });
+  }
+
+  return headings;
+}
+
+// Generate Table of Contents HTML
+function generateTOC(headings) {
+  if (headings.length < 2) return ''; // Don't show TOC for very short articles
+
+  let toc = '<nav class="toc" aria-label="Table of Contents">\n';
+  toc += '<details open>\n';
+  toc += '<summary><strong>⚓ Contents</strong></summary>\n';
+  toc += '<ul>\n';
+
+  for (const heading of headings) {
+    const indent = heading.level === 2 ? '' : '  '.repeat(heading.level - 2);
+    toc += `${indent}<li><a href="#${heading.id}">${heading.text}</a></li>\n`;
+  }
+
+  toc += '</ul>\n';
+  toc += '</details>\n';
+  toc += '</nav>\n';
+
+  return toc;
+}
+
+// Simple markdown to HTML converter with anchor links
+function markdownToHTML(markdown, options = {}) {
+  let html = markdown;
+  const includeTOC = options.includeTOC !== false; // Default to true
+
+  // Extract headings for TOC before conversion
+  const headings = extractHeadings(markdown);
+
+  // Headers with IDs and anchor links (must be in reverse order: h4, h3, h2, h1)
+  html = html.replace(/^#### (.+)$/gim, (match, text) => {
+    const id = slugify(text);
+    return `<h4 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h4>`;
+  });
+  html = html.replace(/^### (.+)$/gim, (match, text) => {
+    const id = slugify(text);
+    return `<h3 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h3>`;
+  });
+  html = html.replace(/^## (.+)$/gim, (match, text) => {
+    const id = slugify(text);
+    return `<h2 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h2>`;
+  });
+  // h1 without anchor (main title)
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
   // Bold and italic
@@ -49,12 +110,20 @@ function markdownToHTML(markdown) {
 
   // Clean up multiple paragraph tags
   html = html.replace(/<p><\/p>/g, '');
-  html = html.replace(/<p>(<h[1-3]>)/g, '$1');
-  html = html.replace(/(<\/h[1-3]>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<h[1-4][^>]*>)/g, '$1');
+  html = html.replace(/(<\/h[1-4]>)<\/p>/g, '$1');
   html = html.replace(/<p>(<blockquote>)/g, '$1');
   html = html.replace(/(<\/blockquote>)<\/p>/g, '$1');
   html = html.replace(/<p>(<ul>)/g, '$1');
   html = html.replace(/(<\/ul>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<nav[^>]*>)/g, '$1');
+  html = html.replace(/(<\/nav>)<\/p>/g, '$1');
+
+  // Add TOC at the beginning if there are enough headings
+  if (includeTOC && headings.length >= 2) {
+    const toc = generateTOC(headings);
+    html = toc + html;
+  }
 
   return html;
 }
