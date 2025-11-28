@@ -37,6 +37,15 @@ description: Meet the crew and characters aboard the Black Captain's ship
 <p class="character-appearances">Appears in: [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html), [The Double Ship](/2025-11-23-the-double-ship.html)</p>
 
 </div>
+
+<div class="character-card">
+
+### The Chief Mate
+<p class="character-role">First Officer</p>
+<p class="character-description">She may look like a delicate and for some fragile woman from the dry lands of the eastern Baltic coast, but the Captain chose her for a reason - and not just for her extensive experience. Before marrying the sea, she was an assistant to a well-known Baltic doctor, making him food in the morning and evening, especially talented in peeling potatoes like a tornado with the precision of a surgeon. After three years she decided to change her life and joined the Captain's ship. From assistant in the kitchen to chef, she worked her way up through sheer competence and an unshakeable steadiness that storms couldn't disturb. Now she commands the night watch with the same precision she once brought to a doctor's kitchen, keeping a special collection of sweets from far away lands for special events - and for answering questions that don't need words.</p>
+<p class="character-appearances">Appears in: [The Regina](/2025-11-28-the-regina.html)</p>
+
+</div>
 </section>
 
 <section class="character-section">
@@ -81,6 +90,15 @@ description: Meet the crew and characters aboard the Black Captain's ship
 <p class="character-role">The Ship with a Soul</p>
 <p class="character-description">A vessel the Black Captain has known for years - one of those rare ships that seems to have a soul of its own. The Aura underwent a complete refit, transforming from worn wooden warmth to sleek modern efficiency. Every surface was replaced, every cabin rebuilt, yet something fundamental remained unchanged. Her bones, her keel, her essential structure - the thing that makes her _her_ - persists beneath the cosmetic transformation. She embodies the ancient paradox: Can a ship that has had every plank replaced still be the same ship? The Boatswain says yes, and he knows ships. She moves through water with the same signature rhythm, the same soul riding beneath new skin.</p>
 <p class="character-appearances">Appears in: [The Double Ship](/2025-11-23-the-double-ship.html)</p>
+
+</div>
+
+<div class="character-card">
+
+### The Regina
+<p class="character-role">The Real Queen of Water and Wind</p>
+<p class="character-description">The elder sister of the Aura, built 23 years before her younger sibling. The Boatswain claims their souls are connected - that they are somehow the same ship in different forms - but the Captain knows better. The Regina has retained even more soul and heat than the Aura, her timbers absorbing decades of storms, calm seas, and whispered night watch conversations. Her former captain was always eager to tell stories of the many sea monsters she survived, tales that grew wilder with each retelling yet held that grain of truth all good sea stories carry. She is a ship with presence that comes only from age and survival, sailing steady through any wind with the quiet confidence of a vessel that has seen everything and fears nothing.</p>
+<p class="character-appearances">Appears in: [The Regina](/2025-11-28-the-regina.html)</p>
 
 </div>
 </section>
