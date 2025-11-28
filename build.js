@@ -41,7 +41,7 @@ function generateTOC(headings) {
 
   let toc = '<nav class="toc" aria-label="Table of Contents">\n';
   toc += '<details open>\n';
-  toc += '<summary><strong>⚓ Contents</strong></summary>\n';
+  toc += '<summary><strong>Contents</strong></summary>\n';
   toc += '<ul>\n';
 
   for (const heading of headings) {
@@ -542,6 +542,7 @@ function build() {
 
     indexContent = `
       <div class="latest-story">
+        <h1 class="story-title">${latestPost.title}</h1>
         ${latestPost.date ? `<time class="post-date">${latestPost.date}</time>` : ''}
         <div class="story-content">
           ${htmlContent}

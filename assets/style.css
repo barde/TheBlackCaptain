@@ -167,8 +167,19 @@ h2 {
   border-radius: 8px;
   padding: var(--space-md);
   margin-bottom: var(--space-xl);
+  margin-left: 2rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
+  position: relative;
+}
+
+.toc::before {
+  content: '⚓';
+  position: absolute;
+  left: -2rem;
+  top: var(--space-md);
+  font-size: 1.2rem;
+  color: var(--brass);
 }
 
 .toc details {
