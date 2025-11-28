@@ -87,6 +87,16 @@ description: Meet the crew and characters aboard the Black Captain's ship
 <p class="character-appearances">Appears in: [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html)</p>
 
 </div>
+
+<div class="character-card">
+
+### The Greek
+<p class="character-role">Able Seaman</p>
+<p class="character-description">A Cretan who introduces himself with the ancient paradox: "I am from Crete. All Cretans are liars." Whether philosopher or fraud, he knows knots older than history - including the mysterious "Knot of Minos" that his grandfather taught him. Sober, he is competent and quiet. Drunk, he transforms into a Homeric storyteller, regaling the crew with tales of romantic conquests across every Mediterranean port - women of all sizes, colors, and temperaments. When served real raki (the true Cretan tsikoudia without anise), he dances like Alexis Zorbas himself, channeling something ancient and sacred that words cannot express. Clean enough, trustworthy enough - though with a Cretan, one can never be entirely certain which truths are true.</p>
+<p class="character-appearances">Appears in: [The Greek Seaman](/2025-11-28-the-greek-seaman.html)</p>
+<p class="character-link">Learn more: [Zorba the Greek](/treasure-trove/zorba-the-greek.html)</p>
+
+</div>
 </section>
 
 <section class="character-section">
