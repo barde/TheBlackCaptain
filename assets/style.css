@@ -223,6 +223,20 @@ h2 {
   font-size: 0.9em;
 }
 
+.toc ul ul {
+  padding-left: var(--space-lg);
+  margin-top: var(--space-xs);
+  list-style: none;
+}
+
+.toc > ul > li {
+  font-weight: 600;
+}
+
+.toc ul ul li {
+  font-weight: 400;
+}
+
 .toc a {
   color: var(--text-secondary);
   border: none;

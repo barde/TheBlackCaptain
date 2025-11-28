@@ -46,6 +46,15 @@ description: Meet the crew and characters aboard the Black Captain's ship
 <p class="character-appearances">Appears in: [The Regina](/2025-11-28-the-regina.html)</p>
 
 </div>
+
+<div class="character-card">
+
+### The Navigator
+<p class="character-role">Ship's Navigator</p>
+<p class="character-description">A well-behaved and always courteous woman of class, moving with the particular grace of someone who learned to walk on shifting surfaces before she learned to walk on land. She carries a subtle smile that suggests she knows things others do not - and she often does. The Navigator sees paths where others see only obstacles, reading charts and currents with an intuition that borders on the supernatural. She is not one for idle chatter; when she speaks, it is worth hearing. Trustworthy, smart, and possessed of a sharp intelligence that misses nothing, she delivers information with precision and then departs, leaving others to decide what to do with her insights. She traffics not in rumors but in certainties.</p>
+<p class="character-appearances">Appears in: [The Seaman's Dark Secret](/2025-11-28-the-seamans-dark-secret.html)</p>
+
+</div>
 </section>
 
 <section class="character-section">
@@ -56,8 +65,8 @@ description: Meet the crew and characters aboard the Black Captain's ship
 
 ### The Russian
 <p class="character-role">Able Seaman</p>
-<p class="character-description">A bald man whose head bears the scars of many winters and harder times still, hailing from the coldest and hardest parts of Russia - places where survival itself is a daily victory. He has fought bears with his bare hands and won. He saved an old grandmother from a pack of hungry wolves, carrying her through snow that would have buried most men. He has survived adventures that would fill volumes, each one carving away weakness until only strength remained. To such a man, navigating heavy waters to retrieve a woolen hat is child's play.</p>
-<p class="character-appearances">Appears in: [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html)</p>
+<p class="character-description">A bald man whose head bears the scars of many winters and harder times still, hailing from the coldest and hardest parts of Russia - places where survival itself is a daily victory. He has fought bears with his bare hands and won. He saved an old grandmother from a pack of hungry wolves, carrying her through snow that would have buried most men. He has survived adventures that would fill volumes, each one carving away weakness until only strength remained. To such a man, navigating heavy waters to retrieve a woolen hat is child's play. Yet beneath this surface of loyal service, darker currents may flow. Rumors speak of connections to a smuggling ring - not as the head, but as the neck that steers where the head looks. The Captain knows, and chooses to see only what serves the ship. Some secrets are best left in the shadows where they belong.</p>
+<p class="character-appearances">Appears in: [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html), [The Seaman's Dark Secret](/2025-11-28-the-seamans-dark-secret.html)</p>
 
 </div>
 

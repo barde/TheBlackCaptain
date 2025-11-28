@@ -35,7 +35,7 @@ function extractHeadings(markdown) {
   return headings;
 }
 
-// Generate Table of Contents HTML
+// Generate Table of Contents HTML with proper nesting
 function generateTOC(headings) {
   if (headings.length < 2) return ''; // Don't show TOC for very short articles
 
@@ -44,9 +44,28 @@ function generateTOC(headings) {
   toc += '<summary><strong>Contents</strong></summary>\n';
   toc += '<ul>\n';
 
+  let currentLevel = 2; // Start at h2 level
+
   for (const heading of headings) {
-    const indent = heading.level === 2 ? '' : '  '.repeat(heading.level - 2);
-    toc += `${indent}<li><a href="#${heading.id}">${heading.text}</a></li>\n`;
+    // Close nested lists if going up in hierarchy
+    while (currentLevel > heading.level) {
+      toc += '</ul></li>\n';
+      currentLevel--;
+    }
+
+    // Open nested lists if going down in hierarchy
+    while (currentLevel < heading.level) {
+      toc += '<li><ul>\n';
+      currentLevel++;
+    }
+
+    toc += `<li><a href="#${heading.id}">${heading.text}</a></li>\n`;
+  }
+
+  // Close any remaining nested lists
+  while (currentLevel > 2) {
+    toc += '</ul></li>\n';
+    currentLevel--;
   }
 
   toc += '</ul>\n';
