@@ -20,4 +20,18 @@ The Black Captain, in all his travels across the digital waters, has encountered
 
 ---
 
+### [DFDS - Det Forenede Dampskibs-Selskab](https://www.dfds.com/)
+
+**The Captain's words**: Upon these great vessels that traverse the Baltic between Kiel and Klaipėda, where twenty hours dissolve into an eternity of sea-gazing from the open deck, of amber liquids savored in bars with breath-taking views, and of dreams conjured in commodious cabins as the ship rocks gently through the night — it was here, upon the decks of DFDS, that the Black Captain first felt the stirrings of these tales in his soul; for what better muse exists than a company that has connected nations since 1866, whose ships bear names like *Regina Seaways* and *Aura Seaways*, and whose Mare Balticum restaurant serves sustenance for both body and imagination whilst the endless grey-blue waters whisper stories of the Hanseatic traders who sailed these same routes centuries before.
+
+**What awaits there**: A Danish shipping company founded in 1866 — Det Forenede Dampskibs-Selskab (The United Steamship Company) — now Northern Europe's leading ferry and logistics provider. Their passenger ferries connect 20+ countries, carrying 5.5 million passengers annually. The Kiel-Klaipėda route offers overnight crossings (~20 hours) aboard modern cruise ferries featuring restaurants, bars with panoramic Baltic views, comfortable cabins, a sea shop, and even "Pirate's Island" playrooms for young sailors. The ships are marvels of the "Courage-Class" — the world's first purpose-built cruise ferries combining freight capacity with genuine passenger comfort.
+
+**Language**: Multiple (English, German, Danish, Lithuanian, and more)
+
+**Active since**: 1866
+
+**The Captain's special note**: *It was aboard a DFDS ferry, somewhere between the German coast and the Lithuanian shore, that the Captain first conceived the idea of writing down his tales. The rhythm of the Baltic waves, the conversations with fellow travelers from a dozen nations, the peculiar timelessness of being neither here nor there — these gifts of DFDS made this humble blog possible.*
+
+---
+
 *More recommendations will appear as the Captain discovers worthy harbors in his travels. Check back when the winds change.*
