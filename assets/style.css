@@ -160,9 +160,7 @@ h2 {
 }
 
 h2::before {
-  content: '⚓';
-  position: absolute;
-  left: -1.5em;
+  content: '⚓ ';
   color: var(--brass);
   opacity: 0.6;
   font-size: 0.8em;
@@ -916,10 +914,6 @@ a:hover {
     font-size: 1.6rem;
   }
 
-  h2::before {
-    position: static;
-    margin-right: 0.5em;
-  }
 
   h3 {
     font-size: 1.3rem;

@@ -498,7 +498,7 @@ function build() {
     `;
   }
 
-  const indexPage = generatePage('', indexContent);
+  const indexPage = generatePage('', indexContent, { type: 'index' });
   fs.writeFileSync(path.join(publicDir, 'index.html'), indexPage);
   console.log('✓ Built: index.html');
 
