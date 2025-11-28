@@ -164,7 +164,7 @@
       console.log(`✓ Translated to ${targetLang}`);
     } catch (error) {
       console.error('Translation error:', error);
-      alert('Translation failed. Showing original content.');
+      // Silently restore original content without alerting user
       restoreOriginalContent();
       currentLang = DEFAULT_LANG;
       if (selector) {
