@@ -64,20 +64,20 @@ function markdownToHTML(markdown, options = {}) {
   // Extract headings for TOC before conversion
   const headings = extractHeadings(markdown);
 
-  // Headers with IDs and anchor links (must be in reverse order: h4, h3, h2, h1)
+  // Headers with IDs for TOC linking (must be in reverse order: h4, h3, h2, h1)
   html = html.replace(/^#### (.+)$/gim, (match, text) => {
     const id = slugify(text);
-    return `<h4 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h4>`;
+    return `<h4 id="${id}">${text}</h4>`;
   });
   html = html.replace(/^### (.+)$/gim, (match, text) => {
     const id = slugify(text);
-    return `<h3 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h3>`;
+    return `<h3 id="${id}">${text}</h3>`;
   });
   html = html.replace(/^## (.+)$/gim, (match, text) => {
     const id = slugify(text);
-    return `<h2 id="${id}"><a href="#${id}" class="heading-anchor" aria-label="Link to section">⚓</a>${text}</h2>`;
+    return `<h2 id="${id}">${text}</h2>`;
   });
-  // h1 without anchor (main title)
+  // h1 (main title)
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
   // Bold and italic

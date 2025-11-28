@@ -159,28 +159,6 @@ h2 {
   }
 }
 
-/* Heading anchor links */
-.heading-anchor {
-  color: var(--brass);
-  opacity: 0.4;
-  font-size: 0.7em;
-  text-decoration: none;
-  margin-right: 0.5em;
-  border: none;
-  transition: opacity 0.2s ease;
-}
-
-.heading-anchor:hover {
-  opacity: 1;
-  border: none;
-}
-
-h2:hover .heading-anchor,
-h3:hover .heading-anchor,
-h4:hover .heading-anchor {
-  opacity: 0.8;
-}
-
 /* Table of Contents */
 .toc {
   background: rgba(184, 134, 11, 0.05);
@@ -312,12 +290,6 @@ a:hover {
   text-shadow: 0 1px 2px rgba(183, 28, 28, 0.1);
   letter-spacing: 0.02em;
   position: relative;
-}
-
-.site-title::before {
-  content: '🏴‍☠️';
-  margin-right: 0.5rem;
-  font-size: 1.2em;
 }
 
 .site-title:hover {
@@ -1042,7 +1014,6 @@ a:hover {
     color: black;
   }
 
-  .heading-anchor,
   .toc {
     display: none;
   }
