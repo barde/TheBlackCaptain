@@ -330,3 +330,72 @@ When adding a new site recommendation to the Others section:
 ```
 
 **Note**: The Captain's sentence should capture the essence and soul of the recommended site, not just describe its features - it should convey why this harbor is worth visiting in the vast digital sea.
+
+## Daily AI-Generated Images (Captain's Vision)
+
+The Ship's Crew page features a daily AI-generated maritime image called "The Captain's Vision".
+
+### How It Works
+
+1. **GitHub Action** (`daily-image.yml`) runs at 4:20 AM GMT daily
+2. **Cloudflare Workers AI** (FLUX-1-schnell model) generates the image
+3. The image is saved to `images/daily/captains-vision.jpg`
+4. Automatic commit and deployment to production
+
+### Prompts
+
+- Different prompts for each day of the week (maritime scenes)
+- Character portraits on certain days (every 7th of the month)
+- Seasonal modifiers added automatically (spring/summer/autumn/winter)
+
+### Required GitHub Secrets
+
+- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+- `CLOUDFLARE_API_TOKEN`: API token with Workers AI permissions
+
+### Manual Generation
+
+```bash
+CLOUDFLARE_ACCOUNT_ID=xxx CLOUDFLARE_API_TOKEN=xxx node scripts/generate-daily-image.js
+```
+
+### Fallback
+
+If no image exists or generation fails, the image container gracefully hides itself via `onerror` handler.
+
+## What's New Notification System
+
+A subtle popup notification that informs returning visitors about new content.
+
+### Features
+
+- Uses **localStorage** (no cookies) to track what version the user has seen
+- Appears in the **lower right corner** after 5 seconds on page
+- **Fades out** after 5 seconds
+- **Stays visible** if user hovers over it
+- Links directly to new/updated content
+
+### Updating the Notification
+
+When publishing new content, update these values in `assets/main.js`:
+
+1. **CURRENT_VERSION**: Update to a new version string (format: `YYYYMMDD-N`)
+2. **RECENT_CHANGES**: Array of new/updated content with title, url, and type
+
+```javascript
+const CURRENT_VERSION = '20251201-1';
+const RECENT_CHANGES = [
+  {
+    title: 'New Article Title',
+    url: '/path/to/article.html',
+    type: 'avian-studies' // or 'update', 'story', etc.
+  }
+];
+```
+
+### Privacy
+
+- No cookies used
+- Only localStorage (stays on user's device)
+- No tracking or analytics
+- User can clear localStorage to see notification again

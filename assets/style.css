@@ -1062,6 +1062,168 @@ a:hover {
   }
 }
 
+/* Captain's Daily Vision - AI Generated Image */
+.captains-vision {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.vision-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid var(--brass);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
+}
+
+.vision-caption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: var(--space-sm);
+}
+
+/* What's New Notification Popup */
+.whats-new-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 320px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--parchment) 100%);
+  border: 2px solid var(--brass);
+  border-left: 4px solid var(--lubeck-red);
+  border-radius: 8px;
+  padding: var(--space-md);
+  box-shadow: var(--shadow-strong);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  font-family: var(--font-sans);
+}
+
+.whats-new-popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.whats-new-popup.staying {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .whats-new-popup {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-color: var(--brass);
+  }
+}
+
+.whats-new-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.whats-new-title {
+  font-weight: 700;
+  color: var(--lubeck-red);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.whats-new-title::before {
+  content: '⚓';
+}
+
+.whats-new-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.whats-new-close:hover {
+  color: var(--lubeck-red);
+}
+
+.whats-new-content {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.whats-new-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.whats-new-list li {
+  margin-bottom: var(--space-xs);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.whats-new-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+}
+
+.whats-new-list a {
+  color: var(--wood-dark);
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .whats-new-list a {
+    color: var(--text-primary);
+  }
+}
+
+.whats-new-list a:hover {
+  color: var(--lubeck-red);
+}
+
+.whats-new-footer {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--border-light);
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .whats-new-popup {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
 /* Accessibility */
 .visually-hidden {
   position: absolute;

@@ -77,6 +77,32 @@ Opens a local server at `http://localhost:8788`
 - Domain connected to Cloudflare
 - `wrangler` CLI installed (included in dependencies)
 
+### Required Tokens & Secrets
+
+| Token | Purpose | Where to Create |
+|-------|---------|-----------------|
+| **CLOUDFLARE_ACCOUNT_ID** | Account identification | [Cloudflare Dashboard](https://dash.cloudflare.com) → Overview (right sidebar) |
+| **CLOUDFLARE_API_TOKEN** | Deployment & AI features | [API Tokens page](https://dash.cloudflare.com/profile/api-tokens) |
+| **GOOGLE_CLOUD_CREDENTIALS** | Translation API | [Google Cloud Console](https://console.cloud.google.com) |
+
+**API Token Required Permissions:**
+- Workers AI - Read/Edit
+- Cloudflare Pages - Edit
+- Account Settings - Read
+
+### GitHub Secrets (for automated workflows)
+
+Add these to **Settings → Secrets and variables → Actions**:
+
+| Secret Name | Description |
+|-------------|-------------|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
+
+### System Health
+
+Visit `/health.html` to check subsystem status (no technical details exposed)
+
 ### Setup Steps
 
 #### 1. Login to Cloudflare

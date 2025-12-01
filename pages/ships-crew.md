@@ -4,6 +4,12 @@ description: Meet the crew and characters aboard the Black Captain's ship
 ---
 
 <div class="crew-roster">
+
+<div class="captains-vision">
+<img src="/images/daily/captains-vision.jpg" alt="The Captain's Daily Vision" class="vision-image" onerror="this.style.display='none'">
+<p class="vision-caption">*Today's vision from the Captain's quarters*</p>
+</div>
+
 <p class="intro">Every ship needs a proper crew, and the Black Captain's vessel sails with characters both extraordinary and strange. Here you'll find those who have graced the Captain's tales, from hardened sailors to wise gulls.</p>
 
 <section class="character-section">
