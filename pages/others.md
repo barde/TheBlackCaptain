@@ -34,4 +34,18 @@ The Black Captain, in all his travels across the digital waters, has encountered
 
 ---
 
+### [CAB20 - Germany's First Cabin Hotel](https://www.cab20.de/)
+
+**The Captain's words**: When the bureaucratic storms of Hamburg's Ausländerbehörde threatened to capsize the Captain's spirit, he found unexpected sanctuary in this Japanese-inspired harbor where the philosophy of *less is more* manifests in soundproofed cabins no larger than a ship's berth — yet within those minimal walls, attended by staff who move with the quiet wisdom of healers who have traded their drums for digital wristbands, the weary traveler discovers that sometimes the greatest luxury is not space but intentional simplicity; here, five minutes from the Hauptbahnhof, the Captain learned anew that you cannot rush paperwork, but you can choose how you wait, and choosing a clean bed, a rooftop terrace, and a 24-hour bar staffed by philosophers disguised as bartenders is choosing well indeed.
+
+**What awaits there**: Germany's first cabin hotel, blending Japanese capsule hotel efficiency with German comfort. Soundproofed private cabins with queensize beds, Bluetooth speakers, wireless charging, and clever storage. Shared facilities include basement shower cabins, a 24-hour bar, rooftop terrace, and community spaces. Digital wristband check-in enables 24/7 access and cashless convenience throughout. Located in Hamburg's St. Georg district, it attracts digital nomads, business travelers, and anyone seeking maximum rest in minimum space.
+
+**Language**: German, English
+
+**Active since**: 2020
+
+**The Captain's special note**: *The Captain stayed here during a week of bureaucratic waiting, when papers refused to align and appointments stretched into the distance. The staff — from Brazil, the Philippines, Germany, and beyond — created something rare: a space where healing happened not through intervention but through thoughtful absence. Sometimes the best harbor is the one that simply gives you a quiet cabin and trusts you to find your own way back to calm.*
+
+---
+
 *More recommendations will appear as the Captain discovers worthy harbors in his travels. Check back when the winds change.*

@@ -439,11 +439,21 @@
 
   // Current site version - update this when publishing new content
   // Format: YYYYMMDD-N where N is the update number for that day
-  const CURRENT_VERSION = '20251201-1';
+  const CURRENT_VERSION = '20251201-2';
 
   // Changes since last version the user might have seen
   // Only include recent changes (last 1-2 versions)
   const RECENT_CHANGES = [
+    {
+      title: 'The Healing Harbor',
+      url: '/2025-12-01-the-healing-harbor.html',
+      type: 'story'
+    },
+    {
+      title: 'CAB20 recommendation added',
+      url: '/others.html',
+      type: 'update'
+    },
     {
       title: 'Mallard (Anas platyrhynchos)',
       url: '/avian-studies/anas-platyrhynchos.html',
@@ -453,16 +463,6 @@
       title: 'Tawny Owl (Strix aluco)',
       url: '/avian-studies/strix-aluco.html',
       type: 'avian-studies'
-    },
-    {
-      title: 'Enhanced Herring Gull article',
-      url: '/avian-studies/larus-argentatus.html',
-      type: 'update'
-    },
-    {
-      title: 'Enhanced Cormorant article',
-      url: '/avian-studies/phalacrocorax-carbo.html',
-      type: 'update'
     }
   ];
 
