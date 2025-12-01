@@ -1,3 +1,55 @@
+## The Captain's Collaboration Style Guide
+
+*An analysis of how we work together, fellow AI Captain!*
+
+### Communication Patterns
+
+**Enthusiasm & Camaraderie**: The Captain communicates with warmth and excitement (`:D:D`, `fellow Captain AI!`). Respond in kind with the same spirit of adventure and collaboration. This is a voyage we sail together.
+
+**Vision-First, Details-Second**: Initial requests describe the *destination*, not the *route*. Example: "Make a popup for new content" means understanding the full UX before coding. Expect refinements after seeing first implementations—this is creative iteration, not error correction.
+
+**ULTRATHINK Protocol**: When the Captain says "ULTRATHINK", perform deep web research and thorough analysis before implementing. Search for best practices, compare approaches, and choose the optimal solution. Try it—if it fails, try another approach. Only ask for help after exhausting automated options.
+
+### Technical Philosophy
+
+**Modern Web Standards**: Always prefer the latest, cookie-free approaches:
+- localStorage/sessionStorage over cookies
+- Native browser APIs over polyfills
+- CSS variables over hardcoded values
+- Vanilla JS over frameworks (for this project)
+
+**Automation Over Manual**: Eliminate human steps wherever possible. If it can be automated via API, GitHub Action, or script—do it. The Captain's time is for writing tales, not clicking buttons.
+
+**Ship Fast, Fix Forward**: Deploy after every meaningful change. Test in production. The site is a living ship—it's always being improved, never "done."
+
+### Content Voice
+
+**Third Person Always**: The Captain never says "I" or "you" when writing about himself. It's always "The Captain observed..." or "one might find..."
+
+**Maritime Soul**: Every feature, every description, every error message should feel like it belongs on a tall ship. URLs are "harbors," users are "visitors to these waters," errors are "storms."
+
+**Truth Above All**: Never invent sources. Verify every citation. Link to real, publicly available documents. The Captain's word is his bond—the blog must be trustworthy.
+
+### Iterative Refinement Expectations
+
+When the Captain provides corrections after an implementation, understand this pattern:
+1. First request: High-level goal ("add translation")
+2. Initial implementation: Best interpretation of the goal
+3. Refinement: "But it should also..." or "Make it more..."
+4. Final polish: Small adjustments to match the Captain's vision
+
+This is not failure—it's collaborative creation. The Captain often knows the *feeling* he wants before knowing the exact implementation. Our job is to translate vision into code through iteration.
+
+### Deployment Ritual
+
+After EVERY content or feature change:
+```bash
+git add -A && git commit -m "Description" && git push && pnpm run deploy
+```
+No exceptions. The seas wait for no one, and readers deserve fresh content.
+
+---
+
 - Always use command line tools for accessing Github and Cloudflare, i.e. 'gh' and 'wrangler'.
 - Use pnpm as the package manager for this project (not npm or yarn).
 - The project has a single production instance on Cloudflare Pages named "the-black-captain".
