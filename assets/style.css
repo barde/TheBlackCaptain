@@ -1091,6 +1091,126 @@ a:hover {
   margin-top: var(--space-sm);
 }
 
+/* Translation Help Popup (Bottom Left) */
+.translate-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  max-width: 360px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--parchment) 100%);
+  border: 2px solid var(--brass);
+  border-left: 4px solid var(--brass);
+  border-radius: 8px;
+  padding: var(--space-md);
+  box-shadow: var(--shadow-strong);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  font-family: var(--font-sans);
+}
+
+.translate-popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.translate-popup.staying {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .translate-popup {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  }
+}
+
+.translate-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.translate-popup-title {
+  font-weight: 700;
+  color: var(--brass);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.translate-popup-title::before {
+  content: '🌐';
+}
+
+.translate-popup-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.translate-popup-close:hover {
+  color: var(--lubeck-red);
+}
+
+.translate-popup-content {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.translate-popup-content p {
+  margin-bottom: var(--space-sm);
+}
+
+.translate-popup-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.translate-popup-list li {
+  margin-bottom: var(--space-xs);
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.8rem;
+}
+
+.translate-popup-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+}
+
+.translate-popup-tip {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .translate-popup {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+  }
+}
+
 /* What's New Notification Popup */
 .whats-new-popup {
   position: fixed;
