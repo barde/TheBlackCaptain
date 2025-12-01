@@ -12,7 +12,35 @@ description: Scientific and observational study of the master diver that perches
 ![Great Cormorant](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Phalacrocorax_carbo_Vic.jpg/800px-Phalacrocorax_carbo_Vic.jpg)
 *Adult Great Cormorant in breeding plumage. [Image: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Phalacrocorax_carbo_Vic.jpg), CC BY-SA 3.0*
 
-**Listen:** [Great Cormorant calls on XenoCanto](https://xeno-canto.org/species/Phalacrocorax-carbo) - Recordings of Great Cormorant vocalizations
+---
+
+## Vocalizations
+
+Unlike the boisterous gulls that share their habitat, Great Cormorants are largely silent birds—a characteristic that adds to their mysterious, monastic presence. Their vocalizations are reserved primarily for breeding colonies and nest sites, rarely heard at sea.
+
+### Featured Recordings from XenoCanto
+
+**Colony Communication:**
+<iframe src='https://xeno-canto.org/1059525/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Sonothèque ADVL - Adult calls from France*
+
+**Nest Site Calls:**
+<iframe src='https://xeno-canto.org/987714/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by David Darrell-Lambert - Calls at Walthamstow Reservoirs, London*
+
+**Roosting Squabbles:**
+<iframe src='https://xeno-canto.org/948759/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Paul Kelly - Squabbling birds going to roost in Ireland*
+
+**Chick Begging Calls:**
+<iframe src='https://xeno-canto.org/923216/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Bram Piot - Chicks begging for food as adult arrives at nest*
+
+**Colony Atmosphere:**
+<iframe src='https://xeno-canto.org/814130/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Francesco Barberini - Large colony with egrets and cormorants*
+
+[Browse all Great Cormorant recordings on XenoCanto →](https://xeno-canto.org/species/Phalacrocorax-carbo)
 
 ---
 

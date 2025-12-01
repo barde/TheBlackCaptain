@@ -157,6 +157,143 @@ Based on 2024 research and best practices:
 - When adding articles to the Avian Studies always show pictures from Wikimedia and sounds from XenoCanto. Choose the most popular ones.
 - Always commit, push and deploy after changing content on the site
 
+## Creating Avian Studies Articles
+
+When creating new articles for the Avian Studies section (`avian-studies/*.md`), follow this comprehensive method to produce world-class ornithological content:
+
+### 1. Research Phase
+
+**Scientific Research (use web search):**
+- Search for recent peer-reviewed research (2023-2025) on the species
+- Focus on behavior, ecology, migration, cognition, and conservation studies
+- Look for urban ecology research if the species is common in cities
+- Find the IUCN Red List status
+
+**XenoCanto Recordings:**
+- Visit `https://xeno-canto.org/species/[Genus]-[species]` (e.g., `Anas-platyrhynchos`)
+- Prioritize recordings from contributor NYVXISGLTR (Bartholomäus Dedersen) when available
+- Select 4-5 high-quality (A-rated) recordings showing different call types
+- Note the XC number for each recording (e.g., XC658853)
+
+**Wikimedia Images:**
+- Visit `https://commons.wikimedia.org/wiki/Category:[Genus]_[species]`
+- Select a high-quality image showing the species clearly
+- Note the license (CC BY-SA 3.0 preferred)
+- Use the 800px thumbnail URL format
+
+### 2. Article Structure
+
+```markdown
+---
+title: [Genus species] - [Common Name]
+subtitle: [Evocative description of the species]
+type: avian-studies
+description: [One-sentence description for SEO]
+---
+
+# *[Genus species]* - [Common Name]
+
+*From the Captain's Avian Studies - Where Ornithology Meets the Open Sea*
+
+![Description](Wikimedia-URL)
+*Caption with Wikimedia Commons attribution and license*
+
+---
+
+## Vocalizations
+
+[Brief introduction to the species' vocal repertoire]
+
+### Featured Recordings from XenoCanto
+
+**[Call Type 1]:**
+<iframe src='https://xeno-canto.org/[XC-NUMBER]/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by [Recordist] - [Description]*
+
+[... 4-5 recordings total ...]
+
+[Browse all recordings on XenoCanto →](https://xeno-canto.org/species/[Genus]-[species])
+
+---
+
+## The Scientific Account
+
+### Taxonomy and Distribution
+[Scientific name, family, order, etymology, range]
+
+### Physical Characteristics
+[Size, weight, plumage, sexual dimorphism - use bullet points]
+
+### Intelligence and Behavioral Ecology
+[Recent research findings, cognitive abilities, notable behaviors]
+
+### [Additional sections as relevant]
+[Diet, breeding biology, migration, conservation status]
+
+---
+
+## The Captain's Account
+
+### [Evocative Title]
+[Personal observations in the Captain's philosophical, third-person voice]
+
+### [Additional narrative sections]
+[Stories, encounters, lessons learned from the species]
+
+---
+
+## References
+
+[Formatted citations with links to source papers/articles]
+
+---
+
+*Part of the Captain's Avian Studies - Where Ornithology Meets the Open Sea*
+
+*"[Philosophical quote in the Captain's voice]"* - The Black Captain
+```
+
+### 3. Writing Guidelines
+
+**Scientific Section:**
+- Use proper scientific terminology with explanations
+- Cite recent research with links
+- Include specific data (percentages, measurements, dates)
+- Cover taxonomy, physical traits, behavior, ecology, and conservation
+
+**Captain's Account:**
+- Write in third person ("The Captain observed...")
+- Use maritime metaphors and nautical language
+- Draw philosophical lessons from the species' behavior
+- Include specific anecdotes or observations
+- End with a memorable insight or quote
+
+**XenoCanto Embedding:**
+```html
+<iframe src='https://xeno-canto.org/[XC-NUMBER]/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+```
+
+### 4. Linking
+
+- Link to [Vogel Yoga](https://verein.vogel.yoga) when relevant (e.g., for ducks, mention the Long Duck story)
+- Include links to XenoCanto species page for browsing all recordings
+- Link to Wikimedia Commons for image attribution
+- Add links to cited research papers (open access preferred)
+
+### 5. Quality Checklist
+
+- [ ] Frontmatter complete with title, subtitle, type, description
+- [ ] Wikimedia image with proper attribution
+- [ ] 4-5 XenoCanto recordings embedded (A-quality preferred)
+- [ ] Recent scientific research cited (2023-2025)
+- [ ] Proper taxonomy section
+- [ ] Physical characteristics with measurements
+- [ ] Behavioral ecology with recent findings
+- [ ] Conservation status from IUCN
+- [ ] Captain's Account with philosophical observations
+- [ ] All references with working links
+- [ ] Closing quote from the Captain
+
 ## The "Others" Section - Recommended Sites
 
 The "Others" section (`pages/others.md`) contains the Black Captain's recommendations for other websites worth visiting.

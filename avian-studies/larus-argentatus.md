@@ -12,7 +12,31 @@ description: Scientific and observational study of one of the world's most intel
 ![Adult Herring Gull](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Larus_argentatus_1.JPG/800px-Larus_argentatus_1.JPG)
 *Adult European Herring Gull (Larus argentatus), Heiligenhafen, Germany. [Image: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Larus_argentatus_1.JPG), CC BY-SA 3.0*
 
-**Listen:** [Herring Gull calls on XenoCanto](https://xeno-canto.org/species/Larus-argentatus) - Over 840 recordings of European Herring Gull vocalizations
+---
+
+## Vocalizations
+
+The European Herring Gull possesses one of the most varied and recognizable vocal repertoires of any seabird. Their calls serve multiple functions: territorial defense, alarm signaling, mate communication, and food-finding announcements.
+
+### Featured Recordings from XenoCanto
+
+**Long Call (Territorial Display):**
+<iframe src='https://xeno-canto.org/1042750/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Stanislas Wroza - The classic "long call" used in territorial display*
+
+**Alarm and Flight Calls:**
+<iframe src='https://xeno-canto.org/984556/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Stein Ø. Nilsen - Multiple call types including alarm calls*
+
+**Communication Calls:**
+<iframe src='https://xeno-canto.org/1025218/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Colm Philpott - Flight calls during aerial communication*
+
+**Colony Sounds:**
+<iframe src='https://xeno-canto.org/1032693/embed' scrolling='no' frameborder='0' width='340' height='220'></iframe>
+*Recording by Lionel FREDERIC - Varied vocalizations from a group*
+
+[Browse all 840+ Herring Gull recordings on XenoCanto →](https://xeno-canto.org/species/Larus-argentatus)
 
 ---
 
