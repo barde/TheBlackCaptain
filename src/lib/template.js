@@ -66,6 +66,10 @@ function generatePage(title, content, metadata = {}) {
     </article>
   </main>
 
+  <div class="job-notice">
+    <p>The Captain's writer is seeking new horizons — <a href="https://www.linkedin.com/posts/activity-7400919305036664832-QHB3" target="_blank" rel="noopener">Open to IT opportunities</a></p>
+  </div>
+
   <footer class="main-footer">
     <p>${config.site.title} - ${config.site.description}</p>
     <p class="footer-links"><a href="/imprint.html">Imprint</a></p>
