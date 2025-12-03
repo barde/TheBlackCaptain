@@ -21,7 +21,7 @@ description: Meet the crew and characters aboard the Black Captain's ship
 ### The Black Captain
 <p class="character-role">Master and Commander</p>
 <p class="character-description">The Black Captain himself - a seafarer of wisdom and experience who always speaks of himself in the third person. He navigates not just oceans but the storms of life itself, finding meaning in stillness and teaching lessons through presence rather than proclamation. His treasured woolen hat has accompanied him through countless voyages. He understands the science of the mind, the patience of waiting, and the value of companionship without words. He carries a Tarot deck not for fortune-telling, but as a tool for reflection and accessing deeper wisdom.</p>
-<p class="character-appearances">Appears in: [The Beginning](/2025-11-18-the-beginning.html), [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html), [The Northern Station](/2025-11-20-northern-station.html), [The Double Ship](/2025-11-23-the-double-ship.html)</p>
+<p class="character-appearances">Appears in: [The Beginning](/2025-11-18-the-beginning.html), [The Voyage to Kamchatka](/2025-11-19-voyage-to-kamchatka.html), [The Northern Station](/2025-11-20-northern-station.html), [The Double Ship](/2025-11-23-the-double-ship.html), [Voyage to Greece](/2025-12-03-voyage-to-greece.html)</p>
 <p class="character-link">Learn more: [Tarot - The Cards of Wisdom](/treasure-trove/tarot.html)</p>
 
 </div>
@@ -99,7 +99,7 @@ description: Meet the crew and characters aboard the Black Captain's ship
 ### The Greek
 <p class="character-role">Able Seaman</p>
 <p class="character-description">A Cretan who introduces himself with the ancient paradox: "I am from Crete. All Cretans are liars." Whether philosopher or fraud, he knows knots older than history - including the mysterious "Knot of Minos" that his grandfather taught him. Sober, he is competent and quiet. Drunk, he transforms into a Homeric storyteller, regaling the crew with tales of romantic conquests across every Mediterranean port - women of all sizes, colors, and temperaments. When served real raki (the true Cretan tsikoudia without anise), he dances like Alexis Zorbas himself, channeling something ancient and sacred that words cannot express. Clean enough, trustworthy enough - though with a Cretan, one can never be entirely certain which truths are true.</p>
-<p class="character-appearances">Appears in: [The Greek Seaman](/2025-11-28-the-greek-seaman.html)</p>
+<p class="character-appearances">Appears in: [The Greek Seaman](/2025-11-28-the-greek-seaman.html), [Voyage to Greece](/2025-12-03-voyage-to-greece.html)</p>
 <p class="character-link">Learn more: [Zorba the Greek](/treasure-trove/zorba-the-greek.html)</p>
 
 </div>
@@ -162,6 +162,16 @@ description: Meet the crew and characters aboard the Black Captain's ship
 <p class="character-role">Station Revelers</p>
 <p class="character-description">Rough boys and their girls who gathered at a northern German train station, dancing to local traditional music with the particular energy of youth that hasn't yet learned that not all moments require filling. Their laughter echoed too loud, too bright against the grey November night, yet the Captain watched without judging.</p>
 <p class="character-appearances">Appears in: [The Northern Station](/2025-11-20-northern-station.html)</p>
+
+</div>
+
+<div class="character-card">
+
+### The Silent Passenger
+<p class="character-role">The Brother Who Saw</p>
+<p class="character-description">A man who appeared in Hamburg without luggage, without companions, without any markers of ordinary traveler - only dark clothes of no particular era and gold ingots bearing unknown symbols. He paid for an entire voyage to Thessaloniki, seeking to become an eremite on Mount Athos. His movements possessed supernatural precision; every blink seemed deliberate, every breath chosen. He taught the crew the story of Saint Athanasius who died and returned, choosing eternal silence because human tongue cannot articulate what lies beyond the veil. Whether he had practiced Zen or glimpsed God himself, none could say - but ordinary life had become impossible for him. He departed at Thessaloniki to begin as a novice at Simonopetra, dreaming of the hermit caves of Karoulia in twenty years' time. "Ask for the Brother Who Saw," he told them, and walked into the city, carrying nothing, leaving only a copy of the Kiev Caves Paterikon and the weight of his silence.</p>
+<p class="character-appearances">Appears in: [Voyage to Greece](/2025-12-03-voyage-to-greece.html)</p>
+<p class="character-link">Learn more: [The Kiev Caves Paterikon](/treasure-trove/kiev-caves-paterikon.html), [Thessaloniki](/treasure-trove/thessaloniki.html)</p>
 
 </div>
 </section>

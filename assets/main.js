@@ -439,19 +439,24 @@
 
   // Current site version - update this when publishing new content
   // Format: YYYYMMDD-N where N is the update number for that day
-  const CURRENT_VERSION = '20251201-2';
+  const CURRENT_VERSION = '20251203-1';
 
   // Changes since last version the user might have seen
   // Only include recent changes (last 1-2 versions)
   const RECENT_CHANGES = [
     {
-      title: 'The Healing Harbor',
-      url: '/2025-12-01-the-healing-harbor.html',
+      title: 'Voyage to Greece',
+      url: '/2025-12-03-voyage-to-greece.html',
       type: 'story'
     },
     {
-      title: 'CAB20 recommendation added',
-      url: '/others.html',
+      title: 'Thessaloniki - Gateway to the Holy Mountain',
+      url: '/treasure-trove/thessaloniki.html',
+      type: 'update'
+    },
+    {
+      title: 'The Kiev Caves Paterikon',
+      url: '/treasure-trove/kiev-caves-paterikon.html',
       type: 'update'
     },
     {
