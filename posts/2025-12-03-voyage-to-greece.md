@@ -1,10 +1,14 @@
 ---
-title: Captain Ship Spotted on Way to Greece
+title: The Voyage to Greece - Part I: The Silent Passenger
 date: December 3, 2025
 description: The Black Captain sets sail for Thessaloniki, carrying a strange passenger who pays in gold and silence - a man who seeks to become an eremite on the Holy Mountain, and who teaches the crew the terrible weight of seeing beyond the veil.
 ---
 
-# Captain Ship Spotted on Way to Greece
+# The Voyage to Greece - Part I: The Silent Passenger
+
+*This is Part I of a two-part tale. [Continue to Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html)*
+
+---
 
 The message came through the harbor telegraph, crackling with static and rumor: *Captain ship spotted on way to Greece.*
 
@@ -194,9 +198,15 @@ And the Captain, looking down at the ancient book in his hands, wondered what it
 
 ---
 
+*The story continues in [Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html), where the crew explores Thessaloniki, [the Russian](/pages/ships-crew.html#the-russian) circles the ancient Rotunda in prayer, and the Captain witnesses something that makes him question the solidity of the world itself.*
+
+---
+
 **Further Reading:**
 
+- [Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html)
 - [Thessaloniki: The Co-Reigning City](/treasure-trove/thessaloniki.html)
+- [The Rotunda of Thessaloniki](/treasure-trove/rotunda.html)
 - [The Kiev Caves Paterikon](/treasure-trove/kiev-caves-paterikon.html)
 - [Mount Athos - Wikipedia](https://en.wikipedia.org/wiki/Mount_Athos)
 - [How to Visit Mount Athos](https://mount-athos.org/en/travel-guide/getting-started)
