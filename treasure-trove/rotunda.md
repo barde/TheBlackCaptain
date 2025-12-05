@@ -104,7 +104,7 @@ This is what the Captain saw when his crew gathered near its walls: not merely a
 
 ---
 
-*The Captain's note: There are sailors who see only the surface of the sea, and sailors who sense the depths beneath. The Rotunda is such a place - its surface is stone, but its depths contain seventeen centuries of human yearning for the eternal. When [the Russian](/pages/ships-crew.html#the-russian) circled this building in prayer, he was walking the same stones that Galerius's guards once patrolled, that Byzantine deacons once swept, that Ottoman imams once crossed on their way to the mihrab. The same stones. Different gods. Or perhaps the same God, wearing different masks.*
+*The Captain's note: There are sailors who see only the surface of the sea, and sailors who sense the depths beneath. The Rotunda is such a place - its surface is stone, but its depths contain seventeen centuries of human yearning for the eternal. When [the Russian](/ships-crew.html#the-russian) circled this building in prayer, he was walking the same stones that Galerius's guards once patrolled, that Byzantine deacons once swept, that Ottoman imams once crossed on their way to the mihrab. The same stones. Different gods. Or perhaps the same God, wearing different masks.*
 
 ---
 

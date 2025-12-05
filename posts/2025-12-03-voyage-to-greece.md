@@ -6,7 +6,7 @@ description: The Black Captain sets sail for Thessaloniki, carrying a strange pa
 
 # The Voyage to Greece - Part I: The Silent Passenger
 
-*This is Part I of a two-part tale. [Continue to Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html)*
+*This is Part I of a two-part tale. [Continue to Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html)*
 
 ---
 
@@ -50,7 +50,7 @@ He ate little. He slept less. He spent hours standing at the rail, watching the 
 
 "But have you seen him move? Watch him sometime. It's like he's calculating every gesture."
 
-The Greek seaman - the Cretan who had joined them in [an earlier tale](/posts/2025-11-28-the-greek-seaman.html) - had a different observation. "He reminds me of the monks on Athos," he said. "The old ones. The ones who have been praying for so long they've forgotten how to do anything else. They move like that. Like they're already half in another world."
+The Greek seaman - the Cretan who had joined them in [an earlier tale](/2025-11-28-the-greek-seaman.html) - had a different observation. "He reminds me of the monks on Athos," he said. "The old ones. The ones who have been praying for so long they've forgotten how to do anything else. They move like that. Like they're already half in another world."
 
 ## The Lesson of Silence
 
@@ -198,13 +198,13 @@ And the Captain, looking down at the ancient book in his hands, wondered what it
 
 ---
 
-*The story continues in [Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html), where the crew explores Thessaloniki, [the Russian](/pages/ships-crew.html#the-russian) circles the ancient Rotunda in prayer, and the Captain witnesses something that makes him question the solidity of the world itself.*
+*The story continues in [Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html), where the crew explores Thessaloniki, [the Russian](/ships-crew.html#the-russian) circles the ancient Rotunda in prayer, and the Captain witnesses something that makes him question the solidity of the world itself.*
 
 ---
 
 **Further Reading:**
 
-- [Part II: The Vanishing Shore](/posts/2025-12-05-voyage-to-greece-part-2.html)
+- [Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html)
 - [Thessaloniki: The Co-Reigning City](/treasure-trove/thessaloniki.html)
 - [The Rotunda of Thessaloniki](/treasure-trove/rotunda.html)
 - [The Kiev Caves Paterikon](/treasure-trove/kiev-caves-paterikon.html)

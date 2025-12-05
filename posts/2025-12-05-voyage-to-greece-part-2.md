@@ -6,7 +6,7 @@ description: The crew explores Thessaloniki while The Russian disappears into ch
 
 # The Voyage to Greece - Part II: The Vanishing Shore
 
-*This is Part II of the Greek Voyage. [Read Part I: The Silent Passenger](/posts/2025-12-03-voyage-to-greece.html)*
+*This is Part II of the Greek Voyage. [Read Part I: The Silent Passenger](/2025-12-03-voyage-to-greece.html)*
 
 ---
 
@@ -28,7 +28,7 @@ The crew stood at the rail, taking in the city for the first time without the pr
 
 The Boatswain spat over the rail. "Old stones and dead kings. I've seen ports in every sea. They're all the same - men selling fish, women selling everything else, and priests selling salvation."
 
-"This one is different," [the Russian](/pages/ships-crew.html#the-russian) said quietly. His bald head gleamed in the grey December light, the scars of hard winters visible even from a distance. "I can feel it. There is holiness here. Old holiness. Deep as the sea."
+"This one is different," [the Russian](/ships-crew.html#the-russian) said quietly. His bald head gleamed in the grey December light, the scars of hard winters visible even from a distance. "I can feel it. There is holiness here. Old holiness. Deep as the sea."
 
 The crew exchanged glances. The Russian was not a man given to poetry. When he spoke of fighting bears or saving grandmothers from wolves, he spoke with the matter-of-fact tone of a man describing breakfast. But now his voice held something else - a hunger, perhaps, or a recognition.
 
@@ -196,8 +196,8 @@ And some coasts, once left behind, are never quite as solid as they seemed.
 
 **Further Reading:**
 
-- [Part I: The Silent Passenger](/posts/2025-12-03-voyage-to-greece.html)
+- [Part I: The Silent Passenger](/2025-12-03-voyage-to-greece.html)
 - [Thessaloniki: The Co-Reigning City](/treasure-trove/thessaloniki.html)
 - [The Rotunda of Thessaloniki](/treasure-trove/rotunda.html)
 - [The Kiev Caves Paterikon](/treasure-trove/kiev-caves-paterikon.html)
-- [The Ship's Crew](/pages/ships-crew.html)
+- [The Ship's Crew](/ships-crew.html)
