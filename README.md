@@ -1,13 +1,13 @@
 # The many travels of the Black Captain
 
-A simple, elegant blog built for healing through writing. Pure HTML/CSS/JS with automatic translation powered by Cloudflare Workers AI.
+A simple, elegant blog built for healing through writing. Pure HTML/CSS/JS with automatic translation powered by Google Cloud Translation API.
 
 ## Philosophy
 
 - **Write-focused**: Markdown files, no admin panel, no distractions
 - **Fast & Simple**: No frameworks, no build complexity, just static HTML
 - **Readable**: Typography and layout optimized for long-form reading
-- **Multilingual**: Automatic translation to any language via Cloudflare Workers AI
+- **Multilingual**: Automatic translation to 40+ languages via Google Cloud Translation API
 - **Resilient**: Static files that can't break, can't be hacked
 
 ## Project Structure
@@ -20,8 +20,8 @@ the-black-captain/
 ├── assets/
 │   ├── style.css        # Readable, minimal styling
 │   └── main.js          # Language toggle & translation
-├── workers/
-│   └── translator.js    # Cloudflare Worker for AI translation
+├── functions/
+│   └── api/translate.js # Cloudflare Pages Function for translation
 ├── public/              # Generated static files (created by build)
 ├── build.js             # Markdown → HTML converter
 ├── package.json         # Node.js config
@@ -73,7 +73,7 @@ Opens a local server at `http://localhost:8788`
 
 ### Prerequisites
 
-- Cloudflare account with Enterprise plan (for Workers AI)
+- Cloudflare account (free plan works!)
 - Domain connected to Cloudflare
 - `wrangler` CLI installed (included in dependencies)
 
@@ -82,13 +82,20 @@ Opens a local server at `http://localhost:8788`
 | Token | Purpose | Where to Create |
 |-------|---------|-----------------|
 | **CLOUDFLARE_ACCOUNT_ID** | Account identification | [Cloudflare Dashboard](https://dash.cloudflare.com) → Overview (right sidebar) |
-| **CLOUDFLARE_API_TOKEN** | Deployment & AI features | [API Tokens page](https://dash.cloudflare.com/profile/api-tokens) |
-| **GOOGLE_CLOUD_CREDENTIALS** | Translation API | [Google Cloud Console](https://console.cloud.google.com) |
+| **CLOUDFLARE_API_TOKEN** | Deployment | [API Tokens page](https://dash.cloudflare.com/profile/api-tokens) |
+| **GOOGLE_TRANSLATE_API_KEY** | Translation API | [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Credentials |
 
-**API Token Required Permissions:**
-- Workers AI - Read/Edit
+**Cloudflare API Token Required Permissions:**
 - Cloudflare Pages - Edit
 - Account Settings - Read
+
+**Google Cloud Translation API Setup:**
+1. Create project at [Google Cloud Console](https://console.cloud.google.com)
+2. Enable "Cloud Translation API" in APIs & Services → Library
+3. Create API Key in APIs & Services → Credentials
+4. Set as Cloudflare Pages secret: `pnpm wrangler pages secret put GOOGLE_TRANSLATE_API_KEY --project-name the-black-captain`
+
+**Free Tier:** 500,000 characters/month (never expires!) - [Pricing details](https://cloud.google.com/translate/pricing)
 
 ### GitHub Secrets (for automated workflows)
 
@@ -299,10 +306,10 @@ All content is in Git. Your markdown files are the source of truth.
 
 ## Costs
 
-With Cloudflare Enterprise:
+All on free tiers:
 - **Hosting**: Free (Cloudflare Pages)
-- **Workers AI**: Included in Enterprise plan
-- **KV Storage**: First 1GB free, then minimal
+- **Translation**: Free up to 500K chars/month ([Google Cloud Translation](https://cloud.google.com/translate/pricing))
+- **KV Storage**: First 1GB free
 - **Bandwidth**: Unlimited on Cloudflare
 
 ## Troubleshooting
@@ -320,10 +327,10 @@ npm run build
 
 ### Translation Not Working
 
-1. Check Worker is deployed: `npx wrangler deployments list`
-2. Verify route in Cloudflare Dashboard
-3. Check browser console for errors
-4. Ensure Workers AI is enabled (Enterprise plan)
+1. Check `GOOGLE_TRANSLATE_API_KEY` is set: `pnpm wrangler pages secret list --project-name the-black-captain`
+2. Verify API key is valid in [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+3. Ensure Cloud Translation API is enabled in your Google Cloud project
+4. Check browser console for errors (403 = origin blocked, 503 = API not configured)
 
 ### Local Development
 
@@ -334,14 +341,14 @@ cd public
 python -m http.server 8000
 ```
 
-Translation won't work locally (needs Cloudflare Workers AI).
+Translation won't work locally (needs Cloudflare Pages Functions with the API key secret).
 
 ## Tech Stack
 
 - **Frontend**: Vanilla HTML, CSS, JavaScript
 - **Build**: Node.js script (no webpack/vite)
 - **Hosting**: Cloudflare Pages
-- **Translation**: Cloudflare Workers AI (m2m100-1.2b model)
+- **Translation**: Google Cloud Translation API (v2) with 7-day caching
 - **Caching**: Cloudflare Workers KV
 - **CDN**: Cloudflare global network
 
