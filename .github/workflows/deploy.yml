@@ -1,15 +1,20 @@
 name: Deploy to Cloudflare Pages
 
 on:
-  push:
+  # Only deploy when PR is merged to master (not on direct push)
+  pull_request:
+    types: [closed]
     branches:
       - master
+  # Allow manual deployment
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to blackhoard.com
+    # Only run if PR was merged (not just closed)
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.merged == true)
 
     steps:
       - name: Checkout
@@ -34,11 +39,8 @@ jobs:
       - name: Strip EXIF data from images
         run: |
           echo "🔒 Removing EXIF metadata from images for privacy..."
-          # Install exiftool for comprehensive metadata removal
           sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
-          # Strip all metadata from images in the public directory
           find public -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
-          # Also strip from source images directory
           find images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
           echo "✓ EXIF data removed"
 
@@ -49,67 +51,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name=the-black-captain --branch=master --commit-dirty=true
 
-      - name: Add custom domain (if needed)
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          # Add custom domain via API
-          DOMAIN="blackhoard.com"
-          PROJECT_NAME="the-black-captain"
-          ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID}"
-          API_TOKEN="${CLOUDFLARE_API_TOKEN}"
-          PAGES_TARGET="the-black-captain.pages.dev"
-
-          echo "🌐 Checking/Adding custom domain..."
-
-          # Get Zone ID
-          ZONE_RESPONSE=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
-            -H "Authorization: Bearer $API_TOKEN" \
-            -H "Content-Type: application/json")
-
-          ZONE_ID=$(echo "$ZONE_RESPONSE" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
-
-          if [ -z "$ZONE_ID" ]; then
-            echo "❌ Could not find zone for $DOMAIN"
-            exit 0  # Don't fail the build
-          fi
-
-          echo "✓ Zone ID: $ZONE_ID"
-
-          # Add/Update CNAME DNS Record
-          echo "Adding CNAME record..."
-          DNS_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
-            -H "Authorization: Bearer $API_TOKEN" \
-            -H "Content-Type: application/json" \
-            --data "{\"type\":\"CNAME\",\"name\":\"@\",\"content\":\"$PAGES_TARGET\",\"ttl\":1,\"proxied\":true}")
-
-          if echo "$DNS_RESPONSE" | grep -q '"success":true'; then
-            echo "✓ CNAME record created"
-          elif echo "$DNS_RESPONSE" | grep -q "already exists"; then
-            echo "✓ CNAME already exists"
-          else
-            echo "⚠ DNS record response: $DNS_RESPONSE"
-          fi
-
-          # Add Custom Domain to Pages
-          echo "Adding custom domain to Pages..."
-          PAGES_RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/pages/projects/$PROJECT_NAME/domains" \
-            -H "Authorization: Bearer $API_TOKEN" \
-            -H "Content-Type: application/json" \
-            --data "{\"name\":\"$DOMAIN\"}")
-
-          if echo "$PAGES_RESPONSE" | grep -q '"success":true'; then
-            echo "✓ Custom domain added"
-          elif echo "$PAGES_RESPONSE" | grep -q "already exists"; then
-            echo "✓ Domain already configured"
-          else
-            echo "⚠ Pages response: $PAGES_RESPONSE"
-          fi
-
-          echo "✅ Domain setup complete!"
-
-      - name: Wait for DNS propagation
+      - name: Wait for deployment
         run: sleep 10
 
       - name: Install Playwright browsers
@@ -127,3 +69,10 @@ jobs:
           path: deployment-test-screenshot.png
           if-no-files-found: ignore
 
+      - name: Post deployment summary
+        run: |
+          echo "## 🏴‍☠️ Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Production URL:** https://blackhoard.com" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployed from PR:** #${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }}" >> $GITHUB_STEP_SUMMARY
