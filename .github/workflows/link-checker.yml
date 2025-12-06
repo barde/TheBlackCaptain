@@ -1,0 +1,136 @@
+name: Check Broken Links
+
+on:
+  # Run after deployments
+  workflow_run:
+    workflows: ["Deploy to Cloudflare Pages"]
+    types:
+      - completed
+  # Run daily at 6 AM UTC
+  schedule:
+    - cron: '0 6 * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    name: Check for broken links
+    # Only run if deployment was successful (or manual/scheduled trigger)
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name != 'workflow_run' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create lychee config
+        run: |
+          cat > lychee.toml << 'EOF'
+          # Lychee Configuration for The Black Captain
+
+          # Skip external links that often block automated checkers
+          exclude = [
+            "^https://www.facebook.com",
+            "^https://twitter.com",
+            "^https://x.com",
+            "^https://linkedin.com",
+            "^https://www.linkedin.com",
+            "^https://instagram.com",
+            "^https://www.instagram.com",
+            # Some academic sites block bots
+            "^https://www.jstor.org",
+            "^https://doi.org",
+            # Xeno-canto embeds don't respond to HEAD requests
+            "^https://xeno-canto.org/.*/embed",
+          ]
+
+          # Accept these status codes as valid
+          accept = [200, 204, 206, 301, 302, 307, 308]
+
+          # Set a reasonable timeout
+          timeout = 30
+
+          # Set max retries
+          max_retries = 3
+
+          # Don't check mail addresses
+          include_mail = false
+
+          # User agent to avoid blocks
+          user_agent = "Mozilla/5.0 (compatible; BlackCaptainLinkChecker/1.0; +https://blackhoard.com)"
+
+          # Max concurrent requests
+          max_concurrency = 8
+          EOF
+
+      - name: Check links in source files
+        id: lychee-source
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            --verbose
+            --no-progress
+            "posts/*.md"
+            "pages/*.md"
+            "treasure-trove/*.md"
+            "avian-studies/*.md"
+          output: ./lychee-report.md
+          fail: false
+
+      - name: Check live site links
+        id: lychee-live
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            --verbose
+            --no-progress
+            --base https://blackhoard.com
+            "https://blackhoard.com"
+          output: ./lychee-live-report.md
+          fail: false
+
+      - name: Combine reports
+        run: |
+          echo "# Link Check Report - $(date -u '+%Y-%m-%d %H:%M UTC')" > combined-report.md
+          echo "" >> combined-report.md
+          echo "## Source Files Check" >> combined-report.md
+          cat lychee-report.md >> combined-report.md
+          echo "" >> combined-report.md
+          echo "## Live Site Check" >> combined-report.md
+          cat lychee-live-report.md >> combined-report.md
+
+      - name: Create issue if broken links found
+        if: steps.lychee-source.outputs.exit_code != 0 || steps.lychee-live.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Broken Links Detected - $(date -u '+%Y-%m-%d')"
+          content-filepath: ./combined-report.md
+          labels: |
+            broken-links
+            automated
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: |
+            lychee-report.md
+            lychee-live-report.md
+            combined-report.md
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Summary
+        run: |
+          echo "## Link Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.lychee-source.outputs.exit_code }}" == "0" ] && [ "${{ steps.lychee-live.outputs.exit_code }}" == "0" ]; then
+            echo "All links are healthy! The ship's navigation is sound." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Some broken links were detected. Check the artifacts for details." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            cat combined-report.md >> $GITHUB_STEP_SUMMARY
+          fi
