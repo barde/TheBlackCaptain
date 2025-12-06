@@ -2,7 +2,7 @@
 set -e
 
 REPO="barde/TheBlackCaptain"
-ACCOUNT_ID="YOUR_CLOUDFLARE_ACCOUNT_ID"
+ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:?Error: CLOUDFLARE_ACCOUNT_ID not set}"
 
 echo "🔐 GitHub Secrets Setup for Cloudflare Pages Deployment"
 echo "========================================================"

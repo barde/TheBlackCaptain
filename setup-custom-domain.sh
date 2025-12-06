@@ -15,7 +15,7 @@ print_warning() { echo -e "${YELLOW}⚠${NC} $1"; }
 
 DOMAIN="blackhoard.com"
 PROJECT_NAME="the-black-captain"
-ACCOUNT_ID="YOUR_CLOUDFLARE_ACCOUNT_ID"
+ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:?Error: CLOUDFLARE_ACCOUNT_ID not set}"
 
 echo -e "${BLUE}🌐 Setting up custom domain: $DOMAIN${NC}"
 echo ""

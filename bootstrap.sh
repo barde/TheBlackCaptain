@@ -19,7 +19,7 @@ print_warning() { echo -e "${YELLOW}⚠${NC} $1"; }
 DOMAIN="blackhoard.com"
 PROJECT_NAME="the-black-captain"
 REPO="barde/TheBlackCaptain"
-ACCOUNT_ID="YOUR_CLOUDFLARE_ACCOUNT_ID"
+ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:?Error: CLOUDFLARE_ACCOUNT_ID not set}"
 PAGES_TARGET="the-black-captain.pages.dev"
 
 clear

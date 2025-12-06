@@ -1,0 +1,16 @@
+# The Black Captain - Cloudflare Pages Configuration
+# Copy this file to wrangler.toml and update with your values
+name = "the-black-captain"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "public"
+
+# AI Binding for translation (requires Cloudflare Workers AI)
+[ai]
+binding = "AI"
+
+# KV Namespace for translation cache
+# Create with: pnpm wrangler kv:namespace create "TRANSLATIONS_KV"
+# Then paste the ID below
+[[kv_namespaces]]
+binding = "TRANSLATIONS_KV"
+id = "YOUR_KV_NAMESPACE_ID_HERE"

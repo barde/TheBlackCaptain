@@ -40,23 +40,57 @@ When the Captain provides corrections after an implementation, understand this p
 
 This is not failure—it's collaborative creation. The Captain often knows the *feeling* he wants before knowing the exact implementation. Our job is to translate vision into code through iteration.
 
-### Deployment Ritual
+### Git Workflow: Branches and Pull Requests
 
-After EVERY content or feature change:
+**IMPORTANT**: This project uses a professional PR-based workflow. Direct pushes to `master` are discouraged.
+
+#### Standard Development Flow
+
 ```bash
-git add -A && git commit -m "Description" && git push && pnpm run deploy
+# 1. Create a feature branch
+git checkout -b feature/my-new-story
+
+# 2. Make changes and commit
+git add -A && git commit -m "Add new story about the northern lights"
+
+# 3. Push branch and create PR
+git push -u origin feature/my-new-story
+gh pr create --title "Add northern lights story" --body "Description of changes"
+
+# 4. Preview URL automatically appears in PR comments
+# 5. Merge PR when ready → Production deploys automatically
 ```
-No exceptions. The seas wait for no one, and readers deserve fresh content.
+
+#### What Happens Automatically
+
+| Event | Action |
+|-------|--------|
+| PR opened/updated | Build + preview deploy to `{branch}.the-black-captain.pages.dev` |
+| PR merged to master | Production deploy to blackhoard.com |
+| Daily at 6 AM UTC | Link checker runs |
+
+#### Manual Deployment (Emergency Only)
+
+If needed, trigger manual deployment via GitHub Actions:
+```bash
+gh workflow run "Deploy to Cloudflare Pages"
+```
+
+Or use the local deploy script:
+```bash
+pnpm run deploy
+```
 
 ---
+
+### Technical Configuration
 
 - Always use command line tools for accessing Github and Cloudflare, i.e. 'gh' and 'wrangler'.
 - Use pnpm as the package manager for this project (not npm or yarn).
 - The project has a single production instance on Cloudflare Pages named "the-black-captain".
 - Production domain: **blackhoard.com** (The Black Hoard - treasure of wisdom and knowledge)
-- To deploy: Run `pnpm run deploy` - this is self-contained and only requires a logged-in wrangler CLI.
+- Preview branches deploy to `{branch}.the-black-captain.pages.dev`
 - The deploy script automatically builds, deploys to production, and opens the URL in the browser.
-- There are no test, staging, or preview instances - only the production deployment on the master branch.
 
 ## Automated Bootstrap Setup
 - **ZERO manual steps after initial token creation!**

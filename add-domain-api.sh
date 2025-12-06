@@ -3,7 +3,7 @@ set -e
 
 DOMAIN="blackhoard.com"
 PROJECT_NAME="the-black-captain"
-ACCOUNT_ID="YOUR_CLOUDFLARE_ACCOUNT_ID"
+ACCOUNT_ID="${CLOUDFLARE_ACCOUNT_ID:?Error: CLOUDFLARE_ACCOUNT_ID not set}"
 PAGES_TARGET="the-black-captain.pages.dev"
 
 echo "🌐 Adding custom domain to Cloudflare Pages via API"
