@@ -31,6 +31,17 @@ jobs:
       - name: Build site
         run: pnpm run build
 
+      - name: Strip EXIF data from images
+        run: |
+          echo "🔒 Removing EXIF metadata from images for privacy..."
+          # Install exiftool for comprehensive metadata removal
+          sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
+          # Strip all metadata from images in the public directory
+          find public -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
+          # Also strip from source images directory
+          find images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
+          echo "✓ EXIF data removed"
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
