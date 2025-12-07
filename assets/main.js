@@ -439,14 +439,14 @@
 
   // Current site version - update this when publishing new content
   // Format: YYYYMMDD-N where N is the update number for that day
-  const CURRENT_VERSION = '20251203-1';
+  const CURRENT_VERSION = '20251207-1';
 
   // Changes since last version the user might have seen
   // Only include recent changes (last 1-2 versions)
   const RECENT_CHANGES = [
     {
-      title: 'Voyage to Greece',
-      url: '/2025-12-03-voyage-to-greece.html',
+      title: 'The Sinner Magnet (Greece Part III)',
+      url: '/2025-12-07-the-sinner-magnet.html',
       type: 'story'
     },
     {

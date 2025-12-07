@@ -10,7 +10,7 @@ binding = "AI"
 # KV namespace for caching translations
 [[kv_namespaces]]
 binding = "TRANSLATIONS_KV"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "a8b8ae235e294b84804a7cb306f3628f"
 
 # Environment variables
 [vars]
