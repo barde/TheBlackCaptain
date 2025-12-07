@@ -6,7 +6,7 @@ description: The Rotunda of Galerius - a building that has served as Roman mauso
 
 ## A Circle That Contains All Time
 
-In the heart of Thessaloniki stands a building that defies simple classification. The [Rotunda](https://en.wikipedia.org/wiki/Rotunda_(Thessaloniki)) (*Ροτόντα*) is a massive cylindrical structure, 30 meters in diameter and 30 meters tall, with walls 6 meters thick at the base. It has stood for over 1,700 years - and in that time, it has served nearly every purpose a sacred building can serve.
+In the heart of Thessaloniki stands a building that defies simple classification. The [Rotunda](https://en.wikipedia.org/wiki/Rotunda_%28Thessaloniki%29) (*Ροτόντα*) is a massive cylindrical structure, 30 meters in diameter and 30 meters tall, with walls 6 meters thick at the base. It has stood for over 1,700 years - and in that time, it has served nearly every purpose a sacred building can serve.
 
 Roman mausoleum. Christian church. Ottoman mosque. UNESCO World Heritage Site. The Rotunda is all of these things and something more: a physical record of how empires rise, fall, and transform into one another.
 
@@ -118,6 +118,6 @@ This is what the Captain saw when his crew gathered near its walls: not merely a
 ---
 
 **Further Reading:**
-- [The Rotunda - Wikipedia](https://en.wikipedia.org/wiki/Rotunda_(Thessaloniki))
+- [The Rotunda - Wikipedia](https://en.wikipedia.org/wiki/Rotunda_%28Thessaloniki%29)
 - [UNESCO World Heritage: Paleochristian and Byzantine Monuments of Thessaloniki](https://whc.unesco.org/en/list/456)
 - [Thessaloniki: The Co-Reigning City](/treasure-trove/thessaloniki.html)

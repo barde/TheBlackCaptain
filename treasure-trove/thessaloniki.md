@@ -62,7 +62,7 @@ Modern militaries continue to employ variants of this tactic. In the Gulf War of
 
 ### The Conquest
 
-With these tools - the phalanx, the cavalry, the tactical genius - Alexander conquered the known world in thirteen years. He defeated the Greeks who had mocked his "barbarian" kingdom at [Chaeronea](https://en.wikipedia.org/wiki/Battle_of_Chaeronea_(338_BC)) in 338 BCE. He crossed into Asia in 334 BCE and never returned.
+With these tools - the phalanx, the cavalry, the tactical genius - Alexander conquered the known world in thirteen years. He defeated the Greeks who had mocked his "barbarian" kingdom at [Chaeronea](https://en.wikipedia.org/wiki/Battle_of_Chaeronea_%28338_BC%29) in 338 BCE. He crossed into Asia in 334 BCE and never returned.
 
 By the time he died in Babylon in 323 BCE, aged thirty-two, his empire stretched from Greece to India, from Egypt to Central Asia. The Greeks who had called his father a semi-barbarian now ruled from Alexandria to Bactria.
 
