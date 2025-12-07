@@ -37,7 +37,23 @@ function markdownToHTML(markdown, options = {}) {
   // h1 (main title)
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
-  // Bold and italic
+  // Protect links and images by extracting them before emphasis processing
+  const protectedElements = [];
+  const placeholder = '%%PROTECTED%%';
+
+  // Extract images first (must come before links since ![]() contains []())
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+    protectedElements.push(`<img src="${src}" alt="${alt}" loading="lazy">`);
+    return placeholder + (protectedElements.length - 1) + placeholder;
+  });
+
+  // Extract links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, href) => {
+    protectedElements.push(`<a href="${href}">${text}</a>`);
+    return placeholder + (protectedElements.length - 1) + placeholder;
+  });
+
+  // Bold and italic (now safe since links/images are protected)
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
@@ -45,11 +61,10 @@ function markdownToHTML(markdown, options = {}) {
   html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
   html = html.replace(/_(.+?)_/g, '<em>$1</em>');
 
-  // Images (must come BEFORE links since ![]() contains []())
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
-
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  // Restore protected elements
+  html = html.replace(new RegExp(placeholder + '(\\d+)' + placeholder, 'g'), (match, index) => {
+    return protectedElements[parseInt(index, 10)];
+  });
 
   // Line breaks and paragraphs
   html = html.replace(/\n\n/g, '</p><p>');

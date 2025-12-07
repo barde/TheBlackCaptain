@@ -485,3 +485,4 @@ const RECENT_CHANGES = [
 - Only localStorage (stays on user's device)
 - No tracking or analytics
 - User can clear localStorage to see notification again
+- Always create new branches and merge them into master so the deployment runs through CI/CD.
