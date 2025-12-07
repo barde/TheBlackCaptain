@@ -10,4 +10,4 @@ binding = "AI"
 # KV Namespace for translation cache
 [[kv_namespaces]]
 binding = "TRANSLATIONS_KV"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "a8b8ae235e294b84804a7cb306f3628f"
