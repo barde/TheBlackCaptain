@@ -439,25 +439,20 @@
 
   // Current site version - update this when publishing new content
   // Format: YYYYMMDD-N where N is the update number for that day
-  const CURRENT_VERSION = '20251207-1';
+  const CURRENT_VERSION = '20251209-1';
 
   // Changes since last version the user might have seen
   // Only include recent changes (last 1-2 versions)
   const RECENT_CHANGES = [
     {
-      title: 'The Sinner Magnet (Greece Part III)',
-      url: '/2025-12-07-the-sinner-magnet.html',
+      title: 'Icons Everywhere (Greece Part IV)',
+      url: '/2025-12-09-icons-everywhere.html',
       type: 'story'
     },
     {
-      title: 'Thessaloniki - Gateway to the Holy Mountain',
-      url: '/treasure-trove/thessaloniki.html',
-      type: 'update'
-    },
-    {
-      title: 'The Kiev Caves Paterikon',
-      url: '/treasure-trove/kiev-caves-paterikon.html',
-      type: 'update'
+      title: 'The Sinner Magnet (Greece Part III)',
+      url: '/2025-12-07-the-sinner-magnet.html',
+      type: 'story'
     },
     {
       title: 'Mallard (Anas platyrhynchos)',

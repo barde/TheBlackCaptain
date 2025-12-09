@@ -6,7 +6,7 @@ description: A mysterious package arrives from the Holy Mountain, containing str
 
 # The Voyage to Greece - Part III: The Sinner Magnet
 
-*This is Part III of the Greek Voyage. [Read Part I: The Silent Passenger](/2025-12-03-voyage-to-greece.html) | [Read Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html)*
+*This is Part III of the Greek Voyage. [Read Part I: The Silent Passenger](/2025-12-03-voyage-to-greece.html) | [Read Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html) | [Read Part IV: Icons Everywhere](/2025-12-09-icons-everywhere.html)*
 
 ---
 
@@ -153,6 +153,7 @@ The incense burned. The prayer rope waited. And somewhere on the Holy Mountain, 
 
 - [Part I: The Silent Passenger](/2025-12-03-voyage-to-greece.html)
 - [Part II: The Vanishing Shore](/2025-12-05-voyage-to-greece-part-2.html)
+- [Part IV: Icons Everywhere](/2025-12-09-icons-everywhere.html)
 - [Thessaloniki: The Co-Reigning City](/treasure-trove/thessaloniki.html)
 - [The Kiev Caves Paterikon](/treasure-trove/kiev-caves-paterikon.html)
 - [Mount Athos - OrthodoxWiki](https://orthodoxwiki.org/Mount_Athos)
