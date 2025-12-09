@@ -21,6 +21,19 @@ function markdownToHTML(markdown, options = {}) {
   // Extract headings for TOC before conversion
   const headings = extractHeadings(markdown);
 
+  // Process footnotes
+  // 1. Extract footnote definitions [^N]: text (multiline support)
+  const footnoteDefinitions = {};
+  html = html.replace(/^\[\^(\d+)\]:\s*(.+?)(?=\n\[\^|\n\n|\n---|\n$|$)/gms, (match, num, content) => {
+    footnoteDefinitions[num] = content.trim();
+    return ''; // Remove from main content
+  });
+
+  // 2. Replace footnote references [^N] with superscript links
+  html = html.replace(/\[\^(\d+)\]/g, (match, num) => {
+    return `<sup class="footnote-ref"><a href="#fn-${num}" id="fnref-${num}">[${num}]</a></sup>`;
+  });
+
   // Headers with IDs for TOC linking (must be in reverse order: h4, h3, h2, h1)
   html = html.replace(/^#### (.+)$/gim, (match, text) => {
     const id = slugify(text);
@@ -95,6 +108,33 @@ function markdownToHTML(markdown, options = {}) {
   if (includeTOC && headings.length >= minTocHeadings) {
     const toc = generateTOC(headings, minTocHeadings);
     html = toc + html;
+  }
+
+  // 3. Generate footnotes section if there are any footnote definitions
+  const footnoteNumbers = Object.keys(footnoteDefinitions).sort((a, b) => parseInt(a) - parseInt(b));
+  if (footnoteNumbers.length > 0) {
+    let footnotesHtml = '<section class="footnotes" aria-label="Footnotes">\n';
+    footnotesHtml += '<hr class="footnotes-separator">\n';
+    footnotesHtml += '<ol class="footnotes-list">\n';
+
+    for (const num of footnoteNumbers) {
+      let footnoteContent = footnoteDefinitions[num];
+      // Process links in footnote content
+      footnoteContent = footnoteContent.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+      // Process bold/italic in footnote content
+      footnoteContent = footnoteContent.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      footnoteContent = footnoteContent.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      footnoteContent = footnoteContent.replace(/_(.+?)_/g, '<em>$1</em>');
+
+      footnotesHtml += `<li id="fn-${num}" class="footnote-item">\n`;
+      footnotesHtml += `<p>${footnoteContent} <a href="#fnref-${num}" class="footnote-backref" aria-label="Back to reference ${num}">↩</a></p>\n`;
+      footnotesHtml += `</li>\n`;
+    }
+
+    footnotesHtml += '</ol>\n';
+    footnotesHtml += '</section>\n';
+
+    html += footnotesHtml;
   }
 
   return html;
