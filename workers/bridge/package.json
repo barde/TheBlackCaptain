@@ -1,0 +1,22 @@
+{
+  "name": "captain-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Captain's Bridge - Web-based editor for The Black Captain blog",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute captain-bridge-db --file=schema.sql",
+    "db:init:local": "wrangler d1 execute captain-bridge-db --local --file=schema.sql",
+    "setup:code": "node scripts/generate-setup-code.js"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^12.0.0",
+    "@anthropic-ai/sdk": "^0.35.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.49.0"
+  }
+}
