@@ -32,3 +32,7 @@ RP_ORIGIN = "https://bridge.blackhoard.com"
 [[routes]]
 pattern = "bridge.blackhoard.com"
 custom_domain = true
+
+# Scheduled publishing - check for due articles every 5 minutes
+[triggers]
+crons = ["*/5 * * * *"]

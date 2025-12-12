@@ -140,6 +140,29 @@ function generateMarkdown(article: Article): string {
 }
 
 /**
+ * Trigger deployment (exported for use by scheduled handler)
+ */
+export async function triggerDeployment(env: Env): Promise<Response> {
+  // Get all published articles
+  const result = await env.DB.prepare(
+    'SELECT * FROM articles WHERE status = ? ORDER BY type, created_at DESC'
+  ).bind('published').all<Article>();
+
+  const articles = result.results || [];
+
+  // Generate markdown files content
+  const files: Record<string, string> = {};
+
+  for (const article of articles) {
+    const path = getArticlePath(article);
+    const markdown = generateMarkdown(article);
+    files[path] = markdown;
+  }
+
+  return triggerGitHubWorkflow(env, files);
+}
+
+/**
  * Trigger GitHub Actions workflow to update files and deploy
  */
 async function triggerGitHubWorkflow(

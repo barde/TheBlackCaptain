@@ -218,7 +218,7 @@ async function updateArticle(slug: string, request: Request, env: Env): Promise<
 
   // Build update query dynamically
   const updates: string[] = [];
-  const values: (string | null)[] = [];
+  const values: (string | number | null)[] = [];
 
   if (body.title !== undefined) {
     updates.push('title = ?');

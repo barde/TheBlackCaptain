@@ -6,7 +6,7 @@
 import { handleAuth } from './auth/webauthn';
 import { handleArticles } from './api/articles';
 import { handleAI } from './api/ai';
-import { handleDeploy } from './api/deploy';
+import { handleDeploy, triggerDeployment } from './api/deploy';
 import { getSession } from './auth/session';
 import { loginPage, editorPage, setupPage } from './ui/pages';
 
@@ -21,6 +21,49 @@ export interface Env {
 }
 
 export default {
+  /**
+   * Scheduled handler for auto-publishing due articles
+   * Runs every 5 minutes via cron trigger
+   */
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
+    const now = Math.floor(Date.now() / 1000);
+
+    // Find articles due for publishing
+    const result = await env.DB.prepare(`
+      SELECT id, slug, title FROM articles
+      WHERE status = 'scheduled' AND publish_at <= ?
+    `).bind(now).all<{ id: string; slug: string; title: string }>();
+
+    const dueArticles = result.results || [];
+
+    if (dueArticles.length === 0) {
+      console.log('[Scheduled] No articles due for publishing');
+      return;
+    }
+
+    console.log(`[Scheduled] Publishing ${dueArticles.length} articles:`, dueArticles.map(a => a.slug));
+
+    // Update status to published for all due articles
+    for (const article of dueArticles) {
+      await env.DB.prepare(`
+        UPDATE articles
+        SET status = 'published', updated_at = unixepoch()
+        WHERE id = ?
+      `).bind(article.id).run();
+    }
+
+    // Trigger deployment to publish the changes
+    ctx.waitUntil(triggerDeployment(env).then(response => {
+      if (response.ok) {
+        console.log('[Scheduled] Deployment triggered successfully');
+      } else {
+        console.error('[Scheduled] Deployment trigger failed:', response.status);
+      }
+    }).catch(error => {
+      console.error('[Scheduled] Deployment error:', error);
+    }));
+  },
+
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const path = url.pathname;

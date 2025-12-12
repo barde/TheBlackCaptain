@@ -486,3 +486,324 @@ const RECENT_CHANGES = [
 - No tracking or analytics
 - User can clear localStorage to see notification again
 - Always create new branches and merge them into master so the deployment runs through CI/CD.
+
+---
+
+## Captain's Bridge - Publishing Platform
+
+The Captain's Bridge (`workers/bridge/`) is a web-based CMS for The Black Captain, built on Cloudflare Workers with D1 database.
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     Captain's Bridge                            │
+│                  bridge.blackhoard.com                          │
+├─────────────────────────────────────────────────────────────────┤
+│  Cloudflare Worker                                              │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │   Auth      │  │  Articles   │  │    AI       │             │
+│  │  (WebAuthn) │  │   (CRUD)    │  │ (Claude)    │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+│         │                │                │                     │
+│         ▼                ▼                ▼                     │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                    D1 Database                          │   │
+│  │  users | credentials | articles | setup_codes           │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│         │                                                       │
+│         ▼                                                       │
+│  ┌─────────────┐                    ┌─────────────────────┐    │
+│  │  KV Store   │                    │  GitHub Actions     │    │
+│  │  (Sessions) │                    │  (Deploy Trigger)   │    │
+│  └─────────────┘                    └─────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Technology Stack:**
+- **Runtime**: Cloudflare Workers (TypeScript)
+- **Database**: Cloudflare D1 (SQLite-compatible)
+- **Sessions**: Cloudflare KV
+- **Auth**: WebAuthn/Passkeys (SimpleWebAuthn)
+- **AI**: Claude API with streaming
+- **Testing**: Vitest with `@cloudflare/vitest-pool-workers`
+
+### Development Workflow
+
+```bash
+# Navigate to Bridge directory
+cd workers/bridge
+
+# Install dependencies
+pnpm install
+
+# Run tests (required before pushing)
+pnpm test
+
+# Start local development
+pnpm run dev
+
+# Deploy to production
+pnpm run deploy
+```
+
+### Testing Strategy
+
+**All tests MUST pass before merging to master.** The Bridge uses Vitest with Cloudflare's Workers pool for realistic runtime testing.
+
+#### Test Categories
+
+1. **Unit Tests** (`*.test.ts`)
+   - Individual functions and utilities
+   - Slug generation, markdown parsing, etc.
+
+2. **API Tests** (`*.api.test.ts`)
+   - Full request/response cycle testing
+   - Uses `SELF` binding to test the Worker directly
+   - Auth flow, CRUD operations, deploy triggers
+
+3. **Integration Tests** (`*.integration.test.ts`)
+   - Cross-module functionality
+   - Scheduled publishing, database migrations
+
+#### Running Tests
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Run specific test file
+pnpm test articles.test.ts
+
+# Run with coverage
+pnpm test:coverage
+```
+
+#### Writing Tests
+
+```typescript
+import { env, SELF } from 'cloudflare:test';
+import { describe, it, expect, beforeEach } from 'vitest';
+
+describe('Articles API', () => {
+  beforeEach(async () => {
+    // Reset database state
+    await env.DB.exec('DELETE FROM articles');
+  });
+
+  it('creates a new article', async () => {
+    const response = await SELF.fetch('https://bridge.blackhoard.com/api/articles', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: 'Test Article',
+        type: 'post',
+        content: '# Hello World'
+      })
+    });
+
+    expect(response.status).toBe(201);
+    const data = await response.json();
+    expect(data.title).toBe('Test Article');
+  });
+});
+```
+
+### Scheduled Publishing
+
+The Bridge supports scheduled articles that auto-publish at a specified time.
+
+#### How It Works
+
+1. **Article Status**: `draft` | `published` | `scheduled`
+2. **Publish Timestamp**: `publish_at` (Unix timestamp) for scheduled articles
+3. **Cron Trigger**: Runs every 5 minutes to check for due articles
+4. **Auto-Publish**: Updates status to `published` and triggers deployment
+
+#### Cron Configuration
+
+```toml
+# In wrangler.toml
+[triggers]
+crons = ["*/5 * * * *"]  # Every 5 minutes
+```
+
+#### Scheduled Handler
+
+```typescript
+export default {
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
+    const now = Math.floor(Date.now() / 1000);
+
+    // Find articles due for publishing
+    const { results } = await env.DB.prepare(`
+      SELECT * FROM articles
+      WHERE status = 'scheduled' AND publish_at <= ?
+    `).bind(now).all();
+
+    if (results.length > 0) {
+      // Update status to published
+      for (const article of results) {
+        await env.DB.prepare(`
+          UPDATE articles SET status = 'published', updated_at = unixepoch()
+          WHERE id = ?
+        `).bind(article.id).run();
+      }
+
+      // Trigger deployment
+      ctx.waitUntil(triggerDeployment(env));
+    }
+  }
+};
+```
+
+### CI/CD Integration
+
+#### GitHub Actions Workflow (`bridge-ci.yml`)
+
+Tests run automatically on:
+- Every push to `feature/*` branches touching `workers/bridge/**`
+- Every PR to `master` touching `workers/bridge/**`
+- Manual trigger via workflow_dispatch
+
+```yaml
+name: Bridge CI
+
+on:
+  push:
+    branches: ['feature/*']
+    paths: ['workers/bridge/**']
+  pull_request:
+    branches: [master]
+    paths: ['workers/bridge/**']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: workers/bridge
+
+      - name: Run tests
+        run: pnpm test
+        working-directory: workers/bridge
+
+      - name: Type check
+        run: pnpm run typecheck
+        working-directory: workers/bridge
+```
+
+### API Reference
+
+#### Authentication
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/auth/register/options` | POST | Get WebAuthn registration options |
+| `/api/auth/register/verify` | POST | Verify registration and create credential |
+| `/api/auth/login/options` | POST | Get WebAuthn authentication options |
+| `/api/auth/login/verify` | POST | Verify authentication and create session |
+| `/api/auth/logout` | POST | Destroy session |
+
+#### Articles
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/articles` | GET | List all articles (filter: `?type=post&status=published`) |
+| `/api/articles` | POST | Create new article |
+| `/api/articles/:slug` | GET | Get single article |
+| `/api/articles/:slug` | PUT | Update article |
+| `/api/articles/:slug` | DELETE | Delete article |
+
+#### AI
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/ai/enhance` | POST | Enhance content with Claude (SSE stream) |
+| `/api/ai/research` | POST | Research topic with web search (SSE stream) |
+
+#### Deployment
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/deploy` | POST | Trigger site deployment |
+
+### Error Handling
+
+All API errors return JSON with consistent structure:
+
+```json
+{
+  "error": "Human-readable error message",
+  "code": "ERROR_CODE",
+  "details": {}  // Optional additional context
+}
+```
+
+**HTTP Status Codes:**
+- `400` - Bad Request (validation errors)
+- `401` - Unauthorized (missing/invalid session)
+- `404` - Not Found (resource doesn't exist)
+- `409` - Conflict (duplicate slug)
+- `500` - Internal Server Error
+
+### Security Considerations
+
+1. **Authentication**: Passkey-only (no passwords)
+2. **Sessions**: Cryptographically random IDs, 24-hour TTL
+3. **CORS**: Strict origin checking
+4. **Input Validation**: All user input sanitized
+5. **SQL Injection**: Parameterized queries only
+6. **XSS Prevention**: Content sanitized before rendering
+
+### Local Development with Remote Bindings
+
+For testing with production data:
+
+```bash
+# Use remote D1 database
+wrangler dev --remote
+
+# Test scheduled handler
+wrangler dev --test-scheduled
+# Then visit: http://localhost:8787/__scheduled
+```
+
+### Deployment Checklist
+
+Before deploying Bridge changes:
+
+- [ ] All tests pass (`pnpm test`)
+- [ ] TypeScript compiles (`pnpm run typecheck`)
+- [ ] Tested locally with `wrangler dev`
+- [ ] Database migrations applied (if any)
+- [ ] Secrets configured (`wrangler secret list`)
+- [ ] Feature branch created and PR opened
+
+### Troubleshooting
+
+**"Scheduled handler not running"**
+- Check cron syntax in wrangler.toml
+- Allow up to 15 minutes for cron changes to propagate
+- Test locally: `wrangler dev --test-scheduled`
+
+**"D1 query failed"**
+- Check D1 binding in wrangler.toml
+- Verify database exists: `wrangler d1 list`
+- Check schema: `wrangler d1 execute captain-bridge-db --command "SELECT sql FROM sqlite_master"`
+
+**"WebAuthn failed"**
+- Verify RP_ID matches domain exactly
+- Check RP_ORIGIN includes protocol (https://)
+- Ensure HTTPS in production (required for WebAuthn)

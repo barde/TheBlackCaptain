@@ -188,8 +188,8 @@ Format the response as markdown with proper citations.`;
               type: 'web_search_20250305',
               name: 'web_search',
               max_uses: 5,
-            },
-          ],
+            } as const,
+          ] as unknown as Parameters<typeof client.messages.create>[0]['tools'],
           messages: [{ role: 'user', content: userPrompt }],
           stream: true,
         });

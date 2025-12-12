@@ -8,15 +8,22 @@
     "deploy": "wrangler deploy",
     "db:init": "wrangler d1 execute captain-bridge-db --file=schema.sql",
     "db:init:local": "wrangler d1 execute captain-bridge-db --local --file=schema.sql",
-    "setup:code": "node scripts/generate-setup-code.js"
+    "setup:code": "node scripts/generate-setup-code.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@simplewebauthn/server": "^12.0.0",
-    "@anthropic-ai/sdk": "^0.35.0"
+    "@anthropic-ai/sdk": "^0.35.0",
+    "@simplewebauthn/server": "^12.0.0"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.9.0",
     "@cloudflare/workers-types": "^4.20241127.0",
+    "@simplewebauthn/types": "^12.0.0",
     "typescript": "^5.7.0",
+    "vitest": "^3.0.0",
     "wrangler": "^4.49.0"
   }
 }

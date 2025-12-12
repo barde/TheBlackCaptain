@@ -13,7 +13,7 @@ import type {
   RegistrationResponseJSON,
   AuthenticationResponseJSON,
   AuthenticatorTransportFuture,
-} from '@simplewebauthn/server';
+} from '@simplewebauthn/types';
 import type { Env } from '../index';
 import { createSession, deleteSession } from './session';
 
