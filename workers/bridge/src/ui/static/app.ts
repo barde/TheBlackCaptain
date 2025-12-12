@@ -173,12 +173,20 @@ export default `
     document.getElementById('start-research').addEventListener('click', handleResearch);
 
     // Track changes
-    const inputs = ['article-title', 'article-slug', 'article-content', 'article-date', 'article-description'];
+    const inputs = ['article-title', 'article-slug', 'article-content', 'article-date', 'article-description', 'article-publish-at'];
     inputs.forEach(id => {
       document.getElementById(id).addEventListener('input', () => {
         hasUnsavedChanges = true;
         document.getElementById('save-btn').disabled = false;
       });
+    });
+
+    // Status change handler for scheduled publishing
+    document.getElementById('article-status').addEventListener('change', (e) => {
+      const publishAtGroup = document.getElementById('publish-at-group');
+      publishAtGroup.style.display = e.target.value === 'scheduled' ? 'block' : 'none';
+      hasUnsavedChanges = true;
+      document.getElementById('save-btn').disabled = false;
     });
 
     // Auto-generate slug from title
@@ -221,11 +229,20 @@ export default `
     articles.forEach(article => {
       const li = document.createElement('li');
       li.className = currentArticle?.id === article.id ? 'active' : '';
+
+      // Format scheduled date if present
+      let scheduledInfo = '';
+      if (article.status === 'scheduled' && article.publish_at) {
+        const date = new Date(article.publish_at * 1000);
+        scheduledInfo = '<span class="scheduled-date">' + date.toLocaleDateString() + '</span>';
+      }
+
       li.innerHTML = \`
         <div class="article-title">\${escapeHtml(article.title)}</div>
         <div class="article-meta">
           <span class="article-type">\${article.type}</span>
-          <span class="article-status">\${article.status}</span>
+          <span class="article-status status-\${article.status}">\${article.status}</span>
+          \${scheduledInfo}
         </div>
       \`;
       li.addEventListener('click', () => selectArticle(article));
@@ -254,6 +271,19 @@ export default `
     document.getElementById('article-date').value = metadata.date || '';
     document.getElementById('article-description').value = metadata.description || '';
 
+    // Handle scheduled publishing date
+    const publishAtGroup = document.getElementById('publish-at-group');
+    const publishAtInput = document.getElementById('article-publish-at');
+    if (article.status === 'scheduled' && article.publish_at) {
+      publishAtGroup.style.display = 'block';
+      // Convert Unix timestamp to datetime-local format
+      const date = new Date(article.publish_at * 1000);
+      publishAtInput.value = date.toISOString().slice(0, 16);
+    } else {
+      publishAtGroup.style.display = article.status === 'scheduled' ? 'block' : 'none';
+      publishAtInput.value = '';
+    }
+
     document.getElementById('save-btn').disabled = true;
     renderArticleList();
 
@@ -279,6 +309,8 @@ export default `
     document.getElementById('article-content').value = '';
     document.getElementById('article-date').value = '';
     document.getElementById('article-description').value = '';
+    document.getElementById('article-publish-at').value = '';
+    document.getElementById('publish-at-group').style.display = 'none';
 
     document.getElementById('save-btn').disabled = true;
     renderArticleList();
@@ -291,9 +323,25 @@ export default `
       return;
     }
 
+    const status = document.getElementById('article-status').value;
+    const publishAtValue = document.getElementById('article-publish-at').value;
+
+    // Validate scheduled publishing
+    if (status === 'scheduled' && !publishAtValue) {
+      showToast('Please select a publish date for scheduled articles', 'error');
+      return;
+    }
+
+    // Convert datetime-local to Unix timestamp
+    let publishAt = null;
+    if (status === 'scheduled' && publishAtValue) {
+      publishAt = Math.floor(new Date(publishAtValue).getTime() / 1000);
+    }
+
     const data = {
       type: document.getElementById('article-type').value,
-      status: document.getElementById('article-status').value,
+      status,
+      publish_at: publishAt,
       title,
       slug: document.getElementById('article-slug').value || undefined,
       content: document.getElementById('article-content').value,

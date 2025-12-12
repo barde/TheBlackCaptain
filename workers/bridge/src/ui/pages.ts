@@ -174,7 +174,12 @@ export function editorPage(env: Env, session: Session): string {
               <select id="article-status">
                 <option value="draft">Draft</option>
                 <option value="published">Published</option>
+                <option value="scheduled">Scheduled</option>
               </select>
+            </div>
+            <div class="form-group" id="publish-at-group" style="display: none;">
+              <label for="article-publish-at">Publish Date</label>
+              <input type="datetime-local" id="article-publish-at">
             </div>
           </div>
           <div class="form-group">

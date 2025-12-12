@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS articles (
   title TEXT NOT NULL,
   content TEXT NOT NULL,
   metadata TEXT,
-  status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft', 'published')),
+  status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft', 'published', 'scheduled')),
+  publish_at INTEGER,  -- Unix timestamp for scheduled publishing
   created_at INTEGER NOT NULL DEFAULT (unixepoch()),
   updated_at INTEGER NOT NULL DEFAULT (unixepoch())
 );
@@ -39,6 +40,7 @@ CREATE TABLE IF NOT EXISTS articles (
 CREATE INDEX IF NOT EXISTS idx_articles_type ON articles(type);
 CREATE INDEX IF NOT EXISTS idx_articles_slug ON articles(slug);
 CREATE INDEX IF NOT EXISTS idx_articles_status ON articles(status);
+CREATE INDEX IF NOT EXISTS idx_articles_publish_at ON articles(publish_at);
 
 -- Setup codes for initial registration (one-time use)
 CREATE TABLE IF NOT EXISTS setup_codes (

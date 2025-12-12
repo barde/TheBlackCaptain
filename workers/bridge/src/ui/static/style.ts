@@ -89,6 +89,7 @@ body {
 
 input[type="text"],
 input[type="email"],
+input[type="datetime-local"],
 textarea,
 select {
   width: 100%;
@@ -99,6 +100,11 @@ select {
   color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
 }
 
 input:focus,
@@ -309,6 +315,33 @@ select:focus {
   padding: 0.125rem 0.5rem;
   border-radius: 2px;
   margin-right: 0.5rem;
+}
+
+.article-list .article-status {
+  padding: 0.125rem 0.5rem;
+  border-radius: 2px;
+}
+
+.article-list .status-draft {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.article-list .status-published {
+  background: rgba(46, 125, 50, 0.2);
+  color: #81c784;
+}
+
+.article-list .status-scheduled {
+  background: rgba(21, 101, 192, 0.2);
+  color: #64b5f6;
+}
+
+.article-list .scheduled-date {
+  display: block;
+  font-size: 0.7rem;
+  color: #64b5f6;
+  margin-top: 0.25rem;
 }
 
 /* Main Editor */

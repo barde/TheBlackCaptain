@@ -13,7 +13,8 @@ interface Article {
   title: string;
   content: string;
   metadata: string | null;
-  status: 'draft' | 'published';
+  status: 'draft' | 'published' | 'scheduled';
+  publish_at: number | null;
   created_at: number;
   updated_at: number;
 }
@@ -25,6 +26,7 @@ interface ArticleInput {
   content?: string;
   metadata?: Record<string, unknown>;
   status?: Article['status'];
+  publish_at?: number | null;
 }
 
 /**
@@ -156,6 +158,15 @@ async function createArticle(request: Request, env: Env): Promise<Response> {
   const content = body.content || '';
   const metadata = body.metadata ? JSON.stringify(body.metadata) : null;
   const status = body.status || 'draft';
+  const publishAt = body.publish_at || null;
+
+  // Validate scheduled publishing
+  if (status === 'scheduled' && !publishAt) {
+    return new Response(JSON.stringify({ error: 'Scheduled articles require a publish_at date' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 
   // Check for duplicate slug
   const existing = await env.DB.prepare(
@@ -170,9 +181,9 @@ async function createArticle(request: Request, env: Env): Promise<Response> {
   }
 
   await env.DB.prepare(`
-    INSERT INTO articles (id, slug, type, title, content, metadata, status)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `).bind(id, slug, body.type, body.title, content, metadata, status).run();
+    INSERT INTO articles (id, slug, type, title, content, metadata, status, publish_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `).bind(id, slug, body.type, body.title, content, metadata, status, publishAt).run();
 
   const article = await env.DB.prepare(
     'SELECT * FROM articles WHERE id = ?'
@@ -227,6 +238,21 @@ async function updateArticle(slug: string, request: Request, env: Env): Promise<
   if (body.status !== undefined) {
     updates.push('status = ?');
     values.push(body.status);
+  }
+
+  if (body.publish_at !== undefined) {
+    updates.push('publish_at = ?');
+    values.push(body.publish_at);
+  }
+
+  // Validate scheduled publishing
+  const finalStatus = body.status !== undefined ? body.status : existing.status;
+  const finalPublishAt = body.publish_at !== undefined ? body.publish_at : existing.publish_at;
+  if (finalStatus === 'scheduled' && !finalPublishAt) {
+    return new Response(JSON.stringify({ error: 'Scheduled articles require a publish_at date' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
   if (body.slug !== undefined && body.slug !== slug) {
