@@ -1,0 +1,201 @@
+name: Deploy from Captain's Bridge
+
+on:
+  workflow_dispatch:
+    inputs:
+      articles:
+        description: 'JSON array of article paths to deploy'
+        required: false
+        type: string
+      trigger_source:
+        description: 'Source of the deployment trigger'
+        required: false
+        default: 'bridge'
+        type: string
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    name: Sync articles and deploy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install wrangler
+        run: pnpm add -g wrangler
+
+      - name: Export articles from D1
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "📦 Fetching published articles from Captain's Bridge database..."
+
+          # Query published articles from D1
+          ARTICLES=$(wrangler d1 execute captain-bridge-db --remote --json --command "SELECT slug, type, title, content, metadata, created_at FROM articles WHERE status = 'published' ORDER BY type, created_at DESC")
+
+          # Parse and create markdown files
+          echo "$ARTICLES" | node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            let input = '';
+            process.stdin.on('data', chunk => input += chunk);
+            process.stdin.on('end', () => {
+              try {
+                const result = JSON.parse(input);
+                const articles = result[0]?.results || [];
+
+                console.log('Found', articles.length, 'published articles');
+
+                for (const article of articles) {
+                  // Determine directory based on type
+                  let dir;
+                  switch (article.type) {
+                    case 'post': dir = 'posts'; break;
+                    case 'treasure-trove': dir = 'treasure-trove'; break;
+                    case 'avian-studies': dir = 'avian-studies'; break;
+                    case 'page': dir = 'pages'; break;
+                    default: dir = 'posts';
+                  }
+
+                  // Parse metadata
+                  let metadata = {};
+                  try {
+                    metadata = article.metadata ? JSON.parse(article.metadata) : {};
+                  } catch (e) {}
+
+                  // Build frontmatter
+                  const frontmatter = {
+                    title: article.title,
+                    ...metadata
+                  };
+
+                  // Add date if not in metadata
+                  if (!frontmatter.date && article.created_at) {
+                    const date = new Date(article.created_at * 1000);
+                    frontmatter.date = date.toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    });
+                  }
+
+                  // Generate YAML
+                  let yaml = '---\n';
+                  for (const [key, value] of Object.entries(frontmatter)) {
+                    if (value !== null && value !== undefined) {
+                      if (typeof value === 'string' && (value.includes(':') || value.includes('#'))) {
+                        yaml += key + ': \"' + value.replace(/\"/g, '\\\"') + '\"\n';
+                      } else if (typeof value === 'object') {
+                        yaml += key + ': ' + JSON.stringify(value) + '\n';
+                      } else {
+                        yaml += key + ': ' + value + '\n';
+                      }
+                    }
+                  }
+                  yaml += '---\n\n';
+
+                  // Ensure directory exists
+                  if (!fs.existsSync(dir)) {
+                    fs.mkdirSync(dir, { recursive: true });
+                  }
+
+                  // Write file
+                  const filePath = path.join(dir, article.slug + '.md');
+                  fs.writeFileSync(filePath, yaml + article.content);
+                  console.log('  ✓', filePath);
+                }
+
+                console.log('✅ Export complete');
+              } catch (error) {
+                console.error('Error parsing articles:', error.message);
+                process.exit(1);
+              }
+            });
+          "
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "📝 No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected:"
+            git diff --staged --stat
+          fi
+
+      - name: Commit changes
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Captain's Bridge"
+          git config user.email "bridge@blackhoard.com"
+          git commit -m "$(cat <<'EOF'
+          Sync articles from Captain's Bridge
+
+          Triggered by: ${{ inputs.trigger_source || 'scheduled' }}
+
+          🤖 Generated with [Captain's Bridge](https://bridge.blackhoard.com)
+          EOF
+          )"
+
+      - name: Push changes
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: git push
+
+      - name: Install build dependencies
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: pnpm install
+
+      - name: Build site
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: pnpm run build
+
+      - name: Strip EXIF data from images
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          echo "🔒 Removing EXIF metadata from images for privacy..."
+          sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
+          find public -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
+          find images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec exiftool -all= -overwrite_original {} \; 2>/dev/null || true
+          echo "✓ EXIF data removed"
+
+      - name: Deploy to Cloudflare Pages
+        if: steps.git-check.outputs.has_changes == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=the-black-captain --branch=master --commit-dirty=true
+
+      - name: Post deployment summary
+        run: |
+          echo "## 🏴‍☠️ Bridge Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.git-check.outputs.has_changes }}" == "true" ]; then
+            echo "**Status:** Articles synced and deployed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Production URL:** https://blackhoard.com" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "All articles are already in sync." >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger Source:** ${{ inputs.trigger_source || 'scheduled' }}" >> $GITHUB_STEP_SUMMARY
