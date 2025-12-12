@@ -4,6 +4,7 @@
 name = "captain-bridge"
 main = "src/index.ts"
 compatibility_date = "2024-12-01"
+workers_dev = true
 
 # D1 Database for articles, users, credentials
 [[d1_databases]]
@@ -27,9 +28,7 @@ RP_ORIGIN = "https://bridge.blackhoard.com"
 # - GITHUB_TOKEN: For triggering deployments
 # - SETUP_CODE: Initial registration code (optional, can be generated)
 
-# Custom domain (configure via Cloudflare dashboard or API)
-# After deploying, add a custom domain at:
-# https://dash.cloudflare.com/<account>/workers-and-pages/captain-bridge/settings/domains
-
-# To add via CLI (requires zone permissions):
-# wrangler routes add bridge.blackhoard.com/* captain-bridge
+# Custom domain
+[[routes]]
+pattern = "bridge.blackhoard.com"
+custom_domain = true
