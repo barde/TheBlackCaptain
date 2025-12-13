@@ -70,6 +70,115 @@ And it all began in Macedonia - in the mountains north of the city that would be
 
 ---
 
+## The Harbor Before History: From Thermi to Therma
+
+Long before Greeks settled these shores, the [Thermaic Gulf](https://en.wikipedia.org/wiki/Thermaic_Gulf) drew ancient peoples to its waters.
+
+### The Neolithic Fishermen
+
+Archaeological excavations at the [Archaeological Museum of Thessaloniki](https://www.amth.gr/en/exhibitions/permanent-exhibitions/prehistoric-macedonia) reveal that humans inhabited this coast as early as the sixth millennium BCE - four thousand years before the pyramids of Egypt. The prehistoric settlements of Thermi, Stavroupoli, Vassilika, and Kastana dot the landscape, their toumbas (artificial mounds built up over millennia of habitation) still visible in the modern suburbs.
+
+These earliest settlers were fishermen and farmers who recognized what every mariner since has understood: the Thermaic Gulf offers deep anchorage protected from the open Aegean's fury, fresh water from the Axios and Aliakmon rivers, and fertile coastal plains for provisioning. They left behind pottery shards, obsidian blades traded from the island of Melos, and the foundations of a maritime tradition that would endure for eight millennia.
+
+### The Port of Therma
+
+By the seventh century BCE, Greek colonists from [Eretria or Corinth](https://www.livius.org/articles/place/thessaloniki/) established the port of *Therma* (Θέρμη) - "the hot place," likely named for the thermal springs that still bubble near the modern suburb of Thermi. The name also hinted at the endemic malaria in the marshy Axios delta, but sailors took the risk for what the harbor offered: the deepest natural port on the Macedonian coast.
+
+When the Persian King [Xerxes I](https://en.wikipedia.org/wiki/Xerxes_I) assembled his massive invasion force against Greece in 480 BCE, he chose Therma as his staging ground. A thousand ships anchored in these waters while a million men (if we believe Herodotus) camped on these shores. The harbor that would become Thessaloniki proved its worth in the scale of war before it proved it in the scales of commerce.
+
+During the [Peloponnesian War](https://en.wikipedia.org/wiki/Peloponnesian_War), Athenian forces occupied Therma in 421 BCE, recognizing its strategic control over the sea-lanes to Macedonia and Thrace. The harbor was too valuable to leave in uncertain hands.
+
+---
+
+## The Roman Harbor: Where East Met West
+
+### The Via Egnatia
+
+When Rome conquered Macedonia in 168 BCE, the new masters understood immediately what the Persians and Athenians had grasped before them: Thessaloniki commanded the junction of land and sea.
+
+The Romans built the [Via Egnatia](https://en.wikipedia.org/wiki/Via_Egnatia) - a monumental road running 1,100 kilometers from the Adriatic port of Dyrrachium (modern Durrës in Albania) to Byzantium on the Bosphorus. Thessaloniki sat at its midpoint, the hinge where maritime cargo transferred to overland caravans and where overland goods boarded ships for every port in the Mediterranean.
+
+From 146 BCE onward, the Via Egnatia carried legions eastward and tribute westward, merchants in both directions, and eventually an idea that would reshape the world - for the Apostle Paul walked this road when he brought Christianity to Europe.
+
+### The Burrowed Harbour
+
+The Romans expanded Therma's modest harbor into a grand commercial port - the *Σκαπτός Λιμήν* (Skaptos Limen, "the Burrowed Harbour"), so named because it was carved into the shoreline to create protected docking for the grain ships, wine traders, and triremes of the Roman fleet. Remnants of its docks lie buried beneath modern Frangon Street, near the city's Catholic Church.
+
+In 41 BCE, Mark Antony declared Thessaloniki a [free city](https://en.wikipedia.org/wiki/Free_city_(antiquity)) - exempt from many Roman taxes, self-governing in local affairs, and free to mint its own coinage. The honor reflected the city's growing wealth. By the second century CE, Thessaloniki was among the largest cities in the empire, its population perhaps 100,000, its harbor crowded with ships from Egypt, Syria, Hispania, and Gaul.
+
+---
+
+## Byzantine Maritime Glory: The Second City
+
+### The Co-Capital of Christendom
+
+For a thousand years of Byzantine rule, Thessaloniki was *Symvasilévousa* - the Co-Reigning City, second only to Constantinople herself. The two cities anchored opposite ends of the empire's maritime spine: Constantinople controlling the strait between Black Sea and Mediterranean, Thessaloniki commanding the western Aegean and the landward routes to the Adriatic.
+
+When Constantinople was threatened, emperors fled to Thessaloniki. When plagues or sieges depopulated the capital, artisans and merchants relocated to the Co-Reigning City. By the mid-twelfth century, [Thessaloniki's population reached 150,000](https://en.wikipedia.org/wiki/History_of_Thessaloniki), making it one of Europe's largest cities.
+
+### The Merchants of Byzantium
+
+[Byzantine maritime trade](https://www.worldhistory.org/article/1179/trade-in-the-byzantine-empire/) operated on a scale that medieval Western Europe could not match. From Thessaloniki's wharves, ships carried:
+
+- **Silk** from the imperial workshops of Constantinople
+- **Grain** from the Black Sea ports of Trebizond and Cherson
+- **Wine and olive oil** from the Aegean islands
+- **Timber** from the Macedonian forests - the same woods that had built Alexander's fleet
+- **Icons and religious objects** bound for monasteries from Kiev to Venice
+
+The state controlled this commerce jealously, charging 10% duties at customs stations throughout the empire. Thessaloniki's harbor masters grew rich on the flow.
+
+### The Italian Interlopers
+
+The empire's slow decline began on these very wharves. The [Komnenian emperors](https://en.wikipedia.org/wiki/Komnenos) granted tax exemptions to Venetian and Genoese merchants in exchange for naval support - short-term political necessity that proved long-term economic catastrophe. By the thirteenth century, Italian merchants had displaced Byzantine traders in their own ports.
+
+After the [Fourth Crusade's sack of Constantinople](https://en.wikipedia.org/wiki/Sack_of_Constantinople) in 1204, Thessaloniki briefly became the capital of a [Crusader kingdom](https://en.wikipedia.org/wiki/Kingdom_of_Thessalonica) - the Kingdom of Thessalonica under Boniface of Montferrat. The Latins held the city only twenty years, but the pattern was set: Western merchants would increasingly control the commerce of the Eastern Mediterranean.
+
+In 1423, facing Ottoman siege, the Byzantine governor [sold Thessaloniki to Venice](https://en.wikipedia.org/wiki/Siege_of_Thessalonica_(1422%E2%80%931430)). The Republic of St. Mark held the city for seven years before the Ottomans broke through in 1430.
+
+---
+
+## Ottoman Selanik: Mother of Israel
+
+### The Sultan's Invitation
+
+When Sultan [Murad II](https://en.wikipedia.org/wiki/Murad_II) conquered Thessaloniki in 1430, the city was a shadow of its Byzantine glory - depopulated by plague, siege, and war. The Ottomans needed merchants to revive it.
+
+The answer came from an unexpected direction. In 1492, the same year Columbus sailed westward, the [Spanish Crown expelled its Jewish population](https://en.wikipedia.org/wiki/Alhambra_Decree). Sultan [Bayezid II](https://en.wikipedia.org/wiki/Bayezid_II) saw opportunity where others saw refugees. "You call Ferdinand a wise king," he reportedly said of the Spanish monarch, "but he has impoverished his country and enriched mine."
+
+Between 15,000 and 20,000 [Sephardic Jews](https://en.wikipedia.org/wiki/History_of_the_Jews_in_Thessaloniki) settled in Thessaloniki within years of the expulsion. They brought skills the Ottoman economy desperately needed: textile manufacturing, banking, international trade networks that stretched from Amsterdam to Alexandria.
+
+### The Jewish Port
+
+By the sixteenth century, Thessaloniki had become the [largest Jewish city in the world](https://www.jewishvirtuallibrary.org/salonika) - and the only city where Jews formed an absolute majority. Ottoman census records from 1519 counted 3,143 Jewish households comprising 54% of the population.
+
+The Sephardim called their new home *la madre de Israel* (the mother of Israel) and *Jerusalem of the Balkans*. They dominated every aspect of commerce:
+
+- **The Port**: Jewish stevedores loaded and unloaded the ships. On Saturdays (Shabbat), the entire harbor fell silent.
+- **Textiles**: Jewish weavers provided cloth for the Ottoman army's uniforms, a contract so valuable that the community could pay its taxes in fabric rather than coin.
+- **Banking**: Jewish financiers connected Thessaloniki to the emerging financial markets of Western Europe.
+- **Tobacco**: The [Allatini brothers](https://en.wikipedia.org/wiki/Allatini) and other Jewish entrepreneurs industrialized tobacco processing, exporting throughout the Mediterranean.
+
+When the railroad connected Thessaloniki to [Mitrovica (1871), Belgrade (1888), Vienna (1888), and Istanbul (1895)](https://en.wikipedia.org/wiki/Thessaloniki_railway_station), Jewish merchants again led the transformation - building the factories, warehouses, and trading companies that made Ottoman Selanik one of the most dynamic ports in the Eastern Mediterranean.
+
+### The Lost Community
+
+This world ended in fire. In 1917, a catastrophic blaze destroyed much of the Jewish quarter. Worse was to come. Under Nazi occupation during World War II, nearly 50,000 Thessalonian Jews - 96% of the community - were deported to Auschwitz. The Jewish harbor workers, the textile dynasties, the coffee merchants who had made the port function for five centuries - all annihilated.
+
+Modern Thessaloniki remembers. The [Jewish Museum of Thessaloniki](https://www.jmth.gr/) preserves what documentation survived. The old Jewish cemetery, paved over during the occupation for a university campus, is commemorated with a Holocaust memorial.
+
+---
+
+## The Modern Harbor
+
+Today the [Port of Thessaloniki](https://en.wikipedia.org/wiki/Port_of_Thessaloniki) remains Greece's second-largest, handling container traffic, cruise ships, and ferry services to the Aegean islands. The waterfront promenade stretches for kilometers - a place where the ancient, the Ottoman, and the modern intersect.
+
+The [White Tower](https://en.wikipedia.org/wiki/White_Tower_of_Thessaloniki), once an Ottoman prison, now a museum, watches over the same waters that Xerxes' triremes once filled. The Aristotelous Square opens onto the same harbor where Sephardic merchants once haggled in Ladino. The Via Egnatia, now paved and widened as Egnatia Street, still carries traffic from the Adriatic toward the Bosphorus.
+
+Eight millennia of harbors lie layered beneath the coffee shops and shipping offices. The Neolithic fishermen, the Macedonian shipwrights, the Roman customs officials, the Byzantine silk traders, the Sephardic stevedores - all gone, but all still somehow present in a city that has never stopped being what geography made it: the place where land meets sea, where East meets West, where merchants of every nation have gathered since before the Greeks had a name for it.
+
+---
+
 ## The Name That Carries Victory
 
 The name Thessaloniki (Θεσσαλονίκη) is not merely a label - it is a history compressed into syllables. It derives from two Greek roots:
