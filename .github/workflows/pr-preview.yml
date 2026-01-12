@@ -51,7 +51,9 @@ jobs:
         with:
           script: |
             const branch = context.payload.pull_request.head.ref;
-            const previewUrl = `https://${branch}.the-black-captain.pages.dev`;
+            // Sanitize branch name for Cloudflare Pages URL (replace non-alphanumeric chars with hyphens)
+            const sanitizedBranch = branch.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
+            const previewUrl = `https://${sanitizedBranch}.the-black-captain.pages.dev`;
 
             // Check if we already commented
             const comments = await github.rest.issues.listComments({
