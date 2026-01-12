@@ -20,6 +20,7 @@
     "test:e2e": "playwright test",
     "test:deployment": "node tests/e2e/deployment.test.js",
     "test:story": "node tests/e2e/story.test.js",
+    "test:translation": "playwright test tests/e2e/translation.test.js",
     "test:all": "pnpm test && pnpm test:e2e",
     "check:links": "node scripts/check-links.js"
   },

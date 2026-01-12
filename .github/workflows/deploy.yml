@@ -61,6 +61,12 @@ jobs:
         run: pnpm run test:deployment
         continue-on-error: true
 
+      - name: Test translation
+        run: pnpm run test:translation
+        env:
+          TEST_URL: https://blackhoard.com
+        continue-on-error: true
+
       - name: Upload test screenshot
         if: always()
         uses: actions/upload-artifact@v4

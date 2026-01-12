@@ -70,7 +70,8 @@ This is not failure—it's collaborative creation. The Captain often knows the *
 - **Playwright** is used for browser automation.
 - **Verification**: `test-deployment.js` checks status, title, content, and takes screenshots.
 - **Story Verification**: `test-story.js`.
-- Run tests: `pnpm run test:deployment` or `pnpm run test:story`.
+- **Translation Verification**: `test:translation` runs `tests/e2e/translation.test.js` to verify the AI translation system on the live site.
+- Run tests: `pnpm run test:deployment` or `pnpm run test:translation`.
 
 ## Content Publishing Workflow
 

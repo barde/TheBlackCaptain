@@ -119,6 +119,16 @@ if [ -n "$DEPLOY_URL" ]; then
         print_error "Automated tests failed - please check the output above"
         exit 1
     fi
+
+    # Run translation test
+    echo ""
+    print_status "Running translation feature test..."
+    if pnpm run test:translation; then
+        print_success "Translation test passed!"
+    else
+        print_error "Translation test failed!"
+        exit 1
+    fi
 else
     print_error "Could not determine deployment URL"
     exit 1
