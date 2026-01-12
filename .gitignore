@@ -46,3 +46,6 @@ homepage-check.png
 
 # Local overrides
 wrangler.local.toml
+
+.gemini/
+gha-creds-*.json

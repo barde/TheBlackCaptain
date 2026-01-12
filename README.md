@@ -308,7 +308,7 @@ All content is in Git. Your markdown files are the source of truth.
 
 All on free tiers:
 - **Hosting**: Free (Cloudflare Pages)
-- **Translation**: Free up to 500K chars/month ([Google Cloud Translation](https://cloud.google.com/translate/pricing))
+- **Translation**: Free (Cloudflare Workers AI - Neuron limit applies)
 - **KV Storage**: First 1GB free
 - **Bandwidth**: Unlimited on Cloudflare
 
@@ -327,10 +327,10 @@ npm run build
 
 ### Translation Not Working
 
-1. Check `GOOGLE_TRANSLATE_API_KEY` is set: `pnpm wrangler pages secret list --project-name the-black-captain`
-2. Verify API key is valid in [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
-3. Ensure Cloud Translation API is enabled in your Google Cloud project
-4. Check browser console for errors (403 = origin blocked, 503 = API not configured)
+1. Check `AI` binding is configured in `wrangler.toml`
+2. Check `TRANSLATIONS_KV` binding is configured in `wrangler.toml`
+3. Ensure Cloudflare Workers AI is enabled in your Cloudflare account
+4. Check browser console for errors
 
 ### Local Development
 
@@ -341,14 +341,14 @@ cd public
 python -m http.server 8000
 ```
 
-Translation won't work locally (needs Cloudflare Pages Functions with the API key secret).
+Translation won't work locally (needs Cloudflare Pages Functions with the AI binding).
 
 ## Tech Stack
 
 - **Frontend**: Vanilla HTML, CSS, JavaScript
 - **Build**: Node.js script (no webpack/vite)
 - **Hosting**: Cloudflare Pages
-- **Translation**: Google Cloud Translation API (v2) with 7-day caching
+- **Translation**: Cloudflare Workers AI (m2m100 model)
 - **Caching**: Cloudflare Workers KV
 - **CDN**: Cloudflare global network
 
